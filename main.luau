@@ -1,43 +1,8 @@
 -- ============================================================
---  CHEAT DURING TEST - ANSWER KEY BOT v9.3
---  - SINGLE OWNER: only the farmer controls hands
---  - Farmer: equips phone and fires photo in the SAME TICK
---  - Photo watchdog: aborts in 0.15s if teacher turns
---  - Conservative safety: real wall block or walking away
---  - Cycle resets if it stalls over 10s
---  - Auto PENCIL on idle hands (less anxiety, innocent look)
---  Settings:
---    _G.BOT.doPhoto = false / _G.BOT.pause = true / _G.BOT.enabled = false
+--  Cheat During Test | Official Automation Hub
+--  Protected by Platoboost & Fluent UI Renewed
+--  Developer: myheisenberg
 -- ============================================================
-
-local Players = game:GetService("Players")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Workspace = game:GetService("Workspace")
-
-local LocalPlayer = Players.LocalPlayer
-local PlayerAnswerTable = ReplicatedStorage:WaitForChild("PlayerAnswerTable")
-local ToolAction = ReplicatedStorage.ToolEvents:WaitForChild("ToolAction")
-local PlayAnimation = ReplicatedStorage.ToolEvents:WaitForChild("PlayAnimation")
-local ShopInventoryAction = ReplicatedStorage:WaitForChild("ShopInventoryAction")
-
--- SETTINGS (evidence-based: catching = teacher GAZE, not distance)
-local SAFE_DISTANCE = 4      -- risk only when right next to you (punch range)
-local SAFE_DOT = -0.25       -- head AND body must clearly face away
-local STABLE_TIME = 0.8      -- continuous safe time before photo
-local FACE_MEMORY = 1.2      -- wait time after teacher looked at us
-local CYCLE_COOLDOWN = 2.5   -- min wait after answer/abort
-local CYCLE_TIMEOUT = 10     -- cycle resets if not done in this many seconds
-local ANXIETY_PAUSE = 60
-local ANXIETY_RESUME = 40
-local ANXIETY_PENCIL = 85
-
--- live tuning from GUI sliders (local constant = default)
-local function T(name, default)
-    local t = _G.BOT_TUNES
-    local v = t and t[name]
-    if type(v) == "number" then return v end
-    return default
-end
 
 
 local TweenService = game:GetService("TweenService")
@@ -102,267 +67,428 @@ local function CreateKeyModal(onSuccess)
         end
     end
 
+    -- Clean previous instances
+    for _, name in ipairs({"CheatBot_AuthModal", "FluentRenewed_Cheat Bot", "CheatBot_Modal"}) do
+        local old = (gethui and gethui():FindFirstChild(name)) or CoreGui:FindFirstChild(name)
+        if old then old:Destroy() end
+        local oldRoblox = CoreGui:FindFirstChild("RobloxGui") and CoreGui.RobloxGui:FindFirstChild(name)
+        if oldRoblox then oldRoblox:Destroy() end
+    end
+
     local parent = (gethui and gethui()) or CoreGui:FindFirstChild("RobloxGui") or CoreGui
     local ScreenGui = Instance.new("ScreenGui")
     ScreenGui.Name = "CheatBot_AuthModal"
     ScreenGui.ResetOnSpawn = false
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    ScreenGui.Parent = parent
 
-    -- Main Card
+    -- Background Tint Overlay
+    local Overlay = Instance.new("TextButton")
+    Overlay.Name = "Overlay"
+    Overlay.Text = ""
+    Overlay.AutoButtonColor = false
+    Overlay.Size = UDim2.fromScale(1, 1)
+    Overlay.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Overlay.BackgroundTransparency = 0.55
+    Overlay.BorderSizePixel = 0
+    Overlay.Parent = ScreenGui
+
+    -- Main Card Frame (Fluent Acrylic Card)
     local Card = Instance.new("Frame")
     Card.Name = "Card"
-    Card.Size = UDim2.fromOffset(380, 230)
+    Card.Size = UDim2.fromOffset(450, 255)
     Card.AnchorPoint = Vector2.new(0.5, 0.5)
     Card.Position = UDim2.fromScale(0.5, 0.5)
-    Card.BackgroundColor3 = Color3.fromRGB(20, 20, 24)
+    Card.BackgroundTransparency = 1
     Card.BorderSizePixel = 0
     Card.Parent = ScreenGui
 
-    local CardCorner = Instance.new("UICorner")
-    CardCorner.CornerRadius = UDim.new(0, 14)
-    CardCorner.Parent = Card
+    -- 1. Fluent Window Drop Shadow
+    local Shadow = Instance.new("ImageLabel")
+    Shadow.Name = "Shadow"
+    Shadow.AnchorPoint = Vector2.new(0.5, 0.5)
+    Shadow.Position = UDim2.fromScale(0.5, 0.5)
+    Shadow.Size = UDim2.new(1, 110, 1, 110)
+    Shadow.BackgroundTransparency = 1
+    Shadow.Image = "rbxassetid://8992230677"
+    Shadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+    Shadow.ImageTransparency = 0.5
+    Shadow.ScaleType = Enum.ScaleType.Slice
+    Shadow.SliceCenter = Rect.new(99, 99, 99, 99)
+    Shadow.ZIndex = 1
+    Shadow.Parent = Card
 
-    local CardStroke = Instance.new("UIStroke")
-    CardStroke.Color = Color3.fromRGB(48, 48, 58)
-    CardStroke.Thickness = 1.2
-    CardStroke.Parent = Card
+    -- 2. Acrylic Background Frame (Fluent Dark Theme AcrylicMain)
+    local Background = Instance.new("Frame")
+    Background.Name = "Background"
+    Background.Size = UDim2.fromScale(1, 1)
+    Background.BackgroundColor3 = Color3.fromRGB(36, 36, 42)
+    Background.BackgroundTransparency = 0.22 -- Acrylic glass effect
+    Background.BorderSizePixel = 0
+    Background.ZIndex = 2
+    Background.Parent = Card
 
-    -- Top Glow Accent
-    local AccentGlow = Instance.new("Frame")
-    AccentGlow.Size = UDim2.new(1, 0, 0, 2)
-    AccentGlow.Position = UDim2.new(0, 0, 0, 0)
-    AccentGlow.BackgroundColor3 = Color3.fromRGB(59, 130, 246)
-    AccentGlow.BorderSizePixel = 0
-    AccentGlow.Parent = Card
+    local BgCorner = Instance.new("UICorner")
+    BgCorner.CornerRadius = UDim.new(0, 8)
+    BgCorner.Parent = Background
 
-    local AccentGlowCorner = Instance.new("UICorner")
-    AccentGlowCorner.CornerRadius = UDim.new(0, 14)
-    AccentGlowCorner.Parent = AccentGlow
+    -- 3. Acrylic Subtle Gradient Layer
+    local GradientFrame = Instance.new("Frame")
+    GradientFrame.Name = "Gradient"
+    GradientFrame.Size = UDim2.fromScale(1, 1)
+    GradientFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    GradientFrame.BackgroundTransparency = 0.75
+    GradientFrame.BorderSizePixel = 0
+    GradientFrame.ZIndex = 2
+    GradientFrame.Parent = Card
 
-    -- Header Icon
+    local GradCorner = Instance.new("UICorner")
+    GradCorner.CornerRadius = UDim.new(0, 8)
+    GradCorner.Parent = GradientFrame
+
+    local Grad = Instance.new("UIGradient")
+    Grad.Rotation = 90
+    Grad.Color = ColorSequence.new(Color3.fromRGB(48, 48, 54), Color3.fromRGB(24, 24, 28))
+    Grad.Parent = GradientFrame
+
+    -- 4. Acrylic Noise Texture
+    local Noise = Instance.new("ImageLabel")
+    Noise.Name = "Noise"
+    Noise.Size = UDim2.fromScale(1, 1)
+    Noise.BackgroundTransparency = 1
+    Noise.Image = "rbxassetid://9968344227"
+    Noise.ImageTransparency = 0.94
+    Noise.ScaleType = Enum.ScaleType.Tile
+    Noise.TileSize = UDim2.new(0, 128, 0, 128)
+    Noise.ZIndex = 2
+    Noise.Parent = Card
+
+    local NoiseCorner = Instance.new("UICorner")
+    NoiseCorner.CornerRadius = UDim.new(0, 8)
+    NoiseCorner.Parent = Noise
+
+    -- 5. Fluent Border Stroke (AcrylicBorder)
+    local BorderFrame = Instance.new("Frame")
+    BorderFrame.Name = "Border"
+    BorderFrame.Size = UDim2.fromScale(1, 1)
+    BorderFrame.BackgroundTransparency = 1
+    BorderFrame.ZIndex = 4
+    BorderFrame.Parent = Card
+
+    local BorderCorner = Instance.new("UICorner")
+    BorderCorner.CornerRadius = UDim.new(0, 8)
+    BorderCorner.Parent = BorderFrame
+
+    local BorderStroke = Instance.new("UIStroke")
+    BorderStroke.Color = Color3.fromRGB(90, 90, 95)
+    BorderStroke.Transparency = 0.5
+    BorderStroke.Thickness = 1
+    BorderStroke.Parent = BorderFrame
+
+    -- 6. Fluent Cyan Top Accent Line
+    local TopLine = Instance.new("Frame")
+    TopLine.Name = "TopLine"
+    TopLine.Size = UDim2.new(1, -16, 0, 1)
+    TopLine.Position = UDim2.fromOffset(8, 0)
+    TopLine.BackgroundColor3 = Color3.fromRGB(96, 205, 255)
+    TopLine.BackgroundTransparency = 0.4
+    TopLine.BorderSizePixel = 0
+    TopLine.ZIndex = 5
+    TopLine.Parent = Card
+
+    -- ================= HEADER =================
+    local Header = Instance.new("Frame")
+    Header.Name = "Header"
+    Header.Size = UDim2.new(1, 0, 0, 52)
+    Header.BackgroundTransparency = 1
+    Header.ZIndex = 5
+    Header.Parent = Card
+
+    -- Lucide Key Icon
     local Icon = Instance.new("ImageLabel")
-    Icon.Size = UDim2.fromOffset(26, 26)
-    Icon.Position = UDim2.fromOffset(22, 20)
+    Icon.Name = "Icon"
+    Icon.Size = UDim2.fromOffset(22, 22)
+    Icon.Position = UDim2.fromOffset(20, 16)
     Icon.BackgroundTransparency = 1
-    Icon.Image = "rbxassetid://6031086173" -- shield/key icon
-    Icon.ImageColor3 = Color3.fromRGB(59, 130, 246)
-    Icon.Parent = Card
+    Icon.Image = "rbxassetid://118976126805967"
+    Icon.ImageRectOffset = Vector2.new(320, 64)
+    Icon.ImageRectSize = Vector2.new(64, 64)
+    Icon.ImageColor3 = Color3.fromRGB(96, 205, 255)
+    Icon.ZIndex = 5
+    Icon.Parent = Header
 
-    -- Title
     local Title = Instance.new("TextLabel")
+    Title.Name = "Title"
     Title.Text = "Cheat Bot Authentication"
-    Title.TextColor3 = Color3.fromRGB(245, 245, 250)
     Title.Font = Enum.Font.GothamBold
-    Title.TextSize = 15
+    Title.TextSize = 16
+    Title.TextColor3 = Color3.fromRGB(245, 245, 245)
     Title.TextXAlignment = Enum.TextXAlignment.Left
-    Title.Size = UDim2.new(1, -90, 0, 18)
-    Title.Position = UDim2.fromOffset(56, 17)
     Title.BackgroundTransparency = 1
+    Title.Position = UDim2.fromOffset(50, 12)
+    Title.Size = UDim2.new(1, -60, 0, 18)
     Title.AutoLocalize = false
-    Title.Parent = Card
+    Title.ZIndex = 5
+    Title.Parent = Header
 
-    -- Subtitle
-    local Subtitle = Instance.new("TextLabel")
-    Subtitle.Text = "24-Hour License • Powered by Platoboost"
-    Subtitle.TextColor3 = Color3.fromRGB(140, 140, 155)
-    Subtitle.Font = Enum.Font.Gotham
-    Subtitle.TextSize = 11
-    Subtitle.TextXAlignment = Enum.TextXAlignment.Left
-    Subtitle.Size = UDim2.new(1, -90, 0, 14)
-    Subtitle.Position = UDim2.fromOffset(56, 36)
-    Subtitle.BackgroundTransparency = 1
-    Subtitle.AutoLocalize = false
-    Subtitle.Parent = Card
+    local SubTitle = Instance.new("TextLabel")
+    SubTitle.Name = "SubTitle"
+    SubTitle.Text = "Enter your key to continue"
+    SubTitle.Font = Enum.Font.Gotham
+    SubTitle.TextSize = 12
+    SubTitle.TextColor3 = Color3.fromRGB(175, 175, 180)
+    SubTitle.TextXAlignment = Enum.TextXAlignment.Left
+    SubTitle.BackgroundTransparency = 1
+    SubTitle.Position = UDim2.fromOffset(50, 31)
+    SubTitle.Size = UDim2.new(1, -60, 0, 14)
+    SubTitle.AutoLocalize = false
+    SubTitle.ZIndex = 5
+    SubTitle.Parent = Header
 
-    -- Close Button
-    local CloseBtn = Instance.new("TextButton")
-    CloseBtn.Size = UDim2.fromOffset(24, 24)
-    CloseBtn.Position = UDim2.new(1, -34, 0, 18)
-    CloseBtn.BackgroundColor3 = Color3.fromRGB(35, 35, 42)
-    CloseBtn.Text = "✕"
-    CloseBtn.TextColor3 = Color3.fromRGB(160, 160, 175)
-    CloseBtn.Font = Enum.Font.GothamMedium
-    CloseBtn.TextSize = 11
-    CloseBtn.AutoLocalize = false
-    CloseBtn.Parent = Card
+    -- ================= BODY =================
+    local Body = Instance.new("Frame")
+    Body.Name = "Body"
+    Body.Size = UDim2.new(1, -40, 0, 115)
+    Body.Position = UDim2.fromOffset(20, 58)
+    Body.BackgroundTransparency = 1
+    Body.ZIndex = 5
+    Body.Parent = Card
 
-    local CloseCorner = Instance.new("UICorner")
-    CloseCorner.CornerRadius = UDim.new(0, 6)
-    CloseCorner.Parent = CloseBtn
-
-    CloseBtn.MouseButton1Click:Connect(function()
-        ScreenGui:Destroy()
-    end)
-
-    -- Divider
-    local Divider = Instance.new("Frame")
-    Divider.Size = UDim2.new(1, -44, 0, 1)
-    Divider.Position = UDim2.fromOffset(22, 64)
-    Divider.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
-    Divider.BorderSizePixel = 0
-    Divider.Parent = Card
-
-    -- Input Box Frame
+    -- Fluent Textbox Input Frame
     local InputFrame = Instance.new("Frame")
-    InputFrame.Size = UDim2.new(1, -44, 0, 42)
-    InputFrame.Position = UDim2.fromOffset(22, 78)
-    InputFrame.BackgroundColor3 = Color3.fromRGB(26, 26, 32)
+    InputFrame.Name = "InputFrame"
+    InputFrame.Size = UDim2.new(1, 0, 0, 38)
+    InputFrame.Position = UDim2.fromOffset(0, 6)
+    InputFrame.BackgroundColor3 = Color3.fromRGB(48, 48, 54)
+    InputFrame.BackgroundTransparency = 0.2
     InputFrame.BorderSizePixel = 0
-    InputFrame.Parent = Card
+    InputFrame.ZIndex = 5
+    InputFrame.Parent = Body
 
     local InputCorner = Instance.new("UICorner")
-    InputCorner.CornerRadius = UDim.new(0, 8)
+    InputCorner.CornerRadius = UDim.new(0, 4)
     InputCorner.Parent = InputFrame
 
     local InputStroke = Instance.new("UIStroke")
-    InputStroke.Color = Color3.fromRGB(44, 44, 56)
+    InputStroke.Color = Color3.fromRGB(75, 75, 82)
+    InputStroke.Transparency = 0.6
     InputStroke.Thickness = 1
     InputStroke.Parent = InputFrame
 
     local TextBox = Instance.new("TextBox")
+    TextBox.Name = "Input"
+    TextBox.PlaceholderText = "Paste key here..."
+    TextBox.PlaceholderColor3 = Color3.fromRGB(150, 150, 155)
+    TextBox.Text = ""
+    TextBox.Font = Enum.Font.Gotham
+    TextBox.TextSize = 13
+    TextBox.TextColor3 = Color3.fromRGB(245, 245, 245)
+    TextBox.TextXAlignment = Enum.TextXAlignment.Left
+    TextBox.ClearTextOnFocus = false
+    TextBox.BackgroundTransparency = 1
     TextBox.Size = UDim2.new(1, -24, 1, 0)
     TextBox.Position = UDim2.fromOffset(12, 0)
-    TextBox.BackgroundTransparency = 1
-    TextBox.PlaceholderText = "Paste your license key here..."
-    TextBox.PlaceholderColor3 = Color3.fromRGB(110, 110, 125)
-    TextBox.TextColor3 = Color3.fromRGB(240, 240, 245)
-    TextBox.Font = Enum.Font.Gotham
-    TextBox.TextSize = 12
-    TextBox.ClearTextOnFocus = false
-    TextBox.TextXAlignment = Enum.TextXAlignment.Left
     TextBox.AutoLocalize = false
+    TextBox.ZIndex = 6
     TextBox.Parent = InputFrame
 
+    local Indicator = Instance.new("Frame")
+    Indicator.Name = "Indicator"
+    Indicator.Size = UDim2.new(1, -4, 0, 1)
+    Indicator.Position = UDim2.new(0, 2, 1, -1)
+    Indicator.BackgroundColor3 = Color3.fromRGB(145, 145, 150)
+    Indicator.BackgroundTransparency = 0.5
+    Indicator.BorderSizePixel = 0
+    Indicator.ZIndex = 6
+    Indicator.Parent = InputFrame
+
     TextBox.Focused:Connect(function()
-        TweenService:Create(InputStroke, TweenInfo.new(0.2), {Color = Color3.fromRGB(59, 130, 246)}):Play()
+        TweenService:Create(InputFrame, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(38, 38, 44), BackgroundTransparency = 0.1}):Play()
+        TweenService:Create(Indicator, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(96, 205, 255), BackgroundTransparency = 0, Size = UDim2.new(1, -2, 0, 2)}):Play()
     end)
+
     TextBox.FocusLost:Connect(function()
-        TweenService:Create(InputStroke, TweenInfo.new(0.2), {Color = Color3.fromRGB(44, 44, 56)}):Play()
+        TweenService:Create(InputFrame, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(48, 48, 54), BackgroundTransparency = 0.2}):Play()
+        TweenService:Create(Indicator, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(145, 145, 150), BackgroundTransparency = 0.5, Size = UDim2.new(1, -4, 0, 1)}):Play()
     end)
 
-    -- Status Label
-    local Status = Instance.new("TextLabel")
-    Status.Text = ""
-    Status.TextColor3 = Color3.fromRGB(239, 68, 68)
-    Status.Font = Enum.Font.GothamMedium
-    Status.TextSize = 10
-    Status.TextXAlignment = Enum.TextXAlignment.Left
-    Status.Size = UDim2.new(1, -44, 0, 14)
-    Status.Position = UDim2.fromOffset(22, 124)
-    Status.BackgroundTransparency = 1
-    Status.AutoLocalize = false
-    Status.Parent = Card
+    local StatusLabel = Instance.new("TextLabel")
+    StatusLabel.Name = "Status"
+    StatusLabel.Text = "Click \"Get Key\" to copy the verification link."
+    StatusLabel.Font = Enum.Font.Gotham
+    StatusLabel.TextSize = 12
+    StatusLabel.TextColor3 = Color3.fromRGB(155, 155, 160)
+    StatusLabel.TextXAlignment = Enum.TextXAlignment.Left
+    StatusLabel.BackgroundTransparency = 1
+    StatusLabel.Position = UDim2.fromOffset(2, 50)
+    StatusLabel.Size = UDim2.new(1, -4, 0, 20)
+    StatusLabel.AutoLocalize = false
+    StatusLabel.ZIndex = 5
+    StatusLabel.Parent = Body
 
-    -- Button Row
+    -- ================= BOTTOM BAR =================
+    local BottomBar = Instance.new("Frame")
+    BottomBar.Name = "BottomBar"
+    BottomBar.Size = UDim2.new(1, 0, 0, 58)
+    BottomBar.Position = UDim2.new(0, 0, 1, -58)
+    BottomBar.BackgroundColor3 = Color3.fromRGB(30, 30, 34)
+    BottomBar.BackgroundTransparency = 0.2
+    BottomBar.BorderSizePixel = 0
+    BottomBar.ZIndex = 5
+    BottomBar.Parent = Card
+
+    local BottomCorner = Instance.new("UICorner")
+    BottomCorner.CornerRadius = UDim.new(0, 8)
+    BottomCorner.Parent = BottomBar
+
+    local BottomCover = Instance.new("Frame")
+    BottomCover.Name = "Cover"
+    BottomCover.Size = UDim2.new(1, 0, 0, 8)
+    BottomCover.Position = UDim2.new(0, 0, 0, 0)
+    BottomCover.BackgroundColor3 = Color3.fromRGB(30, 30, 34)
+    BottomCover.BackgroundTransparency = 0.2
+    BottomCover.BorderSizePixel = 0
+    BottomCover.ZIndex = 5
+    BottomCover.Parent = BottomBar
+
+    local BottomLine = Instance.new("Frame")
+    BottomLine.Name = "Sep"
+    BottomLine.Size = UDim2.new(1, 0, 0, 1)
+    BottomLine.Position = UDim2.new(0, 0, 0, 0)
+    BottomLine.BackgroundColor3 = Color3.fromRGB(60, 60, 66)
+    BottomLine.BackgroundTransparency = 0.4
+    BottomLine.BorderSizePixel = 0
+    BottomLine.ZIndex = 6
+    BottomLine.Parent = BottomBar
+
+    local ButtonHolder = Instance.new("Frame")
+    ButtonHolder.Name = "ButtonHolder"
+    ButtonHolder.Size = UDim2.new(1, -40, 1, 0)
+    ButtonHolder.Position = UDim2.fromOffset(20, 0)
+    ButtonHolder.BackgroundTransparency = 1
+    ButtonHolder.ZIndex = 6
+    ButtonHolder.Parent = BottomBar
+
+    local BtnLayout = Instance.new("UIListLayout")
+    BtnLayout.FillDirection = Enum.FillDirection.Horizontal
+    BtnLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+    BtnLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+    BtnLayout.Padding = UDim.new(0, 10)
+    BtnLayout.Parent = ButtonHolder
+
+    -- Get Key Button (Fluent Dialog Button)
     local GetKeyBtn = Instance.new("TextButton")
-    GetKeyBtn.Size = UDim2.new(0.48, -4, 0, 38)
-    GetKeyBtn.Position = UDim2.fromOffset(22, 146)
-    GetKeyBtn.BackgroundColor3 = Color3.fromRGB(32, 32, 40)
+    GetKeyBtn.Name = "GetKeyBtn"
     GetKeyBtn.Text = "Get Key (Copy Link)"
-    GetKeyBtn.TextColor3 = Color3.fromRGB(200, 200, 215)
     GetKeyBtn.Font = Enum.Font.GothamMedium
-    GetKeyBtn.TextSize = 12
+    GetKeyBtn.TextSize = 13
+    GetKeyBtn.TextColor3 = Color3.fromRGB(235, 235, 240)
+    GetKeyBtn.Size = UDim2.fromOffset(155, 34)
+    GetKeyBtn.BackgroundColor3 = Color3.fromRGB(48, 48, 54)
+    GetKeyBtn.BackgroundTransparency = 0.1
+    GetKeyBtn.AutoButtonColor = false
     GetKeyBtn.AutoLocalize = false
-    GetKeyBtn.Parent = Card
+    GetKeyBtn.ZIndex = 7
+    GetKeyBtn.Parent = ButtonHolder
 
     local GetKeyCorner = Instance.new("UICorner")
-    GetKeyCorner.CornerRadius = UDim.new(0, 8)
+    GetKeyCorner.CornerRadius = UDim.new(0, 4)
     GetKeyCorner.Parent = GetKeyBtn
 
     local GetKeyStroke = Instance.new("UIStroke")
-    GetKeyStroke.Color = Color3.fromRGB(46, 46, 58)
+    GetKeyStroke.Color = Color3.fromRGB(75, 75, 82)
+    GetKeyStroke.Transparency = 0.6
     GetKeyStroke.Thickness = 1
     GetKeyStroke.Parent = GetKeyBtn
 
+    GetKeyBtn.MouseEnter:Connect(function()
+        TweenService:Create(GetKeyBtn, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(62, 62, 70)}):Play()
+    end)
+    GetKeyBtn.MouseLeave:Connect(function()
+        TweenService:Create(GetKeyBtn, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(48, 48, 54)}):Play()
+    end)
+
+    -- Primary Button: Verify Key (Fluent Accent Style)
     local VerifyBtn = Instance.new("TextButton")
-    VerifyBtn.Size = UDim2.new(0.48, -4, 0, 38)
-    VerifyBtn.Position = UDim2.new(0.52, 2, 0, 146)
-    VerifyBtn.BackgroundColor3 = Color3.fromRGB(59, 130, 246)
+    VerifyBtn.Name = "VerifyBtn"
     VerifyBtn.Text = "Verify Key"
-    VerifyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
     VerifyBtn.Font = Enum.Font.GothamBold
-    VerifyBtn.TextSize = 12
+    VerifyBtn.TextSize = 13
+    VerifyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    VerifyBtn.Size = UDim2.fromOffset(120, 34)
+    VerifyBtn.BackgroundColor3 = Color3.fromRGB(0, 120, 212)
+    VerifyBtn.BackgroundTransparency = 0
+    VerifyBtn.AutoButtonColor = false
     VerifyBtn.AutoLocalize = false
-    VerifyBtn.Parent = Card
+    VerifyBtn.ZIndex = 7
+    VerifyBtn.Parent = ButtonHolder
 
     local VerifyCorner = Instance.new("UICorner")
-    VerifyCorner.CornerRadius = UDim.new(0, 8)
+    VerifyCorner.CornerRadius = UDim.new(0, 4)
     VerifyCorner.Parent = VerifyBtn
 
-    -- Footer note
-    local Footer = Instance.new("TextLabel")
-    Footer.Text = "Complete 1 quick task on LootLabs to obtain your key."
-    Footer.TextColor3 = Color3.fromRGB(115, 115, 130)
-    Footer.Font = Enum.Font.Gotham
-    Footer.TextSize = 10
-    Footer.Size = UDim2.new(1, -44, 0, 16)
-    Footer.Position = UDim2.fromOffset(22, 196)
-    Footer.BackgroundTransparency = 1
-    Footer.AutoLocalize = false
-    Footer.Parent = Card
+    local VerifyStroke = Instance.new("UIStroke")
+    VerifyStroke.Color = Color3.fromRGB(96, 205, 255)
+    VerifyStroke.Transparency = 0.6
+    VerifyStroke.Thickness = 1
+    VerifyStroke.Parent = VerifyBtn
 
-    -- Button Actions
+    VerifyBtn.MouseEnter:Connect(function()
+        TweenService:Create(VerifyBtn, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(16, 137, 230)}):Play()
+    end)
+    VerifyBtn.MouseLeave:Connect(function()
+        TweenService:Create(VerifyBtn, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(0, 120, 212)}):Play()
+    end)
+
+    -- Actions & Events
     GetKeyBtn.MouseButton1Click:Connect(function()
-        GetKeyBtn.Text = "Fetching Link..."
         local url = GetKeyURL()
         if setclipboard then
             setclipboard(url)
-            GetKeyBtn.Text = "Copied to Clipboard! ✓"
-            Status.TextColor3 = Color3.fromRGB(34, 197, 94)
-            Status.Text = "Link copied! Open browser and complete task."
-            task.delay(2.5, function()
-                GetKeyBtn.Text = "Get Key (Copy Link)"
-            end)
+            StatusLabel.Text = "Key link copied to clipboard! Complete checkpoint in browser."
+            StatusLabel.TextColor3 = Color3.fromRGB(96, 205, 255)
         else
-            Status.TextColor3 = Color3.fromRGB(239, 68, 68)
-            Status.Text = "Clipboard unsupported: " .. url
+            StatusLabel.Text = "Link: " .. url
+            StatusLabel.TextColor3 = Color3.fromRGB(240, 200, 80)
         end
     end)
 
-    local isVerifying = false
+    local verifying = false
     VerifyBtn.MouseButton1Click:Connect(function()
-        if isVerifying then return end
-        local input = TextBox.Text
-        if not input or input == "" then
-            Status.TextColor3 = Color3.fromRGB(239, 68, 68)
-            Status.Text = "Please enter your license key."
+        if verifying then return end
+        local entered = TextBox.Text
+        if not entered or entered == "" then
+            StatusLabel.Text = "Please paste your key into the text field first."
+            StatusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
             return
         end
 
-        isVerifying = true
-        VerifyBtn.Text = "Verifying..."
-        Status.TextColor3 = Color3.fromRGB(140, 140, 155)
-        Status.Text = "Validating key with Platoboost..."
+        verifying = true
+        VerifyBtn.Text = "Checking..."
+        StatusLabel.Text = "Verifying key with Platoboost..."
+        StatusLabel.TextColor3 = Color3.fromRGB(180, 180, 185)
 
         task.spawn(function()
-            local valid = CheckWhitelist(input)
+            local valid = CheckWhitelist(entered)
             if valid then
+                StatusLabel.Text = "Key verified successfully! Loading bot..."
+                StatusLabel.TextColor3 = Color3.fromRGB(100, 255, 120)
                 if writefile then
-                    pcall(writefile, SavePath, input)
+                    pcall(function() writefile(SavePath, entered) end)
                 end
-                Status.TextColor3 = Color3.fromRGB(34, 197, 94)
-                Status.Text = "Key Verified! Loading Cheat Bot..."
-                VerifyBtn.BackgroundColor3 = Color3.fromRGB(34, 197, 94)
-                VerifyBtn.Text = "Success! ✓"
-
-                task.wait(0.7)
-                TweenService:Create(Card, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
-                    Size = UDim2.fromOffset(300, 180),
-                    BackgroundTransparency = 1
-                }):Play()
-                task.wait(0.3)
+                task.wait(0.6)
                 ScreenGui:Destroy()
                 onSuccess()
             else
-                Status.TextColor3 = Color3.fromRGB(239, 68, 68)
-                Status.Text = "Invalid or expired key. Please get a new one."
+                StatusLabel.Text = "Invalid or expired key. Please get a new key."
+                StatusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
                 VerifyBtn.Text = "Verify Key"
-                isVerifying = false
+                verifying = false
             end
         end)
     end)
 
-    -- Draggable card implementation
+    -- Draggable Card
     local dragging, dragInput, dragStart, startPos
     Card.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
@@ -370,9 +496,7 @@ local function CreateKeyModal(onSuccess)
             dragStart = input.Position
             startPos = Card.Position
             input.Changed:Connect(function()
-                if input.UserInputState == Enum.UserInputState.End then
-                    dragging = false
-                end
+                if input.UserInputState == Enum.UserInputState.End then dragging = false end
             end)
         end
     end)
@@ -387,14 +511,53 @@ local function CreateKeyModal(onSuccess)
             Card.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
         end
     end)
-
-    ScreenGui.Parent = parent
 end
 
 -- Load Fluent UI library
 local Fluent = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/myheisenberg/Fluent-Renewed/main/Fluent.luau"))()
 
 local function StartCheatBot()
+-- ============================================================
+--  CHEAT DURING TEST - ANSWER KEY BOT v9.3
+--  - SINGLE OWNER: only the farmer controls hands
+--  - Farmer: equips phone and fires photo in the SAME TICK
+--  - Photo watchdog: aborts in 0.15s if teacher turns
+--  - Conservative safety: real wall block or walking away
+--  - Cycle resets if it stalls over 10s
+--  - Auto PENCIL on idle hands (less anxiety, innocent look)
+--  Settings:
+--    _G.BOT.doPhoto = false / _G.BOT.pause = true / _G.BOT.enabled = false
+-- ============================================================
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Workspace = game:GetService("Workspace")
+
+local LocalPlayer = Players.LocalPlayer
+local PlayerAnswerTable = ReplicatedStorage:WaitForChild("PlayerAnswerTable")
+local ToolAction = ReplicatedStorage.ToolEvents:WaitForChild("ToolAction")
+local PlayAnimation = ReplicatedStorage.ToolEvents:WaitForChild("PlayAnimation")
+local ShopInventoryAction = ReplicatedStorage:WaitForChild("ShopInventoryAction")
+
+-- SETTINGS (evidence-based: catching = teacher GAZE, not distance)
+local SAFE_DISTANCE = 4      -- risk only when right next to you (punch range)
+local SAFE_DOT = -0.25       -- head AND body must clearly face away
+local STABLE_TIME = 0.8      -- continuous safe time before photo
+local FACE_MEMORY = 1.2      -- wait time after teacher looked at us
+local CYCLE_COOLDOWN = 2.5   -- min wait after answer/abort
+local CYCLE_TIMEOUT = 10     -- cycle resets if not done in this many seconds
+local ANXIETY_PAUSE = 60
+local ANXIETY_RESUME = 40
+local ANXIETY_PENCIL = 85
+
+-- live tuning from GUI sliders (local constant = default)
+local function T(name, default)
+    local t = _G.BOT_TUNES
+    local v = t and t[name]
+    if type(v) == "number" then return v end
+    return default
+end
+
 if _G.BOT then _G.BOT.enabled = false end
 if _G.BOT_CLEANUP then pcall(_G.BOT_CLEANUP) end
 
@@ -1162,22 +1325,7 @@ end)
 log("Bot started")
 print("[CevapBotu] v9.3 active")
 
--- ---------------- GUI (Fluent Renewed - resmi v1.0.5) ----------------
--- silent retried download: GUI guaranteed even if first execute has slow HTTP
-local Fluent = nil
-local fluentErr = nil
-
-for attempt = 1, 3 do
-    local ok, result = pcall(function()
-        return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/myheisenberg/Fluent-Renewed/main/Fluent.luau"))()
-    end)
-    if ok and type(result) == "table" and type(result.CreateWindow) == "function" then
-        Fluent = result
-        break
-    end
-    fluentErr = tostring(result)
-    task.wait(2)
-end
+-- Fluent is already loaded by launcher
 
 local guiOK, guiErr = pcall(function()
 if not Fluent then

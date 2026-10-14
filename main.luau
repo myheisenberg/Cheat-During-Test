@@ -40,35 +40,15 @@ local function T(name, default)
 end
 
 
--- ============================================================
---  CHEAT BOT | OFFICIAL PLATBOOST KEY SYSTEM & LOADER
---  Developer: myheisenberg | UI: Fluent Renewed
--- ============================================================
-
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
 local HttpService = game:GetService("HttpService")
-local RbxAnalyticsService = game:GetService("RbxAnalyticsService")
-
--- 1. Load Fluent UI Library
-local Fluent = nil
-local fluentErr = nil
-for attempt = 1, 3 do
-    local ok, result = pcall(function()
-        return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/myheisenberg/Fluent-Renewed/main/Fluent.luau"))()
-    end)
-    if ok and type(result) == "table" and type(result.CreateWindow) == "function" then
-        Fluent = result
-        break
-    end
-    fluentErr = tostring(result)
-    task.wait(2)
-end
-
-if not Fluent then
-    error("Fluent download failed (3 attempts): " .. tostring(fluentErr))
-end
+local CoreGui = game:GetService("CoreGui")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
 
 local ServiceID = "34572"
-local HWID = (gethwid and gethwid()) or (get_hwid and get_hwid()) or (pcall(function() return RbxAnalyticsService:GetClientId() end) and RbxAnalyticsService:GetClientId()) or tostring(LocalPlayer.UserId)
+local HWID = (gethwid and gethwid()) or (get_hwid and get_hwid()) or (pcall(function() return game:GetService("RbxAnalyticsService"):GetClientId() end) and game:GetService("RbxAnalyticsService"):GetClientId()) or tostring(LocalPlayer.UserId)
 local SavePath = "CheatBot_Key.txt"
 
 local function CheckWhitelist(key)
@@ -109,6 +89,310 @@ local function GetKeyURL()
     end
     return "https://gateway.platoboost.com/a/34572?id=" .. HWID
 end
+
+local function CreateKeyModal(onSuccess)
+    -- Check auto-saved key first
+    if isfile and readfile and isfile(SavePath) then
+        local savedKey = readfile(SavePath)
+        if savedKey and savedKey ~= "" then
+            if CheckWhitelist(savedKey) then
+                onSuccess()
+                return
+            end
+        end
+    end
+
+    local parent = (gethui and gethui()) or CoreGui:FindFirstChild("RobloxGui") or CoreGui
+    local ScreenGui = Instance.new("ScreenGui")
+    ScreenGui.Name = "CheatBot_AuthModal"
+    ScreenGui.ResetOnSpawn = false
+    ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+    -- Main Card
+    local Card = Instance.new("Frame")
+    Card.Name = "Card"
+    Card.Size = UDim2.fromOffset(380, 230)
+    Card.AnchorPoint = Vector2.new(0.5, 0.5)
+    Card.Position = UDim2.fromScale(0.5, 0.5)
+    Card.BackgroundColor3 = Color3.fromRGB(20, 20, 24)
+    Card.BorderSizePixel = 0
+    Card.Parent = ScreenGui
+
+    local CardCorner = Instance.new("UICorner")
+    CardCorner.CornerRadius = UDim.new(0, 14)
+    CardCorner.Parent = Card
+
+    local CardStroke = Instance.new("UIStroke")
+    CardStroke.Color = Color3.fromRGB(48, 48, 58)
+    CardStroke.Thickness = 1.2
+    CardStroke.Parent = Card
+
+    -- Top Glow Accent
+    local AccentGlow = Instance.new("Frame")
+    AccentGlow.Size = UDim2.new(1, 0, 0, 2)
+    AccentGlow.Position = UDim2.new(0, 0, 0, 0)
+    AccentGlow.BackgroundColor3 = Color3.fromRGB(59, 130, 246)
+    AccentGlow.BorderSizePixel = 0
+    AccentGlow.Parent = Card
+
+    local AccentGlowCorner = Instance.new("UICorner")
+    AccentGlowCorner.CornerRadius = UDim.new(0, 14)
+    AccentGlowCorner.Parent = AccentGlow
+
+    -- Header Icon
+    local Icon = Instance.new("ImageLabel")
+    Icon.Size = UDim2.fromOffset(26, 26)
+    Icon.Position = UDim2.fromOffset(22, 20)
+    Icon.BackgroundTransparency = 1
+    Icon.Image = "rbxassetid://6031086173" -- shield/key icon
+    Icon.ImageColor3 = Color3.fromRGB(59, 130, 246)
+    Icon.Parent = Card
+
+    -- Title
+    local Title = Instance.new("TextLabel")
+    Title.Text = "Cheat Bot Authentication"
+    Title.TextColor3 = Color3.fromRGB(245, 245, 250)
+    Title.Font = Enum.Font.GothamBold
+    Title.TextSize = 15
+    Title.TextXAlignment = Enum.TextXAlignment.Left
+    Title.Size = UDim2.new(1, -90, 0, 18)
+    Title.Position = UDim2.fromOffset(56, 17)
+    Title.BackgroundTransparency = 1
+    Title.AutoLocalize = false
+    Title.Parent = Card
+
+    -- Subtitle
+    local Subtitle = Instance.new("TextLabel")
+    Subtitle.Text = "24-Hour License • Powered by Platoboost"
+    Subtitle.TextColor3 = Color3.fromRGB(140, 140, 155)
+    Subtitle.Font = Enum.Font.Gotham
+    Subtitle.TextSize = 11
+    Subtitle.TextXAlignment = Enum.TextXAlignment.Left
+    Subtitle.Size = UDim2.new(1, -90, 0, 14)
+    Subtitle.Position = UDim2.fromOffset(56, 36)
+    Subtitle.BackgroundTransparency = 1
+    Subtitle.AutoLocalize = false
+    Subtitle.Parent = Card
+
+    -- Close Button
+    local CloseBtn = Instance.new("TextButton")
+    CloseBtn.Size = UDim2.fromOffset(24, 24)
+    CloseBtn.Position = UDim2.new(1, -34, 0, 18)
+    CloseBtn.BackgroundColor3 = Color3.fromRGB(35, 35, 42)
+    CloseBtn.Text = "✕"
+    CloseBtn.TextColor3 = Color3.fromRGB(160, 160, 175)
+    CloseBtn.Font = Enum.Font.GothamMedium
+    CloseBtn.TextSize = 11
+    CloseBtn.AutoLocalize = false
+    CloseBtn.Parent = Card
+
+    local CloseCorner = Instance.new("UICorner")
+    CloseCorner.CornerRadius = UDim.new(0, 6)
+    CloseCorner.Parent = CloseBtn
+
+    CloseBtn.MouseButton1Click:Connect(function()
+        ScreenGui:Destroy()
+    end)
+
+    -- Divider
+    local Divider = Instance.new("Frame")
+    Divider.Size = UDim2.new(1, -44, 0, 1)
+    Divider.Position = UDim2.fromOffset(22, 64)
+    Divider.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+    Divider.BorderSizePixel = 0
+    Divider.Parent = Card
+
+    -- Input Box Frame
+    local InputFrame = Instance.new("Frame")
+    InputFrame.Size = UDim2.new(1, -44, 0, 42)
+    InputFrame.Position = UDim2.fromOffset(22, 78)
+    InputFrame.BackgroundColor3 = Color3.fromRGB(26, 26, 32)
+    InputFrame.BorderSizePixel = 0
+    InputFrame.Parent = Card
+
+    local InputCorner = Instance.new("UICorner")
+    InputCorner.CornerRadius = UDim.new(0, 8)
+    InputCorner.Parent = InputFrame
+
+    local InputStroke = Instance.new("UIStroke")
+    InputStroke.Color = Color3.fromRGB(44, 44, 56)
+    InputStroke.Thickness = 1
+    InputStroke.Parent = InputFrame
+
+    local TextBox = Instance.new("TextBox")
+    TextBox.Size = UDim2.new(1, -24, 1, 0)
+    TextBox.Position = UDim2.fromOffset(12, 0)
+    TextBox.BackgroundTransparency = 1
+    TextBox.PlaceholderText = "Paste your license key here..."
+    TextBox.PlaceholderColor3 = Color3.fromRGB(110, 110, 125)
+    TextBox.TextColor3 = Color3.fromRGB(240, 240, 245)
+    TextBox.Font = Enum.Font.Gotham
+    TextBox.TextSize = 12
+    TextBox.ClearTextOnFocus = false
+    TextBox.TextXAlignment = Enum.TextXAlignment.Left
+    TextBox.AutoLocalize = false
+    TextBox.Parent = InputFrame
+
+    TextBox.Focused:Connect(function()
+        TweenService:Create(InputStroke, TweenInfo.new(0.2), {Color = Color3.fromRGB(59, 130, 246)}):Play()
+    end)
+    TextBox.FocusLost:Connect(function()
+        TweenService:Create(InputStroke, TweenInfo.new(0.2), {Color = Color3.fromRGB(44, 44, 56)}):Play()
+    end)
+
+    -- Status Label
+    local Status = Instance.new("TextLabel")
+    Status.Text = ""
+    Status.TextColor3 = Color3.fromRGB(239, 68, 68)
+    Status.Font = Enum.Font.GothamMedium
+    Status.TextSize = 10
+    Status.TextXAlignment = Enum.TextXAlignment.Left
+    Status.Size = UDim2.new(1, -44, 0, 14)
+    Status.Position = UDim2.fromOffset(22, 124)
+    Status.BackgroundTransparency = 1
+    Status.AutoLocalize = false
+    Status.Parent = Card
+
+    -- Button Row
+    local GetKeyBtn = Instance.new("TextButton")
+    GetKeyBtn.Size = UDim2.new(0.48, -4, 0, 38)
+    GetKeyBtn.Position = UDim2.fromOffset(22, 146)
+    GetKeyBtn.BackgroundColor3 = Color3.fromRGB(32, 32, 40)
+    GetKeyBtn.Text = "Get Key (Copy Link)"
+    GetKeyBtn.TextColor3 = Color3.fromRGB(200, 200, 215)
+    GetKeyBtn.Font = Enum.Font.GothamMedium
+    GetKeyBtn.TextSize = 12
+    GetKeyBtn.AutoLocalize = false
+    GetKeyBtn.Parent = Card
+
+    local GetKeyCorner = Instance.new("UICorner")
+    GetKeyCorner.CornerRadius = UDim.new(0, 8)
+    GetKeyCorner.Parent = GetKeyBtn
+
+    local GetKeyStroke = Instance.new("UIStroke")
+    GetKeyStroke.Color = Color3.fromRGB(46, 46, 58)
+    GetKeyStroke.Thickness = 1
+    GetKeyStroke.Parent = GetKeyBtn
+
+    local VerifyBtn = Instance.new("TextButton")
+    VerifyBtn.Size = UDim2.new(0.48, -4, 0, 38)
+    VerifyBtn.Position = UDim2.new(0.52, 2, 0, 146)
+    VerifyBtn.BackgroundColor3 = Color3.fromRGB(59, 130, 246)
+    VerifyBtn.Text = "Verify Key"
+    VerifyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    VerifyBtn.Font = Enum.Font.GothamBold
+    VerifyBtn.TextSize = 12
+    VerifyBtn.AutoLocalize = false
+    VerifyBtn.Parent = Card
+
+    local VerifyCorner = Instance.new("UICorner")
+    VerifyCorner.CornerRadius = UDim.new(0, 8)
+    VerifyCorner.Parent = VerifyBtn
+
+    -- Footer note
+    local Footer = Instance.new("TextLabel")
+    Footer.Text = "Complete 1 quick task on LootLabs to obtain your key."
+    Footer.TextColor3 = Color3.fromRGB(115, 115, 130)
+    Footer.Font = Enum.Font.Gotham
+    Footer.TextSize = 10
+    Footer.Size = UDim2.new(1, -44, 0, 16)
+    Footer.Position = UDim2.fromOffset(22, 196)
+    Footer.BackgroundTransparency = 1
+    Footer.AutoLocalize = false
+    Footer.Parent = Card
+
+    -- Button Actions
+    GetKeyBtn.MouseButton1Click:Connect(function()
+        GetKeyBtn.Text = "Fetching Link..."
+        local url = GetKeyURL()
+        if setclipboard then
+            setclipboard(url)
+            GetKeyBtn.Text = "Copied to Clipboard! ✓"
+            Status.TextColor3 = Color3.fromRGB(34, 197, 94)
+            Status.Text = "Link copied! Open browser and complete task."
+            task.delay(2.5, function()
+                GetKeyBtn.Text = "Get Key (Copy Link)"
+            end)
+        else
+            Status.TextColor3 = Color3.fromRGB(239, 68, 68)
+            Status.Text = "Clipboard unsupported: " .. url
+        end
+    end)
+
+    local isVerifying = false
+    VerifyBtn.MouseButton1Click:Connect(function()
+        if isVerifying then return end
+        local input = TextBox.Text
+        if not input or input == "" then
+            Status.TextColor3 = Color3.fromRGB(239, 68, 68)
+            Status.Text = "Please enter your license key."
+            return
+        end
+
+        isVerifying = true
+        VerifyBtn.Text = "Verifying..."
+        Status.TextColor3 = Color3.fromRGB(140, 140, 155)
+        Status.Text = "Validating key with Platoboost..."
+
+        task.spawn(function()
+            local valid = CheckWhitelist(input)
+            if valid then
+                if writefile then
+                    pcall(writefile, SavePath, input)
+                end
+                Status.TextColor3 = Color3.fromRGB(34, 197, 94)
+                Status.Text = "Key Verified! Loading Cheat Bot..."
+                VerifyBtn.BackgroundColor3 = Color3.fromRGB(34, 197, 94)
+                VerifyBtn.Text = "Success! ✓"
+
+                task.wait(0.7)
+                TweenService:Create(Card, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
+                    Size = UDim2.fromOffset(300, 180),
+                    BackgroundTransparency = 1
+                }):Play()
+                task.wait(0.3)
+                ScreenGui:Destroy()
+                onSuccess()
+            else
+                Status.TextColor3 = Color3.fromRGB(239, 68, 68)
+                Status.Text = "Invalid or expired key. Please get a new one."
+                VerifyBtn.Text = "Verify Key"
+                isVerifying = false
+            end
+        end)
+    end)
+
+    -- Draggable card implementation
+    local dragging, dragInput, dragStart, startPos
+    Card.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = Card.Position
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+    Card.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end)
+    UserInputService.InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+            local delta = input.Position - dragStart
+            Card.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
+    end)
+
+    ScreenGui.Parent = parent
+end
+
+-- Load Fluent UI library
+local Fluent = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/myheisenberg/Fluent-Renewed/main/Fluent.luau"))()
 
 local function StartCheatBot()
 if _G.BOT then _G.BOT.enabled = false end
@@ -908,13 +1192,13 @@ local Window = Fluent:CreateWindow{
     Theme = "Dark",
 }
 
--- Fix: Disable Roblox AutoLocalize to prevent unwanted Turkish translation on UI buttons
-Window.GUI.DescendantAdded:Connect(function(v)
+-- Fix: Disable Roblox AutoLocalize on all main UI labels
+Fluent.GUI.DescendantAdded:Connect(function(v)
     if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") then
         v.AutoLocalize = false
     end
 end)
-for _, v in ipairs(Window.GUI:GetDescendants()) do
+for _, v in ipairs(Fluent.GUI:GetDescendants()) do
     if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") then
         v.AutoLocalize = false
     end
@@ -1086,117 +1370,5 @@ end
 
 end
 
--- ============================================================
---  KEY SYSTEM CHECK & LAUNCHER
--- ============================================================
-
--- 1. Check for Saved Key (24h Auto-Login)
-if isfile and readfile and isfile(SavePath) then
-    local savedKey = readfile(SavePath)
-    if savedKey and savedKey ~= "" then
-        if CheckWhitelist(savedKey) then
-            Fluent:Notify{
-                Title = "Cheat Bot",
-                Content = "Giris Basarili! 24 saatlik anahtariniz dogrulandi.",
-                Duration = 4
-            }
-            StartCheatBot()
-            return
-        end
-    end
-end
-
--- 2. Create Fluent Key System GUI
-local KeyWindow = Fluent:CreateWindow{
-    Title = "Cheat Bot | Key System",
-    SubTitle = "Platoboost (24h Access)",
-    TabWidth = 120,
-    Size = UDim2.fromOffset(450, 320),
-    Acrylic = false,
-    Theme = "Dark",
-    MinimizeKey = Enum.KeyCode.LeftControl
-}
-
--- Disable AutoLocalize on KeyWindow
-KeyWindow.GUI.DescendantAdded:Connect(function(v)
-    if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") then
-        v.AutoLocalize = false
-    end
-end)
-for _, v in ipairs(KeyWindow.GUI:GetDescendants()) do
-    if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") then
-        v.AutoLocalize = false
-    end
-end
-
-local KeyTab = KeyWindow:CreateTab{ Title = "Key", Icon = "key" }
-
-KeyTab:CreateParagraph("KeyInfo", {
-    Title = "Anahtar Dogrulamasi",
-    Content = "Hileyi baslatmak icin 24 saat gecerli anahtarinizi alin."
-})
-
-local enteredKey = ""
-local KeyInput = KeyTab:CreateInput("InputKey", {
-    Title = "Anahtarınızı Girin",
-    Default = "",
-    Placeholder = "KEY_...",
-    Numeric = false,
-    Finished = false,
-    Callback = function(v)
-        enteredKey = v
-    end
-})
-
-KeyTab:CreateButton{
-    Title = "Get Key (Link Kopyala)",
-    Description = "Anahtar alma linkini panoya kopyalar",
-    Callback = function()
-        local url = GetKeyURL()
-        if setclipboard then
-            setclipboard(url)
-            Fluent:Notify{
-                Title = "Key Linki Kopyalandi",
-                Content = "Tarayicinizda acip gorevi tamamlayin (Panoya alindi).",
-                Duration = 6
-            }
-        else
-            Fluent:Notify{
-                Title = "URL",
-                Content = url,
-                Duration = 10
-            }
-        end
-    end
-}
-
-KeyTab:CreateButton{
-    Title = "Verify Key (Kontrol Et)",
-    Description = "Girdiginiz anahtari dogrular",
-    Callback = function()
-        Fluent:Notify{
-            Title = "Kontrol Ediliyor...",
-            Content = "Lutfen bekleyin...",
-            Duration = 3
-        }
-        if CheckWhitelist(enteredKey) then
-            if writefile then
-                pcall(writefile, SavePath, enteredKey)
-            end
-            Fluent:Notify{
-                Title = "Basarili!",
-                Content = "Anahtar onaylandi. Hile yukleniyor...",
-                Duration = 3
-            }
-            task.wait(0.8)
-            pcall(function() KeyWindow:Destroy() end)
-            StartCheatBot()
-        else
-            Fluent:Notify{
-                Title = "Gecersiz Anahtar",
-                Content = "Anahtar yanlis veya suresi dolmus. Lutfen 'Get Key' ile yeni alin.",
-                Duration = 5
-            }
-        end
-    end
-}
+-- Launch Key System Modal
+CreateKeyModal(StartCheatBot)

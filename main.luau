@@ -1,12 +1,1026 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+-- ============================================================
+--  Cheat During Test | Official Automation Hub
+--  Protected by Platoboost & Fluent UI Renewed
+--  Developer: myheisenberg
+-- ============================================================
 
-]]--
+-- Load Modular Key System & Fluent UI
+local KeySystem = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/myheisenberg/Fluent-Renewed/main/KeySystem.luau"))()
+local Fluent = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/myheisenberg/Fluent-Renewed/main/Fluent.luau"))()
 
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v22,v23) local v24={};for v366=1, #v22 do v6(v24,v0(v4(v1(v2(v22,v366,v366 + 1 )),v1(v2(v23,1 + (v366% #v23) ,1 + (v366% #v23) + 1 )))%256 ));end return v5(v24);end local v8=game:GetService(v7("\229\212\222\32\232\136\194\12\199\202\216\32","\126\177\163\187\69\134\219\167"));local v9=game:GetService(v7("\22\222\47\215\213\45\221\63\209\207\38\223\60\204\255\38","\156\67\173\74\165"));local v10=game:GetService(v7("\28\163\93\6\143\35\84\34\190\74\19","\38\84\215\41\118\220\70"));local v11=game:GetService(v7("\115\25\48\23\217\69\31","\158\48\118\66\114"));local v12=game:GetService(v7("\155\40\17\47\118\183\232","\155\203\68\112\86\19\197"));local v13=v12.LocalPlayer;local v14=v7("\21\137\99\171\18","\152\38\189\86\156\32\24\133");local v15=(gethwid and gethwid()) or (get_hwid and get_hwid()) or (pcall(function() return game:GetService(v7("\206\85\191\103\242\86\171\95\232\94\164\85\207\82\181\80\245\84\162","\38\156\55\199")):GetClientId();end) and game:GetService(v7("\154\127\100\9\29\117\246\90\188\116\127\59\32\113\232\85\161\126\121","\35\200\29\28\72\115\20\154")):GetClientId()) or tostring(v13.UserId) ;local v16=v7("\58\183\212\222\153\14\59\13\128\250\218\148\98\32\1\171","\84\121\223\177\191\237\76");local function v17(v25) if ( not v25 or (v25=="")) then return false;end v25=string.gsub(v25,v7("\133\19\218\234\114\30\125\136\254\69\131\228","\161\219\54\169\192\90\48\80"),v7("\12\19","\69\41\34\96"));local v26,v27=pcall(function() return game:HttpGet(v7("\180\215\195\26\17\113\243\140\214\26\11\101\172\207\214\30\13\41\179\204\196\30\76\37\185\215\152\26\23\41\176\202\212\69\21\35\181\215\210\6\11\56\168\140","\75\220\163\183\106\98")   .. v14   .. v7("\93\179\143\50\215\22\179\141\62\220\16\231","\185\98\218\235\87")   .. v15   .. v7("\141\55\34\255\131","\202\171\92\71\134\190")   .. v25 );end);if (v26 and v27) then local v450=0 + 0 ;local v451;local v452;while true do if (v450==(0 -0)) then v451,v452=pcall(function() return v10:JSONDecode(v27);end);if (v451 and v452 and v452.success and v452.data and (v452.data.valid==true)) then return true;end break;end end end return false;end local function v18() local v28=(syn and syn.request) or (http and http.request) or http_request or request or (fluxus and fluxus.request) ;if v28 then local v453=0 + 0 ;local v454;local v455;while true do if (v453==(0 -0)) then v454,v455=pcall(function() return v28({[v7("\28\211\32","\232\73\161\76")]=v7("\179\205\86\77\13\225\150\13\92\14\178\151\82\81\31\175\214\64\82\17\168\205\12\83\27\175\150\82\72\28\183\208\65\18\13\175\216\80\73","\126\219\185\34\61"),[v7("\33\203\74\122\113\115","\135\108\174\62\18\30\23\147")]=v7("\134\198\25\255","\167\214\137\74\171\120\206\83"),[v7("\163\245\51\89\253\181\152","\199\235\144\82\61\152")]={[v7("\36\25\183\63\2\24\173\102\51\15\169\46","\75\103\118\217")]=v7("\198\68\96\24\176\29\198\64\121\27\183\81\205\71\127\26","\126\167\52\16\116\217")},[v7("\234\33\36\153","\156\168\78\64\224\212\121")]=v10:JSONEncode({[v7("\20\235\183\216\14\237\160","\174\103\142\197")]=35922 -(540 + 810) ,[v7("\95\44\90\54\49\87\254\95\45\77","\152\54\72\63\88\69\62")]=v15})});end);if (v454 and v455 and v455.Body) then local v594=0;local v595;local v596;local v597;while true do if (v594==(0 + 0)) then v595=0 + 0 ;v596=nil;v594=2 -1 ;end if (v594==(1 + 0)) then v597=nil;while true do if (0==v595) then v596,v597=pcall(function() return v10:JSONDecode(v455.Body);end);if (v596 and v597 and v597.success and v597.data and v597.data.url) then return v597.data.url;end break;end end break;end end end break;end end end return v7("\220\208\250\76\199\158\161\19\211\197\250\89\195\197\247\18\196\200\239\72\219\198\225\83\199\208\160\95\219\201\161\93\155\151\186\9\131\150\177\85\208\153","\60\180\164\142")   .. v15 ;end local function v19(v29) if (isfile and readfile and isfile(v16)) then local v456=0 -0 ;local v457;while true do if ((0 -0)==v456) then v457=readfile(v16);if (v457 and (v457~="")) then if v17(v457) then local v626=1772 -(843 + 929) ;while true do if (v626==(0 + 0)) then v29();return;end end end end break;end end end for v367,v368 in ipairs({v7("\123\86\0\40\51\207\29\76\97\36\60\51\229\63\87\90\4\37","\114\56\62\101\73\71\141"),v7("\158\229\206\193\182\253\233\193\182\236\204\193\188\214\248\204\189\232\207\132\154\230\207","\164\216\137\187"),v7("\241\238\52\179\178\220\4\198\217\28\189\162\255\7","\107\178\134\81\210\198\158")}) do local v369=713 -(164 + 549) ;local v370;local v371;while true do if ((1676 -(78 + 1597))==v369) then v371=v11:FindFirstChild(v7("\10\1\128\202\165\32\41\151\207","\202\88\110\226\166")) and v11.RobloxGui:FindFirstChild(v368) ;if v371 then v371:Destroy();end break;end if (v369==(0 + 0)) then v370=(gethui and gethui():FindFirstChild(v368)) or v11:FindFirstChild(v368) ;if v370 then v370:Destroy();end v369=1439 -(1059 + 379) ;end end end local v30=(gethui and gethui()) or v11:FindFirstChild(v7("\241\0\128\251\197\219\40\151\254","\170\163\111\226\151")) or v11 ;local v31=Instance.new(v7("\34\51\160\61\75\57\14\4\57","\73\113\80\210\88\46\87"));v31.Name=v7("\162\36\200\19\243\163\35\217\45\198\148\56\197\63\232\133\45\193","\135\225\76\173\114");v31.ResetOnSpawn=false;v31.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;v31.Parent=v30;local v37=Instance.new(v7("\46\232\160\164\142\168\179\14\226\182","\199\122\141\216\208\204\221"));v37.Name=v7("\130\203\21\226\116\247\180","\150\205\189\112\144\24");v37.Text="";v37.AutoButtonColor=false;v37.Size=UDim2.fromScale(1 -0 ,550 -(305 + 244) );v37.BackgroundColor3=Color3.fromRGB(0 + 0 ,0 + 0 ,0 + 0 );v37.BackgroundTransparency=392.55 -(145 + 247) ;v37.BorderSizePixel=0;v37.Parent=v31;local v46=Instance.new(v7("\3\150\190\65\1","\112\69\228\223\44\100\232\113"));v46.Name=v7("\247\30\21\215","\230\180\127\103\179\214\28");v46.Size=UDim2.fromOffset(370 + 80 ,348 -93 );v46.AnchorPoint=Vector2.new(0.5 + 0 ,0.5 -0 );v46.Position=UDim2.fromScale(0.5 + 0 ,0.5);v46.BackgroundTransparency=1 + 0 ;v46.BorderSizePixel=0 -0 ;v46.Parent=v31;local v54=Instance.new(v7("\165\8\94\65\225\109\225\142\0\83","\128\236\101\63\38\132\33"));v54.Name=v7("\159\161\16\64\185\252","\175\204\201\113\36\214\139");v54.AnchorPoint=Vector2.new(0.5 + 0 ,0.5 + 0 );v54.Position=UDim2.fromScale(0.5 -0 ,720.5 -(254 + 466) );v54.Size=UDim2.new(561 -(544 + 16) ,110,2 -1 ,738 -(294 + 334) );v54.BackgroundTransparency=254 -(236 + 17) ;v54.Image=v7("\85\206\45\221\23\84\201\33\213\0\29\131\122\132\93\30\158\103\143\84\17\155\98","\100\39\172\85\188");v54.ImageColor3=Color3.fromRGB(0 + 0 ,507 -(353 + 154) ,0 + 0 );v54.ImageTransparency=0.5 -0 ;v54.ScaleType=Enum.ScaleType.Slice;v54.SliceCenter=Rect.new(372 -273 ,468 -369 ,51 + 48 ,82 + 17 );v54.ZIndex=795 -(413 + 381) ;v54.Parent=v46;local v68=Instance.new(v7("\139\106\184\141\54","\83\205\24\217\224"));v68.Name=v7("\196\196\206\54\225\215\194\40\232\193","\93\134\165\173");v68.Size=UDim2.fromScale(1 -0 ,1 + 0 );v68.BackgroundColor3=Color3.fromRGB(36,83 -47 ,42);v68.BackgroundTransparency=0.22 -0 ;v68.BorderSizePixel=0 -0 ;v68.ZIndex=1972 -(582 + 1388) ;v68.Parent=v46;local v76=Instance.new(v7("\139\219\226\205\40\192\183\108","\30\222\146\161\162\90\174\210"));v76.CornerRadius=UDim.new(0 -0 ,16 -8 );v76.Parent=v68;local v79=Instance.new(v7("\195\92\113\7\224","\106\133\46\16"));v79.Name=v7("\127\50\114\248\83\69\86\52","\32\56\64\19\156\58");v79.Size=UDim2.fromScale(1 + 0 ,365 -(326 + 38) );v79.BackgroundColor3=Color3.fromRGB(754 -499 ,364 -109 ,875 -(47 + 573) );v79.BackgroundTransparency=0.75 + 0 ;v79.BorderSizePixel=0 -0 ;v79.ZIndex=2;v79.Parent=v46;local v87=Instance.new(v7("\111\225\198\89\72\252\133\72","\224\58\168\133\54\58\146"));v87.CornerRadius=UDim.new(0 -0 ,1672 -(1269 + 395) );v87.Parent=v79;local v90=Instance.new(v7("\108\127\108\239\116\130\142\14\87\66","\107\57\54\43\157\21\230\231"));v90.Rotation=582 -(76 + 416) ;v90.Color=ColorSequence.new(Color3.fromRGB(491 -(319 + 124) ,109 -61 ,1061 -(564 + 443) ),Color3.fromRGB(66 -42 ,482 -(337 + 121) ,81 -53 ));v90.Parent=v79;local v94=Instance.new(v7("\242\134\16\242\188\240\206\217\142\29","\175\187\235\113\149\217\188"));v94.Name=v7("\18\160\136\95\230","\24\92\207\225\44\131\25");v94.Size=UDim2.fromScale(1 + 0 ,3 -2 );v94.BackgroundTransparency=1912 -(1261 + 650) ;v94.Image=v7("\89\209\160\77\8\110\78\199\177\72\65\50\4\138\225\26\67\46\31\135\234\30\76","\29\43\179\216\44\123");v94.ImageTransparency=0.94 + 0 ;v94.ScaleType=Enum.ScaleType.Tile;v94.TileSize=UDim2.new(0 -0 ,203 -75 ,0 + 0 ,1945 -(772 + 1045) );v94.ZIndex=1 + 1 ;v94.Parent=v46;local v105=Instance.new(v7("\136\240\3\67\175\215\37\94","\44\221\185\64"));v105.CornerRadius=UDim.new(589 -(276 + 313) ,152 -(102 + 42) );v105.Parent=v94;local v108=Instance.new(v7("\39\245\73\82\118","\19\97\135\40\63"));v108.Name=v7("\140\83\33\63\42\35","\81\206\60\83\91\79");v108.Size=UDim2.fromScale(1845 -(1524 + 320) ,1271 -(1049 + 221) );v108.BackgroundTransparency=1;v108.ZIndex=160 -(18 + 138) ;v108.Parent=v46;local v114=Instance.new(v7("\123\130\243\125\61\205\72\182","\196\46\203\176\18\79\163\45"));v114.CornerRadius=UDim.new(0 -0 ,1 + 7 );v114.Parent=v108;local v117=Instance.new(v7("\141\11\77\10\54\244\228\189","\143\216\66\30\126\68\155"));v117.Color=Color3.fromRGB(1192 -(67 + 1035) ,438 -(136 + 212) ,63 + 32 );v117.Transparency=0.5 -0 ;v117.Thickness=1 + 0 ;v117.Parent=v108;local v122=Instance.new(v7("\140\218\12\198\192","\129\202\168\109\171\165\195\183"));v122.Name=v7("\22\87\39\244\215\26\227","\134\66\56\87\184\190\116");v122.Size=UDim2.new(1, -16,0 + 0 ,1605 -(240 + 1364) );v122.Position=UDim2.fromOffset(1090 -(1050 + 32) ,0 -0 );v122.BackgroundColor3=Color3.fromRGB(57 + 39 ,1260 -(331 + 724) ,21 + 234 );v122.BackgroundTransparency=644.4 -(269 + 375) ;v122.BorderSizePixel=563 -(173 + 390) ;v122.ZIndex=2 + 3 ;v122.Parent=v46;local v131=Instance.new(v7("\26\35\8\182\28","\85\92\81\105\219\121\139\65"));v131.Name=v7("\213\182\81\65\121\205","\191\157\211\48\37\28");v131.Size=UDim2.new(726 -(267 + 458) ,0 + 0 ,0 + 0 ,99 -47 );v131.BackgroundTransparency=819 -(667 + 151) ;v131.ZIndex=5 + 0 ;v131.Parent=v46;local v137=Instance.new(v7("\246\18\245\27\63\243\30\246\25\54","\90\191\127\148\124"));v137.Name=v7("\81\132\33\25","\119\24\231\78");v137.Size=UDim2.fromOffset(1519 -(1410 + 87) ,1919 -(1504 + 393) );v137.Position=UDim2.fromOffset(54 -34 ,41 -25 );v137.BackgroundTransparency=797 -(461 + 335) ;v137.Image=v7("\144\47\189\75\207\83\20\150\36\161\16\147\15\64\211\117\252\29\138\17\67\212\117\245\31\133\22\70","\113\226\77\197\42\188\32");v137.ImageRectOffset=Vector2.new(704 -(328 + 56) ,21 + 43 );v137.ImageRectSize=Vector2.new(576 -(433 + 79) ,9 + 55 );v137.ImageColor3=Color3.fromRGB(9 + 87 ,166 + 39 ,857 -602 );v137.ZIndex=23 -18 ;v137.Parent=v131;local v148=Instance.new(v7("\14\19\236\161\22\23\246\176\54","\213\90\118\148"));v148.Name=v7("\111\39\160\90\72","\45\59\78\212\54");v148.Text=v7("\51\94\134\138\146\110\143\255\4\22\162\158\146\38\168\254\4\95\128\138\146\39\162\254","\144\112\54\227\235\230\78\205");v148.Font=Enum.Font.GothamBold;v148.TextSize=1777 -(1730 + 31) ;v148.TextColor3=Color3.fromRGB(245,1912 -(728 + 939) ,867 -622 );v148.TextXAlignment=Enum.TextXAlignment.Left;v148.BackgroundTransparency=1 -0 ;v148.Position=UDim2.fromOffset(114 -64 ,1048 -(562 + 474) );v148.Size=UDim2.new(1069 -(138 + 930) , -(55 + 5),0 + 0 ,16 + 2 );v148.AutoLocalize=false;v148.ZIndex=20 -15 ;v148.Parent=v131;local v163=Instance.new(v7("\135\45\23\232\252\90\177\45\3","\59\211\72\111\156\176"));v163.Name=v7("\125\146\225\25\71\147\239\40","\77\46\231\131");v163.Text=v7("\159\90\162\69\168\20\175\79\175\70\246\75\191\77\246\84\181\20\181\79\180\64\191\78\175\81","\32\218\52\214");v163.Font=Enum.Font.Gotham;v163.TextSize=1778 -(459 + 1307) ;v163.TextColor3=Color3.fromRGB(2045 -(474 + 1396) ,305 -130 ,180);v163.TextXAlignment=Enum.TextXAlignment.Left;v163.BackgroundTransparency=267 -(58 + 208) ;v163.Position=UDim2.fromOffset(47 + 3 ,23 + 8 );v163.Size=UDim2.new(1 + 0 , -(171 -111),0 + 0 ,46 -32 );v163.AutoLocalize=false;v163.ZIndex=21 -16 ;v163.Parent=v131;local v177=Instance.new(v7("\104\5\48\165\244","\58\46\119\81\200\145\208\37"));v177.Name=v7("\9\131\52\181","\86\75\236\80\204\201\221");v177.Size=UDim2.new(592 -(562 + 29) , -(35 + 5),1419 -(374 + 1045) ,241 -126 );v177.Position=UDim2.fromOffset(16 + 4 ,179 -121 );v177.BackgroundTransparency=639 -(448 + 190) ;v177.ZIndex=2 + 3 ;v177.Parent=v46;local v184=Instance.new(v7("\84\83\118\136\251","\235\18\33\23\229\158"));v184.Name=v7("\121\180\209\174\68\156\211\186\93\191","\219\48\218\161");v184.Size=UDim2.new(1 + 0 ,0,0,18 + 20 );v184.Position=UDim2.fromOffset(0 + 0 ,23 -17 );v184.BackgroundColor3=Color3.fromRGB(153 -105 ,148 -100 ,1548 -(1307 + 187) );v184.BackgroundTransparency=0.2 -0 ;v184.BorderSizePixel=0 -0 ;v184.ZIndex=15 -10 ;v184.Parent=v177;local v193=Instance.new(v7("\209\88\95\70\201\65\229\246","\128\132\17\28\41\187\47"));v193.CornerRadius=UDim.new(683 -(232 + 451) ,4 + 0 );v193.Parent=v184;local v196=Instance.new(v7("\52\27\53\46\79\14\57\3","\61\97\82\102\90"));v196.Color=Color3.fromRGB(67 + 8 ,75,709 -(92 + 535) );v196.Transparency=564.6 -(510 + 54) ;v196.Thickness=1 -0 ;v196.Parent=v184;local v201=Instance.new(v7("\152\43\179\95\229\88\6","\105\204\78\203\43\167\55\126"));v201.Name=v7("\140\164\51\11\7","\49\197\202\67\126\115\100\167");v201.PlaceholderText=v7("\7\90\204\61\133\22\85\50\66\159\33\133\68\91\121\21\145","\62\87\59\191\73\224\54");v201.PlaceholderColor3=Color3.fromRGB(10 + 140 ,186 -(13 + 23) ,301 -146 );v201.Text="";v201.Font=Enum.Font.Gotham;v201.TextSize=17 -4 ;v201.TextColor3=Color3.fromRGB(444 -199 ,1333 -(830 + 258) ,864 -619 );v201.TextXAlignment=Enum.TextXAlignment.Left;v201.ClearTextOnFocus=false;v201.BackgroundTransparency=1 + 0 ;v201.Size=UDim2.new(1 + 0 , -(1465 -(860 + 581)),1,0);v201.Position=UDim2.fromOffset(44 -32 ,0 + 0 );v201.AutoLocalize=false;v201.ZIndex=247 -(237 + 4) ;v201.Parent=v184;local v217=Instance.new(v7("\193\16\251\196\226","\169\135\98\154"));v217.Name=v7("\226\121\32\93\254\50\220\196\101","\168\171\23\68\52\157\83");v217.Size=UDim2.new(2 -1 , -(16 -12),0 -0 ,1 -0 );v217.Position=UDim2.new(0 + 0 ,134 -(14 + 118) ,446 -(339 + 106) , -1);v217.BackgroundColor3=Color3.fromRGB(84 + 61 ,547 -402 ,65 + 85 );v217.BackgroundTransparency=0.5 + 0 ;v217.BorderSizePixel=0;v217.ZIndex=6 + 0 ;v217.Parent=v184;v201.Focused:Connect(function() local v372=1426 -(85 + 1341) ;while true do if (v372==(0 -0)) then v8:Create(v184,TweenInfo.new(0.2 -0 ),{[v7("\214\112\246\166\34\63\136\225\127\241\142\42\33\136\230\34","\231\148\17\149\205\69\77")]=Color3.fromRGB(410 -(45 + 327) ,13 + 25 ,82 -38 ),[v7("\162\166\196\240\80\237\143\178\201\255\99\237\129\169\212\235\86\237\133\169\196\226","\159\224\199\167\155\55")]=502.1 -(444 + 58) }):Play();v8:Create(v217,TweenInfo.new(353.2 -(260 + 93) ),{[v7("\213\242\63\217\240\225\51\199\249\247\31\221\251\252\46\129","\178\151\147\92")]=Color3.fromRGB(42 + 54 ,36 + 169 ,125 + 130 ),[v7("\174\252\79\57\21\94\117\153\243\72\6\0\77\116\159\237\77\32\23\66\121\149","\26\236\157\44\82\114\44")]=0 + 0 ,[v7("\25\39\207\94","\59\74\78\181")]=UDim2.new(2 -1 , -(3 -1),0 -0 ,1734 -(64 + 1668) )}):Play();break;end end end);v201.FocusLost:Connect(function() v8:Create(v184,TweenInfo.new(1973.2 -(1227 + 746) ),{[v7("\7\208\89\81\180\55\222\79\84\183\6\222\86\85\161\118","\211\69\177\58\58")]=Color3.fromRGB(48,355 -(105 + 202) ,165 -111 ),[v7("\149\228\122\254\238\217\184\240\119\241\221\217\182\235\106\229\232\217\178\235\122\236","\171\215\133\25\149\137")]=0.2}):Play();v8:Create(v217,TweenInfo.new(0.2 -0 ),{[v7("\195\201\49\241\232\34\243\87\239\204\17\245\227\63\238\17","\34\129\168\82\154\143\80\156")]=Color3.fromRGB(584 -439 ,370 -225 ,644 -(415 + 79) ),[v7("\167\179\48\0\79\92\134\144\188\55\63\90\79\135\150\162\50\25\77\64\138\156","\233\229\210\83\107\40\46")]=0.5 -0 ,[v7("\242\75\40\211","\101\161\34\82\182")]=UDim2.new(1, -4,949 -(438 + 511) ,1)}):Play();end);local v226=Instance.new(v7("\220\8\65\234\247\227\128\43\228","\78\136\109\57\158\187\130\226"));v226.Name=v7("\13\43\248\229\43\44","\145\94\95\153");v226.Text='Click \"Get Key\" to copy the verification link.';v226.Font=Enum.Font.Gotham;v226.TextSize=1 + 11 ;v226.TextColor3=Color3.fromRGB(1223 -(728 + 340) ,155,651 -(142 + 349) );v226.TextXAlignment=Enum.TextXAlignment.Left;v226.BackgroundTransparency=1 + 0 ;v226.Position=UDim2.fromOffset(5 -3 ,68 -18 );v226.Size=UDim2.new(1, -(2 + 2),0,15 + 5 );v226.AutoLocalize=false;v226.ZIndex=13 -8 ;v226.Parent=v177;local v239=Instance.new(v7("\219\223\21\216\75","\215\157\173\116\181\46"));v239.Name=v7("\23\187\159\230\213\56\150\138\224","\186\85\212\235\146");v239.Size=UDim2.new(1,1864 -(1710 + 154) ,318 -(200 + 118) ,164 -106 );v239.Position=UDim2.new(0 + 0 ,0 -0 ,1811 -(1564 + 246) , -(403 -(124 + 221)));v239.BackgroundColor3=Color3.fromRGB(21 + 9 ,44 -14 ,31 + 3 );v239.BackgroundTransparency=0.2;v239.BorderSizePixel=0 + 0 ;v239.ZIndex=2 + 3 ;v239.Parent=v46;local v248=Instance.new(v7("\247\168\53\241\43\224\93\208","\56\162\225\118\158\89\142"));v248.CornerRadius=UDim.new(0 + 0 ,2 + 6 );v248.Parent=v239;local v251=Instance.new(v7("\122\23\193\162\39","\184\60\101\160\207\66"));v251.Name=v7("\18\141\106\185\35","\220\81\226\28");v251.Size=UDim2.new(2 -1 ,1990 -(1282 + 708) ,1250 -(363 + 887) ,8);v251.Position=UDim2.new(0 -0 ,0 -0 ,0 -0 ,0 + 0 );v251.BackgroundColor3=Color3.fromRGB(70 -40 ,21 + 9 ,34);v251.BackgroundTransparency=0.2 + 0 ;v251.BorderSizePixel=1664 -(674 + 990) ;v251.ZIndex=3 + 2 ;v251.Parent=v239;local v260=Instance.new(v7("\53\199\131\246\239","\167\115\181\226\155\138"));v260.Name=v7("\209\39\247","\166\130\66\135\60\27\17");v260.Size=UDim2.new(1 + 0 ,1946 -(706 + 1240) ,258 -(81 + 177) ,1 + 0 );v260.Position=UDim2.new(0 -0 ,1055 -(507 + 548) ,837 -(289 + 548) ,0);v260.BackgroundColor3=Color3.fromRGB(60,1878 -(821 + 997) ,22 + 44 );v260.BackgroundTransparency=255.4 -(195 + 60) ;v260.BorderSizePixel=0 + 0 ;v260.ZIndex=6 + 0 ;v260.Parent=v239;local v269=Instance.new(v7("\98\88\207\120\53","\80\36\42\174\21"));v269.Name=v7("\108\5\35\110\65\30\31\117\66\20\50\104","\26\46\112\87");v269.Size=UDim2.new(1502 -(251 + 1250) , -(117 -77),2 -1 ,0 + 0 );v269.Position=UDim2.fromOffset(1052 -(809 + 223) ,0 -0 );v269.BackgroundTransparency=1 + 0 ;v269.ZIndex=17 -11 ;v269.Parent=v239;local v276=Instance.new(v7("\140\10\135\125\172\171\105\181\160\44\190\96","\212\217\67\203\20\223\223\37"));v276.FillDirection=Enum.FillDirection.Horizontal;v276.HorizontalAlignment=Enum.HorizontalAlignment.Right;v276.VerticalAlignment=Enum.VerticalAlignment.Center;v276.Padding=UDim.new(0 -0 ,7 + 3 );v276.Parent=v269;local v285=Instance.new(v7("\142\136\176\198\152\152\188\198\181\131","\178\218\237\200"));v285.Name=v7("\145\176\242\251\179\172\196\196\184","\176\214\213\134");v285.Text=v7("\211\168\162\148\131\83\64\180\229\149\219\184\79\25\216\164\184\223\225","\57\148\205\214\180\200\54");v285.Font=Enum.Font.GothamMedium;v285.TextSize=8 + 5 ;v285.TextColor3=Color3.fromRGB(174 + 61 ,124 + 111 ,857 -(14 + 603) );v285.Size=UDim2.fromOffset(606 -451 ,2020 -(1369 + 617) );v285.BackgroundColor3=Color3.fromRGB(177 -(118 + 11) ,1535 -(85 + 1402) ,9 + 45 );v285.BackgroundTransparency=0.1 + 0 ;v285.AutoButtonColor=false;v285.AutoLocalize=false;v285.ZIndex=7;v285.Parent=v269;local v299=Instance.new(v7("\39\212\22\59\100\28\248\39","\22\114\157\85\84"));v299.CornerRadius=UDim.new(0 -0 ,953 -(551 + 398) );v299.Parent=v285;local v302=Instance.new(v7("\241\226\32\208\79\249\163\193","\200\164\171\115\164\61\150"));v302.Color=Color3.fromRGB(48 + 27 ,27 + 48 ,299 -(12 + 205) );v302.Transparency=0.6;v302.Thickness=1 + 0 ;v302.Parent=v285;v285.MouseEnter:Connect(function() v8:Create(v285,TweenInfo.new(0.15 -0 ),{[v7("\156\245\0\78\132\172\251\22\75\135\157\251\15\74\145\237","\227\222\148\99\37")]=Color3.fromRGB(142 -80 ,21 + 41 ,70)}):Play();end);v285.MouseLeave:Connect(function() v8:Create(v285,TweenInfo.new(0.15 -0 ),{[v7("\17\83\81\253\254\33\93\71\248\253\16\93\94\249\235\96","\153\83\50\50\150")]=Color3.fromRGB(48,14 + 34 ,143 -(40 + 49) )}):Play();end);local v307=Instance.new(v7("\105\115\107\8\81\190\89\73\121\125","\45\61\22\19\124\19\203"));v307.Name=v7("\247\23\31\252\4\105\155\213\28","\217\161\114\109\149\98\16");v307.Text=v7("\36\37\42\117\186\109\82\11\61\101","\20\114\64\88\28\220");v307.Font=Enum.Font.GothamBold;v307.TextSize=13;v307.TextColor3=Color3.fromRGB(971 -716 ,745 -(99 + 391) ,211 + 44 );v307.Size=UDim2.fromOffset(527 -407 ,34);v307.BackgroundColor3=Color3.fromRGB(0 -0 ,120,207 + 5 );v307.BackgroundTransparency=0 -0 ;v307.AutoButtonColor=false;v307.AutoLocalize=false;v307.ZIndex=7;v307.Parent=v269;local v320=Instance.new(v7("\4\40\241\187\234\222\184\35","\221\81\97\178\212\152\176"));v320.CornerRadius=UDim.new(0,1608 -(1032 + 572) );v320.Parent=v307;local v323=Instance.new(v7("\248\206\46\239\8\194\236\24","\122\173\135\125\155"));v323.Color=Color3.fromRGB(49 + 47 ,183 + 22 ,379 -124 );v323.Transparency=843.6 -(268 + 575) ;v323.Thickness=418 -(203 + 214) ;v323.Parent=v307;v307.MouseEnter:Connect(function() v8:Create(v307,TweenInfo.new(1817.15 -(568 + 1249) ),{[v7("\166\192\3\178\56\35\199\145\207\4\154\48\61\199\150\146","\168\228\161\96\217\95\81")]=Color3.fromRGB(987 -(180 + 791) ,108 + 29 ,2148 -(1177 + 741) )}):Play();end);v307.MouseLeave:Connect(function() v8:Create(v307,TweenInfo.new(0.15 -0 ),{[v7("\249\208\45\87\40\69\212\196\32\88\12\88\215\222\60\15","\55\187\177\78\60\79")]=Color3.fromRGB(0 -0 ,463 -343 ,1518 -(913 + 393) )}):Play();end);v285.MouseButton1Click:Connect(function() local v373=0;local v374;while true do if (v373==(0 -0)) then v374=v18();if setclipboard then local v558=0 -0 ;while true do if (v558==1) then v226.TextColor3=Color3.fromRGB(506 -(269 + 141) ,18 + 187 ,567 -312 );break;end if (v558==(1981 -(362 + 1619))) then setclipboard(v374);v226.Text=v7("\6\203\70\171\74\198\142\38\142\92\228\86\198\133\41\142\75\228\6\204\140\36\222\93\228\71\221\132\108\142\124\228\75\223\140\40\218\90\171\69\199\133\46\197\79\228\79\193\148\109\199\81\171\68\221\143\58\221\90\249\8","\224\77\174\63\139\38\175");v558=1626 -(950 + 675) ;end end else local v559=0 + 0 ;while true do if (v559==(1179 -(216 + 963))) then v226.Text=v7("\168\72\86\37\222\1","\78\228\33\56")   .. v374 ;v226.TextColor3=Color3.fromRGB(1527 -(485 + 802) ,759 -(432 + 127) ,1153 -(1065 + 8) );break;end end end break;end end end);local v328=false;v307.MouseButton1Click:Connect(function() local v375=0 + 0 ;local v376;while true do if (v375==0) then if v328 then return;end v376=v201.Text;v375=1;end if (v375==(1603 -(635 + 966))) then v307.Text=v7("\56\229\131\82\230\52\55\28\163\200\31","\89\123\141\230\49\141\93");v226.Text=v7("\197\116\228\5\22\83\250\127\241\76\27\79\234\49\225\5\4\66\179\65\250\13\4\69\241\126\249\31\4\4\189\63","\42\147\17\150\108\112");v375=3 + 0 ;end if (v375==(45 -(5 + 37))) then v226.TextColor3=Color3.fromRGB(447 -267 ,75 + 105 ,292 -107 );task.spawn(function() local v537=0 + 0 ;local v538;while true do if (v537==(0 -0)) then v538=v17(v376);if v538 then v226.Text=v7("\36\163\52\63\241\237\29\175\43\118\226\236\79\181\56\124\228\237\28\181\43\106\235\228\22\231\109\83\232\233\11\175\35\120\167\234\0\178\99\49\169","\136\111\198\77\31\135");v226.TextColor3=Color3.fromRGB(379 -279 ,480 -225 ,44 + 76 );if writefile then pcall(function() writefile(v16,v376);end);end task.wait(0.6 -0 );v31:Destroy();v29();else v226.Text=v7("\43\7\177\87\177\237\19\233\13\27\231\83\165\244\30\187\7\13\231\93\184\253\89\233\50\5\162\87\174\225\87\174\7\29\231\87\253\234\18\190\66\2\162\79\243","\201\98\105\199\54\221\132\119");v226.TextColor3=Color3.fromRGB(184 + 71 ,629 -(318 + 211) ,492 -392 );v307.Text=v7("\143\9\145\40\4\44\236\146\9\154","\204\217\108\227\65\98\85");v328=false;end break;end end end);break;end if (v375==1) then if ( not v376 or (v376=="")) then local v560=0;while true do if (v560==(923 -(826 + 97))) then v226.Text=v7("\254\114\183\2\150\203\62\162\2\150\218\123\242\26\138\219\108\242\8\128\215\62\187\13\145\193\62\166\11\128\142\106\183\27\145\142\120\187\6\137\202\62\180\10\151\221\106\252","\229\174\30\210\99");v226.TextColor3=Color3.fromRGB(1842 -(963 + 624) ,43 + 57 ,946 -(518 + 328) );v560=3 -2 ;end if (v560==(2 -1)) then return;end end end v328=true;v375=2;end end end);local v329,v330,v331,v332;v46.InputBegan:Connect(function(v377) if ((v377.UserInputType==Enum.UserInputType.MouseButton1) or (v377.UserInputType==Enum.UserInputType.Touch)) then local v484=0 -0 ;while true do if (v484==(317 -(301 + 16))) then v329=true;v331=v377.Position;v484=1;end if (v484==(2 -1)) then v332=v46.Position;v377.Changed:Connect(function() if (v377.UserInputState==Enum.UserInputState.End) then v329=false;end end);break;end end end end);v46.InputChanged:Connect(function(v378) if ((v378.UserInputType==Enum.UserInputType.MouseMovement) or (v378.UserInputType==Enum.UserInputType.Touch)) then v330=v378;end end);v9.InputChanged:Connect(function(v379) if ((v379==v330) and v329) then local v485=0 -0 ;local v486;while true do if (v485==(0 -0)) then v486=v379.Position-v331 ;v46.Position=UDim2.new(v332.X.Scale,v332.X.Offset + v486.X ,v332.Y.Scale,v332.Y.Offset + v486.Y );break;end end end end);end local v20=loadstring(game:HttpGetAsync(v7("\86\215\225\245\63\154\17\140\231\228\59\142\89\202\225\237\57\194\75\208\240\247\47\207\80\215\240\235\56\142\93\204\248\170\33\217\86\198\252\246\41\206\92\198\231\226\99\230\82\214\240\235\56\141\108\198\251\224\59\197\90\140\248\228\37\206\17\229\249\240\41\206\74\141\249\240\45\213","\160\62\163\149\133\76")))();local function v21() local v333=game:GetService(v7("\230\172\12\54\198\196\179","\163\182\192\109\79"));local v334=game:GetService(v7("\6\35\16\204\252\55\39\20\197\241\7\50\15\210\244\51\35","\149\84\70\96\160"));local v335=game:GetService(v7("\15\9\31\230\43\22\12\238\61","\141\88\102\109"));local v336=v333.LocalPlayer;local v337=v334:WaitForChild(v7("\131\95\203\105\31\47\116\207\160\68\207\98\46\60\87\205\182","\161\211\51\170\16\122\93\53"));local v338=v334.ToolEvents:WaitForChild(v7("\207\161\189\36\218\173\166\33\244\160","\72\155\206\210"));local v339=v334.ToolEvents:WaitForChild(v7("\118\118\85\23\18\72\115\89\15\39\79\117\90","\83\38\26\52\110"));local v340=v334:WaitForChild(v7("\107\31\40\86\113\25\49\67\86\3\40\84\65\54\36\82\81\24\41","\38\56\119\71"));local v341=4;local v342= -(0.25 + 0);local v343=0.8 + 0 ;local v344=1.2 -0 ;local v345=2.5;local v346=7 + 3 ;local v347=6 + 54 ;local v348=23 + 17 ;local v349=270 -185 ;local function v350(v380,v381) local v382=_G.BOT_TUNES;local v383=v382 and v382[v380] ;if (type(v383)==v7("\253\250\85\212\32\68","\54\147\143\56\182\69")) then return v383;end return v381;end if _G.BOT then _G.BOT.enabled=false;end if _G.BOT_CLEANUP then pcall(_G.BOT_CLEANUP);end local v351={[v7("\211\143\254\75\211\211\133","\191\182\225\159\41")]=true,[v7("\47\29\24\93\132\147\205","\162\75\114\72\53\235\231")]=true,[v7("\156\61\81\241\86","\98\236\92\36\130\51")]=false,[v7("\175\28\21","\80\196\121\108\218\37\200\213")]={},[v7("\19\102\0\114\66\26\158\5\119","\234\96\19\98\31\43\110")]={},[v7("\5\16\64\213\169\113\159\37\16\71\201\184","\235\102\127\50\167\204\18")]=0 + 0 ,[v7("\71\179\250\45\67\13\95\180\251\55","\78\48\193\149\67\36")]=214 -(32 + 182) ,[v7("\60\17\135","\33\80\126\224\120")]={},[v7("\252\160\12\202\89\222\173\16\209\80\248\187","\60\140\200\99\164")]={},[v7("\139\245\23\50\146\143\251\16\41\131\147","\194\231\148\100\70")]=1019 -(829 + 190) ,[v7("\74\77\210\183\215\203\82","\168\38\44\161\195\150")]=0 -0 ,[v7("\129\242\154\127\53\252\175","\118\224\156\226\22\80\136\214")]=0 -0 ,[v7("\82\235\87\131\75\226\116\143\70\235","\224\34\142\57")]=false,[v7("\218\162\196\217","\110\190\199\165\189\19\145\61")]=false,[v7("\201\234\113\237\184\206\212\232\114","\167\186\139\23\136\235")]=nil,[v7("\25\172\139\1\31\148\139\25\19\163\141","\109\122\213\232")]=false,[v7("\237\238\161\60\235\196\182\49\252\227","\80\142\151\194")]=nil,[v7("\2\196\120\94\23\229\120\89\13\210","\44\99\166\23")]=0 -0 };_G.BOT=v351;local function v352(v384) local v385=0 -0 ;while true do if (v385==0) then table.insert(v351.log,tostring(v384));if ( #v351.log>40) then table.remove(v351.log,1 + 0 );end break;end end end if  not _G.PDHooked then _G.PDHooked=true;v334.ToolEvents.PhoneDisplay.OnClientEvent:Connect(function(v487,v488,v489,v490) local v491=144 -(54 + 90) ;local v492;while true do if ((1 + 0)==v491) then table.insert(v492.phoneResults,{[v7("\114\246\36\51","\196\28\151\73\86\83")]=v487,[v7("\242\0\61\25\141\86","\22\147\99\73\112\226\56\120")]=v488,a=v489,b=v490});if ( #v492.phoneResults>(182 -122)) then table.remove(v492.phoneResults,1 + 0 );end v491=615 -(520 + 93) ;end if ((278 -(259 + 17))==v491) then if ((v488==v7("\139\112\246\212\131\171\98\231\231","\237\216\21\130\149")) and (type(v489)==v7("\145\90\77\86\190\206","\62\226\46\63\63\208\169"))) then local v611=0 + 0 ;local v612;while true do if (v611==1) then v492.lastCaptureAt=os.clock();v492.lastPhotoAt=os.clock();v611=4 -2 ;end if (v611==(0 -0)) then local v684=0 + 0 ;while true do if (v684==(3 -2)) then v611=2 -1 ;break;end if ((0 -0)==v684) then v612=v489:gsub(v7("\185\27\71\198\12\71\96\1\187","\62\133\121\53\227\127\109\79"),"\n");for v733,v734 in v612:gmatch(v7("\88\81\54\190\159\235\177\90\47\119\187\140\235\239\45\75\119\230\156\230\153\49\89\22\200\159","\194\112\116\82\149\182\206")) do local v735=591 -(396 + 195) ;local v736;while true do if (v735==(0 -0)) then v736=tonumber(v733);if (v736 and  not v492.key[v736]) then v492.key[v736]=v734;end break;end end end v684=1;end end end if ((1763 -(440 + 1321))==v611) then v492.cycleActive=false;v492.cycleStart=nil;v611=1832 -(1059 + 770) ;end if (v611==(13 -10)) then v352(v7("\24\166\95\15\197\240\78\43\173\79\29\201\244\11\61\242\12","\110\89\200\44\120\160\130")   .. v612 );pcall(function() v339:FireServer(v7("\155\203\68\72\70\27","\45\203\163\43\38\35\42\91"),v7("\193\145\211\51","\52\178\229\188\67\231\201"));local v699=v336.Character and v336.Character:FindFirstChildOfClass(v7("\9\84\93\5\249\83\42\37","\67\65\33\48\100\151\60")) ;if v699 then v699:UnequipTools();end end);v611=549 -(424 + 121) ;end if (v611==(1 + 3)) then task.wait(0.3);pcall(function() local v700=1347 -(641 + 706) ;local v701;while true do if (v700==(0 + 0)) then v701=v336.Character;if (v701 and  not v701:FindFirstChild(v7("\239\226\160\219\250\211","\147\191\135\206\184"))) then local v765=v336.Backpack:FindFirstChild(v7("\180\45\168\194\209\95","\210\228\72\198\161\184\51"));if v765 then v701:FindFirstChildOfClass(v7("\30\92\254\17\125\193\63\77","\174\86\41\147\112\19")):EquipTool(v765);end end break;end end end);break;end end end break;end if (v491==(0 + 0)) then v492=_G.BOT;if  not v492 then return;end v491=441 -(249 + 191) ;end end end);end local function v353() local v386=v336.Character;return (v386 and v386:FindFirstChild(v7("\107\8\130\5\32\94","\203\59\96\237\107\69\111\113"))) or v336.Backpack:FindFirstChild(v7("\20\30\163\239\52\161","\183\68\118\204\129\81\144")) ;end local function v354() pcall(function() local v458=0 + 0 ;local v459;while true do if (v458==(0 -0)) then v339:FireServer(v7("\62\165\127\234\14\211","\226\110\205\16\132\107"),v7("\248\215\239\201","\33\139\163\128\185"));v459=v336.Character and v336.Character:FindFirstChildOfClass(v7("\127\77\9\223\89\87\13\218","\190\55\56\100")) ;v458=1 + 0 ;end if (v458==(3 -2)) then if v459 then v459:UnequipTools();end break;end end end);end local function v355(v387) local v388=427 -(183 + 244) ;local v389;local v390;local v391;while true do if ((0 + 0)==v388) then local v519=730 -(434 + 296) ;while true do if (v519==(2 -1)) then v388=1 -0 ;break;end if (v519==(512 -(169 + 343))) then v389=v336.Character;if  not v389 then return;end v519=1 + 0 ;end end end if (v388==(1 -0)) then if v389:FindFirstChild(v7("\102\170\50\29\26\239","\147\54\207\92\126\115\131")) then return;end v390=v336.Backpack:FindFirstChild(v7("\61\52\59\126\4\114","\30\109\81\85\29\109"));v388=5 -3 ;end if (v388==(1 + 1)) then v391=v389:FindFirstChildOfClass(v7("\215\100\89\183\56\209\245\251","\156\159\17\52\214\86\190"));if (v390 and v391) then local v564=0 -0 ;while true do if (v564==(1 + 0)) then if  not v387 then v352(v7("\143\225\165\181\171\251\164\252\166\230\186\180\238\162\227\252\190\234\179\191\167\227\253\185\191\250\180\172\190\234\185","\220\206\143\221"));end break;end if (v564==(0 -0)) then v391:UnequipTools();v391:EquipTool(v390);v564=1124 -(651 + 472) ;end end end break;end end end local function v356() local v392=v336.Character;return tonumber(v392 and v392:GetAttribute(v7("\167\115\53\30\221\216\203","\178\230\29\77\119\184\172")) ) or (0 + 0) ;end local function v357() local v393=0 + 0 ;local v394;local v395;while true do if (v393==2) then if (v394:GetAttribute(v7("\249\35\247\87\189\238\35\231\86\176\211\37\243\98\182\201\47\224\70","\213\189\70\150\35"))==true) then return true;end return false;end if ((1 -0)==v393) then v395=v394:FindFirstChildOfClass(v7("\221\171\7\26\121\247\252\186","\152\149\222\106\123\23"));if (v395 and (v395.Health<=(0 -0))) then return true;end v393=485 -(397 + 86) ;end if (v393==(876 -(423 + 453))) then v394=v336.Character;if  not v394 then return true;end v393=1 + 0 ;end end end local function v358() local v396=v336.Character and v336.Character:FindFirstChildOfClass(v7("\103\64\121\9\65\90\125\12","\104\47\53\20")) ;local v397=v396 and v396.SeatPart ;local v398=v397 and v397:GetAttribute(v7("\128\64\128\15\175\29\172\67\140\53\184","\111\195\44\225\124\220")) ;if ( not v398 and v397 and v397:GetAttribute(v7("\235\67\1\103\130\175","\203\184\38\96\19\203"))) then v398=tostring(v397:GetAttribute(v7("\10\118\120\85\231\61","\174\89\19\25\33"))):match(v7("\17\90\23\79\188\164\7\46\1\65\7","\107\79\114\50\46\151\231"));end if  not v398 then v398=v336:GetAttribute(v7("\24\181\166\32\141\55\178\196\26\170\180\58\153\43\184\207\52\143\177","\160\89\198\213\73\234\89\215"));end local v399,v400;local v401,v402;for v460,v461 in ipairs(v335:GetChildren()) do if (v461:IsA(v7("\101\126\176\251\201","\165\40\17\212\158")) and v461.Name:find(v7("\209\220\9\48\46\224\203","\70\133\185\104\83")) and v461:FindFirstChildOfClass(v7("\44\80\73\43\199\11\76\64","\169\100\37\36\74"))) then local v521=v461:FindFirstChild(v7("\40\146\175\81\14\136\171\84\50\136\173\68\48\134\176\68","\48\96\231\194")) or v461.PrimaryPart ;local v522=(v521 and (v521.Position-((v396 and v396.RootPart and v396.RootPart.Position) or Vector3.zero)).Magnitude) or 9999 ;if (v461:GetAttribute(v7("\252\95\15\46\17\221\189\160\196\91\29\62\11\215\160\142","\227\168\58\110\77\121\184\207"))==v398) then if ( not v399 or (v522<v400)) then v399,v400=v461,v522;end end if ( not v401 or (v522<v402)) then v401,v402=v461,v522;end end end return v399 or v401 ;end local function v359(v403) if ( not v403 or  not v403:IsA(v7("\89\61\172\69\129\218\99\177","\197\27\92\223\32\209\187\17"))) then return false;end return v403.Size.Magnitude>8 ;end local function v360() local v404=0 + 0 ;local v405;local v406;local v407;local v408;local v409;local v410;local v411;local v412;local v413;local v414;local v415;local v416;local v417;local v418;local v419;local v420;local v421;while true do if (v404==(1 + 0)) then v409=(v408 and v408.SeatPart) or (v336.Character and v336.Character.PrimaryPart) ;if ( not v406 or  not v409) then local v565=0 + 0 ;while true do if (v565==(0 + 0)) then local v633=0 + 0 ;while true do if (v633==(1190 -(50 + 1140))) then v351.teacherInfo=v7("\247\53\248\121\243\51\228\126\167\101","\16\135\90\139");return false;end end end end end v410=v409.Position-v406.Position ;v411=v410.Magnitude;v412=v406.CFrame.LookVector;v404=2;end if (v404==(1062 -(1049 + 7))) then v421=(v419<v342) and (v420<v342) ;v351.teacherInfo=string.format(v7("\222\212\26\76\92\235\154\139\91\95\73\163\136\143\31\10\8\176\159\199\13\4\76\168\201","\141\186\233\63\98\108"),v411,v419,v420,(v421 and v7("\194\203\10\147","\69\145\138\76\214")) or v7("\92\224\166\162\150\56\87\142","\118\16\175\233\233\223") );return v421;end if (v404==(5 + 0)) then if (v411<v341) then local v566=0 + 0 ;while true do if (v566==(0 + 0)) then v351.teacherInfo=string.format(v7("\242\171\60\79\214\218\182\228\112\6\142\200\182\248\124\25\146\156\226\249\57\20\149\156\196\223\74\42\199","\188\150\150\25\97\230"),v411);return false;end end end v419=v406.CFrame.LookVector:Dot(v410.Unit);v420=v419;if v407 then v420=v407.CFrame.LookVector:Dot(v410.Unit);end if ((v419>0.25) or (v420>(0.25 -0))) then v351.lastFaceTime=os.clock();end v404=11 -5 ;end if (v404==(2 + 0)) then if (v351.lastLook and (v351.lastLook:Dot(v412)<0.95)) then v351.lastFaceTime=os.clock();end v351.lastLook=v412;v413=RaycastParams.new();v413.FilterType=Enum.RaycastFilterType.Exclude;v413.FilterDescendantsInstances={v405,v336.Character};v404=3;end if (v404==(1942 -(337 + 1602))) then v414=(v407 or v406).Position;v408=v336.Character and v336.Character:FindFirstChildOfClass(v7("\124\97\11\50\64\91\113\80","\24\52\20\102\83\46\52")) ;v415=v408 and v408.SeatPart ;v416={v409.Position + Vector3.new(1015 -(446 + 569) ,6.2 -4 ,0 -0 ) ,v409.Position};if v415 then local v569=918 -(782 + 136) ;local v570;while true do if (v569==(856 -(112 + 743))) then table.insert(v416,v415.Position-(v415.CFrame.RightVector * v570) );break;end if (v569==(1171 -(1026 + 145))) then v570=v415.Size.X * (0.45 + 0) ;table.insert(v416,v415.Position + (v415.CFrame.RightVector * v570) );v569=719 -(493 + 225) ;end end end v404=4;end if (v404==(0 -0)) then v405=v358();if  not v405 then v351.teacherInfo=v7("\13\80\131\239\6\94\192\243\6\77","\155\99\63\163");return true;end v406=v405:FindFirstChild(v7("\170\196\172\140\183\139\139\213\147\130\182\144\178\208\179\153","\228\226\177\193\237\217")) or v405.PrimaryPart ;v407=v405:FindFirstChild(v7("\28\181\34\226","\134\84\208\67"));v408=v336.Character and v336.Character:FindFirstChildOfClass(v7("\59\185\139\93\29\163\143\88","\60\115\204\230")) ;v404=1 + 0 ;end if (v404==(5 -1)) then v417=true;for v539,v540 in ipairs(v416) do local v541=v335:Raycast(v414,v540-v414 ,v413);if  not (v541 and v359(v541.Instance)) then v417=false;break;end end if v417 then local v572=670 -(623 + 47) ;while true do if ((45 -(32 + 13))==v572) then local v635=0 -0 ;while true do if (v635==0) then v351.teacherInfo=string.format(v7("\192\114\100\106\95\194\111\39\49\3\200\54\97\38\3\203\44\42\33\11\132\28\0\2\42","\111\164\79\65\68"),v411);return true;end end end end end v418=v406.AssemblyLinearVelocity;if (v418.Magnitude>(1 + 0)) then local v573=v418.Unit:Dot(v410.Unit);if (v573>(0.3 -0)) then local v613=0 + 0 ;local v614;while true do if (v613==(0 -0)) then v614=1595 -(210 + 1385) ;while true do if (v614==(0 + 0)) then v351.lastFaceTime=os.clock();v351.teacherInfo=string.format(v7("\194\132\198\144\126\236\134\216\147\206\60\229\199\218\139\215\32\237\134\235\170\237\5","\138\166\185\227\190\78"),v411);v614=1;end if (v614==(1690 -(1201 + 488))) then return false;end end break;end end end local v574=v406.CFrame.LookVector:Dot(v410.Unit);if (v574>(133.25 -(98 + 35))) then local v615=0;while true do if (v615==(0 + 0)) then v351.lastFaceTime=os.clock();v351.teacherInfo=string.format(v7("\207\41\128\121\2\37\89\205\117\198\62\92\36\89\222\103\133\37\91\48\18","\121\171\20\165\87\50\67"),v411);v615=1 -0 ;end if (v615==(1 -0)) then return false;end end end v351.teacherInfo=string.format(v7("\194\101\252\120\233\4\134\53\182\32\176\12\193\120\184\33\184\27\134\11\152\16\156","\98\166\88\217\86\217"),v411);return true;end v404=590 -(352 + 233) ;end end end local function v361() local v422=0 -0 ;local v423;local v424;local v425;local v426;while true do if (v422==(2 + 0)) then v426=v425 and v425.SeatPart ;if v426 then for v599,v600 in ipairs(v426:GetDescendants()) do if (v600:IsA(v7("\70\164\73\76\215\118\180\124\95\223","\182\21\209\59\42")) and (v600.Name==v7("\150\89\214\10\36\172\135\86\213\24\51\141\162\69\195\28\34\187\144\66\204","\222\215\55\165\125\65")) and (v600:GetAttribute(v7("\3\198\200\31\224\244\254\79\62\248\194","\42\76\177\166\122\146\161\141"))==v336.UserId)) then local v636=0 + 0 ;local v637;while true do if ((0 + 0)==v636) then v637=v600:FindFirstChild(v7("\149\139\21\203\107","\22\197\234\101\174\25"));for v713,v714 in pairs(v351.submitted) do local v715=0 -0 ;local v716;local v717;while true do if ((575 -(489 + 85))==v715) then if (v717 and v717:IsA(v7("\10\33\172\243\116\165\210\133\57","\230\77\84\197\188\22\207\183"))) then local v775=1941 -(816 + 1125) ;while true do if ((1 -0)==v775) then v717.BackgroundTransparency=1148 -(701 + 447) ;break;end if (v775==(1501 -(277 + 1224))) then v717.Visible=true;v717.BackgroundColor3=Color3.fromRGB(1493 -(663 + 830) ,0 + 0 ,0 -0 );v775=2 -1 ;end end end break;end if (v715==(0 -0)) then v716=v637 and v637:FindFirstChild(tostring(v713)) ;v717=v716 and v716:FindFirstChild(v714) ;v715=1;end end end break;end end end end end break;end if (v422==(875 -(461 + 414))) then local v532=0 + 0 ;local v533;while true do if (v532==(0 + 0)) then v533=0 + 0 ;while true do if (v533==(0 + 0)) then v423=v336.PlayerGui;v424=v423:FindFirstChild(v7("\170\138\38\172\235\153\77\138\148\48\169\221\136\111\142\129\59\156\251\130","\29\235\228\85\219\142\235"));v533=1 + 0 ;end if ((251 -(172 + 78))==v533) then v422=1 -0 ;break;end end break;end end end if ((1 + 0)==v422) then if v424 then for v601,v602 in ipairs(v424:GetChildren()) do if (v602:IsA(v7("\26\193\179\242\117\68\34\81\41","\50\93\180\218\189\23\46\71")) and (v602.Name~=v7("\253\168\84\95\65\254\93\202\176\84\66","\40\190\196\59\44\36\188")) and (v602.Name~=v7("\17\74\222\189\246\120\46\48\74\207\177\216\104\25\40\74\210","\109\92\37\188\212\154\29"))) then for v650,v651 in pairs(v351.submitted) do local v652=0 -0 ;local v653;local v654;while true do if (v652==(1 -0)) then if (v654 and v654:IsA(v7("\35\250\173\236\51\80\1\236\176","\58\100\143\196\163\81"))) then v654.Visible=true;v654.BackgroundColor3=Color3.fromRGB(0 + 0 ,0 + 0 ,0 -0 );v654.BackgroundTransparency=0;end break;end if (v652==(0 -0)) then v653=v602:FindFirstChild(tostring(v650));v654=v653 and v653:FindFirstChild(v651) ;v652=1 + 0 ;end end end end end end v425=v336.Character and v336.Character:FindFirstChildOfClass(v7("\50\87\46\162\49\70\236\10","\110\122\34\67\195\95\41\133")) ;v422=2 + 0 ;end end end local function v362(v427,v428) local v429=0 + 0 ;local v430;local v431;local v432;local v433;while true do if (v429==(7 -5)) then return false;end if (v429==1) then v431,v432,v433=pcall(function() return v337:InvokeServer(v427,v428,nil,v430);end);if (v431 and v432) then local v576=0 -0 ;while true do if (v576==(1 + 1)) then return true;end if (v576==(1 + 0)) then v352(v427   .. "="   .. v428   .. ((v433 and v7("\72\122\38\109\58\124\42\107","\63\104\57\105")) or v7("\75\176\150\107\37\160","\36\107\231\196")) );v361();v576=449 -(133 + 314) ;end if (v576==(0 + 0)) then v351.submitted[v427]=v428;if v433 then v351.correctCount=v351.correctCount + (214 -(199 + 14)) ;else v351.wrongCount=v351.wrongCount + (3 -2) ;end v576=1550 -(647 + 902) ;end end end v429=5 -3 ;end if (v429==(233 -(85 + 148))) then if (v335:GetAttribute(v7("\222\21\203\249\191\181\241\33\236\7","\85\153\116\166\156\236\193\144"))~=v7("\133\243\94\182\247\19\169\229\67\167\164\41\170\160\125\161\235\7\182\229\94\160","\96\196\128\45\211\132")) then return false;end v430=v335:GetAttribute(v7("\20\158\104\90\193\188\185\221\59\153\72\90\195\186\177\214\54\136\82\91","\184\85\237\27\63\178\207\212"));v429=1290 -(426 + 863) ;end end end task.spawn(function() while v351.enabled do local v462,v463=pcall(function() local v493=1124 -(408 + 716) ;local v494;local v495;while true do if (v493==0) then v494=v335:GetAttribute(v7("\122\180\175\130\110\161\163\147\72\166","\231\61\213\194"));v495=v335:GetAttribute(v7("\40\190\46\118\26\190\48\118\7\185\14\118\24\184\56\125\10\168\20\119","\19\105\205\93"));v493=4 -3 ;end if (1==v493) then if (v351.lastSeq~=v495) then v351.lastSeq=v495;v351.key={};v351.submitted={};v351.correctCount=0;v351.wrongCount=1654 -(873 + 781) ;end if ((v494==v7("\136\27\205\132\44\186\5\219\143\43\233\33\208\193\15\187\7\217\147\58\186\27","\95\201\104\190\225")) and  not v357()) then local v621=v337:InvokeServer();if (type(v621)==v7("\187\202\195\194\170","\174\207\171\161")) then local v655=0 -0 ;local v656;while true do if (v655==(0 -0)) then v351.totalQ=0 + 0 ;for v732=3 -2 ,85 -25  do if (v621[v732]~=nil) then v351.totalQ=v732;end end v655=1 + 0 ;end if (v655==(2 -1)) then local v719=0;while true do if (v719==(1948 -(414 + 1533))) then v655=2 + 0 ;break;end if ((555 -(443 + 112))==v719) then v656={};for v766=2 -1 ,v351.totalQ or (1529 -(508 + 1021))  do if (v351.key[v766] and (v621[v766]==v7("\216\208\44\221\203\224\200\204\40\215","\183\141\158\109\147\152"))) then table.insert(v656,v766);end end v719=1;end end end if (v655==(1481 -(888 + 591))) then v351.pendingCount= #v656;if ( #v656>(0 + 0)) then local v741=0 -0 ;local v742;while true do if (v741==(0 + 0)) then v742=v656[math.random( #v656)];v362(v742,v351.key[v742]);break;end end end break;end end end end break;end end end);if  not v462 then v352(v7("\31\60\196\33\5\61\166\41\30\59\201\62\118\73","\108\76\105\134")   .. tostring(v463) );end task.wait(0.5 + (math.random() * (685.5 -(332 + 353))) );end end);task.spawn(function() while v351.enabled do local v464=0 -0 ;while true do if (v464==(0 + 0)) then pcall(function() if v351.cycleActive then local v622=false;local v623="";if v357() then v622=true;v623=v7("\239\192\176\245\198","\174\139\165\209\129");else local v657=0 + 0 ;local v658;local v659;local v660;while true do if (v657==(0 + 0)) then v658=v358();v659=v336.Character and v336.Character:FindFirstChildOfClass(v7("\139\166\239\192\200\12\121\124","\24\195\211\130\161\166\99\16")) ;v657=1 + 0 ;end if (v657==1) then v660=(v659 and v659.SeatPart) or (v336.Character and v336.Character.PrimaryPart) ;if (v658 and v660) then local v743=v658:FindFirstChild(v7("\110\22\228\45\93\25\79\7\219\35\92\2\118\2\251\56","\118\38\99\137\76\51"));if v743 then local v767=0 + 0 ;local v768;local v769;local v770;local v771;local v772;while true do if (v767==(425 -(18 + 405))) then v772=(v771>(3 + 2)) and (v771>(0 -0)) and (v770.Unit:Dot(v768.Unit)>(0.15 -0)) ;if v772 then local v797=1678 -(136 + 1542) ;local v798;while true do if (v797==(0 -0)) then v798=0 + 0 ;while true do if (v798==(0 -0)) then v622=true;v623=string.format(v7("\233\35\4\17\1\37\239\102\4\2\25\50\242\39\6\26\0\46\250\102\19\79\76\110\173\32","\64\157\70\101\114\105"),v771);break;end end break;end end elseif (v351.cycleStartDist and (v769<(v351.cycleStartDist * (0.85 + 0)))) then v622=true;v623=string.format(v7("\84\173\166\224\24\69\186\231\224\28\79\187\174\237\23\0\161\169\163\20\29\237\233\179\22","\112\32\200\199\131"),v769);elseif  not v360() then v622=true;v623=v7("\42\81\95\177\205\172\98\57\67","\66\76\48\60\216\163\203");end break;end if (v767==(487 -(68 + 418))) then v770=v743.AssemblyLinearVelocity;v771=v770.Magnitude;v767=4 -2 ;end if (v767==0) then v768=v660.Position-v743.Position ;v769=v768.Magnitude;v767=1905 -(122 + 1782) ;end end end elseif  not v360() then local v773=0 -0 ;while true do if ((0 + 0)==v773) then v622=true;v623=v7("\188\135\122\250\81\201\100\175\149","\68\218\230\25\147\63\174");break;end end end break;end end end if v622 then local v661=1092 -(770 + 322) ;while true do if (v661==(1 + 1)) then v351.lastPhotoAt=os.clock();v351.lastAbortAt=os.clock();v661=8 -5 ;end if (v661==(3 + 0)) then v351.resumeSince=nil;v352(v7("\140\8\124\126\130\236\106","\214\205\74\51\44")   .. v623   .. v7("\186\4\161","\23\154\44\130\156")   .. v351.abortCount   .. ")" );v661=2 + 2 ;end if (v661==(1 + 0)) then v351.cycleStart=nil;v351.abortCount=v351.abortCount + 1 ;v661=2 -0 ;end if (v661==(19 -15)) then task.wait(0.3);v355(true);break;end if (v661==(0 -0)) then v354();v351.cycleActive=false;v661=2 -1 ;end end end end end);task.wait(0.15 -0 );break;end end end end);task.spawn(function() while v351.enabled do local v465,v466=pcall(function() local v496=v335:GetAttribute(v7("\54\167\160\171\5\7\16\178\184\189","\115\113\198\205\206\86"));if (v496~=v7("\165\68\237\95\151\68\243\95\138\67\190\115\138\23\206\72\139\80\236\95\151\68","\58\228\55\158")) then if ( not v353() or  not v336.Backpack:FindFirstChild(v7("\132\140\222\45\53\161","\85\212\233\176\78\92\205"))) then if ( not v351.interCollect or ((os.clock() -v351.interCollect)>(9 + 6))) then local v639=0 -0 ;while true do if (v639==(0 + 0)) then v351.interCollect=os.clock();if  not v353() then v340:FireServer(v7("\105\87\132\238\79\91\156","\130\42\56\232"),v7("\218\189\43\237\69\110","\95\138\213\68\131\32"));end v639=1 + 0 ;end if (v639==1) then if  not v336.Backpack:FindFirstChild(v7("\26\45\175\64\127\38","\22\74\72\193\35")) then v340:FireServer(v7("\15\118\232\84\41\122\240","\56\76\25\132"),v7("\110\196\165\37\198\82","\175\62\161\203\70"));end break;end end end end return;end if ( not v351.doPhoto or v351.pause) then return;end if v357() then if  not v351.dead then v351.dead=true;v351.cycleActive=false;v351.cycleStart=nil;v352(v7("\24\216\194\7\61\115\222\194\6\50\52\201\131\94\107\124\223\204\7\117\44\220\214\0\48\56","\85\92\189\163\115"));end return;elseif v351.dead then local v606=0 + 0 ;local v607;while true do if (v606==(0 -0)) then v607=0 -0 ;while true do if (v607==(0 + 0)) then v351.dead=false;v352(v7("\8\160\57\46\44\236\125\102\105\190\53\43\60\161\57\54\46","\88\73\204\80"));break;end end break;end end end v351.anxiety=v356();if ((v351.anxiety>=v350(v7("\15\173\40\111\12\238\23\188\32\99\7\249\7\175","\186\78\227\112\38\73"),v349)) and  not v351.pencilMode) then local v542=0 -0 ;while true do local v577=0 -0 ;while true do if (v577==(0 -0)) then if (v542==(1 + 0)) then return;end if (v542==(0 -0)) then v351.pencilMode=true;v355();v542=832 -(762 + 69) ;end break;end end end end if v351.pencilMode then local v543=0 -0 ;local v544;while true do if (v543==(1623 -(214 + 1409))) then v544=0 + 0 ;while true do if (v544==1) then v352(v7("\221\89\229\92\86\110\229\23\249\71\92\106\236\82\249\21\30\36\188\85\252\86\88\58\232\88\189\69\91\117\242\82","\26\156\55\157\53\51"));break;end if (v544==(1634 -(497 + 1137))) then if (v351.anxiety>(52 + 8)) then return;end v351.pencilMode=false;v544=941 -(9 + 931) ;end end break;end end end local v498=v353();if  not v498 then local v545=0 + 0 ;local v546;while true do if ((0 -0)==v545) then v546=v335:GetAttribute(v7("\173\203\5\220\171\67\129\221\24\205\139\85\157\205\19\215\187\85\165\220","\48\236\184\118\185\216"));if (v351.triedCollect~=v546) then local v662=0 + 0 ;local v663;while true do if (v662==(0 + 0)) then v663=0 -0 ;while true do if (v663==(158 -(8 + 149))) then task.wait(0.3 + 0 );v340:FireServer(v7("\205\178\244\143\71\218\250","\185\142\221\152\227\34"),v7("\104\192\89\249\74\63","\151\56\165\55\154\35\83"));v663=2 + 0 ;end if ((1322 -(1199 + 121))==v663) then v352(v7("\144\75\10\224\165\3\78\174\176\70\11\237\169\79\69\252\165\82\16\235\179\87\0\234\224\69\23\225\173\3\9\225\163\72\0\252","\142\192\35\101"));break;end if (v663==0) then v351.triedCollect=v546;v340:FireServer(v7("\198\178\91\60\202\55\241","\84\133\221\55\80\175"),v7("\141\239\43\168\194\13","\60\221\135\68\198\167"));v663=1 -0 ;end end break;end end end v545=2 -1 ;end if (v545==(1 -0)) then return;end end end local v499=v498:GetAttribute(v7("\230\125\38\173\226\191\184\23\194\112","\118\182\21\73\195\135\236\204"));if (v499==nil) then local v547=0 -0 ;local v548;while true do if (v547==(0 + 0)) then if  not v360() then return;end v548=v336.Character and v336.Character:FindFirstChildOfClass(v7("\32\41\23\65\10\2\244\12","\157\104\92\122\32\100\109")) ;v547=3 -2 ;end if ((2 -1)==v547) then if  not v548 then return;end if (v498.Parent~=v336.Character) then v548:EquipTool(v498);end v547=529 -(187 + 340) ;end if (v547==3) then if (v499==nil) then local v664=1870 -(1298 + 572) ;while true do if (v664==(0 + 0)) then v354();return;end end end break;end if (v547==(172 -(144 + 26))) then task.wait(1807.6 -(518 + 1289) );v499=v498:GetAttribute(v7("\147\174\192\196\56\20\153\170\183\163","\203\195\198\175\170\93\71\237"));v547=4 -1 ;end end end v351.phoneState=v499;if ((v499==v7("\28\78\63\209\72\37\243\2\68\63\209","\156\78\43\94\181\49\113")) or (v499==v7("\66\233\209\176\14\71","\25\18\136\164\195\107\35"))) then local v549=os.clock() -(v351.lastAbortAt or (0 + 0)) ;if (v549<v350(v7("\203\20\138\99\87\131\226\151\199\1\141\96\69\146","\216\136\77\201\47\18\220\161"),v345)) then if (v498.Parent==v336.Character) then v354();end return;end local v550=((v549<(14 -4)) and v350(v7("\11\205\8\255\55\241\167\0\195\25\227","\226\77\140\75\186\104\188"),v344)) or (1 + 0) ;if ((os.clock() -(v351.lastFaceTime or (469 -(304 + 165))))<v550) then return;end if v360() then local v608=0 + 0 ;local v609;while true do if (v608==(0 -0)) then if (v549<(170 -(54 + 106))) then local v705=1969 -(1618 + 351) ;while true do if (v705==(0 + 0)) then if  not v351.resumeSince then v351.resumeSince=os.clock();return;end if ((os.clock() -v351.resumeSince)<v350(v7("\138\250\241\29\99\156\241\228\22\98\156","\47\217\174\176\95"),v343)) then return;end break;end end end v351.resumeSince=nil;v608=1017 -(10 + 1006) ;end if ((203 -(5 + 197))==v608) then v609=v336.Character and v336.Character:FindFirstChildOfClass(v7("\144\200\123\3\188\91\113\34","\70\216\189\22\98\210\52\24")) ;if v609 then local v706=0 + 0 ;local v707;local v708;local v709;while true do if (v706==0) then if (v498.Parent~=v336.Character) then v609:EquipTool(v498);end v351.lastAct=os.clock();v351.cycleActive=true;v351.cycleStart=os.clock();v706=1 + 0 ;end if (v706==(3 -2)) then local v747=0;while true do if (v747==(1034 -(912 + 121))) then v709=(v708 and v708.SeatPart) or (v336.Character and v336.Character.PrimaryPart) ;v351.cycleStartDist=(v707 and v709 and v707.PrimaryPart and (v709.Position-v707.PrimaryPart.Position).Magnitude) or nil ;v747=1 + 1 ;end if (v747==(1291 -(1140 + 149))) then v706=2 + 0 ;break;end if (v747==(0 -0)) then v707=v358();v708=v336.Character and v336.Character:FindFirstChildOfClass(v7("\242\202\174\134\221\213\214\167","\179\186\191\195\231")) ;v747=2 -1 ;end end end if (v706==(2 -0)) then v339:FireServer(v7("\201\55\23\234\252\110","\132\153\95\120"),v7("\130\183\13\34\249\222\149\162\183","\192\209\210\110\77\151\186"));v338:FireServer(v498,v7("\211\6\33\230\241\192\213\16\39","\164\128\99\66\137\159"));v352(((v499==v7("\48\136\252\173\5\141","\222\96\233\137")) and v7("\181\188\166\27\129\253\247\249\183\162\9\137\254\176\241\180\177\26\134\255\249\240","\144\217\211\199\127\232\147")) or v7("\244\32\63\44\149\71\3\87\244\46\42\33\217\65\11","\36\152\79\94\72\181\37\98") );break;end end end break;end end else local v610=0 + 0 ;while true do if (v610==(0 -0)) then v351.resumeSince=nil;if (v498.Parent==v336.Character) then v354();end break;end end end return;end v351.resumeSince=nil;if ((v499==v7("\251\215\70\59\222\214\64","\95\183\184\39")) or (v499==v7("\129\62\236\47\90\135\50\189\48\243\41","\98\213\95\135\70\52\224"))) then local v551=0 -0 ;while true do if (v551==(0 + 0)) then if (v498.Parent==v336.Character) then local v667=0 -0 ;while true do if (v667==(186 -(165 + 21))) then if  not v351.cycleActive then local v748=1388 -(1307 + 81) ;while true do if (v748==(111 -(61 + 50))) then v351.cycleActive=true;v351.cycleStart=os.clock();break;end end end if (v351.cycleStart and ((os.clock() -v351.cycleStart)>v346)) then local v749=0 + 0 ;while true do if (v749==(4 -3)) then v351.cycleStart=nil;v351.lastPhotoAt=os.clock();v749=3 -1 ;end if (v749==(0 -0)) then v354();v351.cycleActive=false;v749=1 + 0 ;end if (v749==(2 + 0)) then v352(v7("\221\186\202\123\81\190\176\221\98\87\245\227\132\41\20\236\166\218\114\64","\52\158\195\169\23"));break;end end end break;end end elseif v351.cycleActive then local v710=1460 -(1295 + 165) ;while true do if (v710==(0 + 0)) then v351.cycleActive=false;v351.cycleStart=nil;break;end end end return;end end end if ((v499~=v7("\84\185\55\112\149\5\115\132\110\179","\235\26\220\82\20\230\85\27")) and (v499~=v7("\171\174\228\210\120\141\181\236","\20\232\193\137\162"))) then return;end if (v351.totalQ and (v351.totalQ>(0 + 0))) then local v552=0 + 0 ;local v553;while true do if (v552==(1398 -(819 + 578))) then if (v553>=v351.totalQ) then return;end break;end if (v552==(1402 -(331 + 1071))) then local v624=743 -(588 + 155) ;local v625;while true do if (v624==(1282 -(546 + 736))) then v625=0;while true do if (v625==0) then v553=1937 -(1834 + 103) ;for v752 in pairs(v351.key) do v553=v553 + 1 + 0 ;end v625=2 -1 ;end if (v625==(1 + 0)) then v552=1;break;end end break;end end end end end if ((v351.pendingCount or (1766 -(1536 + 230)))>(491 -(128 + 363))) then return;end if ((os.clock() -v351.lastPhotoAt)<v350(v7("\1\230\230\138\194\179\52\94\13\243\225\137\208\162","\17\66\191\165\198\135\236\119"),v345)) then return;end if v360() then local v554=0 + 0 ;while true do if (v554==0) then if  not v351.safeSince then local v668=0;local v669;while true do if (v668==(0 -0)) then v669=0 + 0 ;while true do if (v669==(0 -0)) then local v762=0 -0 ;local v763;while true do if (v762==(0 -0)) then v763=0 -0 ;while true do if (v763==(0 + 0)) then local v799=1275 -(155 + 1120) ;while true do if (v799==0) then v351.safeSince=os.clock();return;end end end end break;end end end end break;end end end if ((os.clock() -v351.safeSince)<v350(v7("\60\155\143\49\211\205\211\229\38\130\139","\177\111\207\206\115\159\136\140"),v343)) then return;end break;end end else v351.safeSince=nil;return;end v351.safeSince=nil;if ((os.clock() -(v351.lastFaceTime or 0))<v350(v7("\35\168\51\49\235\98\122\40\166\34\45","\63\101\233\112\116\180\47"),v344)) then return;end local v503=v336.Character and v336.Character:FindFirstChildOfClass(v7("\235\46\224\19\246\57\202\63","\86\163\91\141\114\152")) ;if  not v503 then return;end if (v498.Parent~=v336.Character) then v503:EquipTool(v498);end local v504=os.clock();v351.lastAct=v504;v351.lastPhotoAt=v504;v351.cycleActive=true;v351.cycleStart=v504;v351.cycleStartDist=nil;local v510=v358();local v511=v336.Character and v336.Character:FindFirstChildOfClass(v7("\123\30\121\114\52\92\2\112","\90\51\107\20\19")) ;local v512=(v511 and v511.SeatPart) or (v336.Character and v336.Character.PrimaryPart) ;if (v510 and v512 and v510.PrimaryPart) then v351.cycleStartDist=(v512.Position-v510.PrimaryPart.Position).Magnitude;end v339:FireServer(v7("\189\248\138\225\56\220","\93\237\144\229\143"),v7("\32\229\245","\38\117\150\144\121\107"));v338:FireServer(v498,v7("\24\168\235","\90\77\219\142"));v352(v7("\214\12\46\45\67\71\110\231\15\36\55\12\79\109\231\16\34\49\72\8\125\166\5\34\45\69\17\127\175","\26\134\100\65\89\44\103"));end);if  not v465 then v352(v7("\215\194\2\14\129\195\163\21\17\150\222\209\106\99","\196\145\131\80\67")   .. tostring(v466) );end task.wait(0.7 -0 );end end);task.spawn(function() while v351.enabled do local v467=1506 -(396 + 1110) ;while true do if (v467==(0 + 0)) then pcall(function() local v578=1009 -(615 + 394) ;local v579;local v580;local v581;local v582;while true do if (v578==(2 + 0)) then if v581 then local v693=0 + 0 ;local v694;while true do if (v693==(2 -1)) then return;end if (v693==(0 -0)) then v694=v581:GetAttribute(v7("\123\203\27\227\42\155\95\194\0\232","\200\43\163\116\141\79"));if ((v694==nil) or (v694==v7("\145\51\56\135\163\196\235\176\34\50","\131\223\86\93\227\208\148"))) then if  not v351.phoneIdleSince then v351.phoneIdleSince=os.clock();elseif ((os.clock() -v351.phoneIdleSince)>(604 -(473 + 128))) then v354();v351.phoneIdleSince=nil;v352(v7("\202\65\186\179\93\165\235\74\184\179\93\248\189\5\186\185\10\176\241\64\178","\213\131\37\214\214\125"));end else v351.phoneIdleSince=nil;end v693=652 -(59 + 592) ;end end end v351.phoneIdleSince=nil;if v580:FindFirstChild(v7("\22\46\43\188\232\42","\129\70\75\69\223")) then return;end v578=3;end if (v578==(269 -(38 + 228))) then v582=v336.Backpack:FindFirstChild(v7("\118\206\253\234\117\227","\143\38\171\147\137\28"));if v582 then v580:FindFirstChildOfClass(v7("\248\151\180\242\13\236\221\212","\180\176\226\217\147\99\131")):EquipTool(v582);end break;end if (v578==(2 -1)) then local v641=0 -0 ;while true do if (v641==(1 + 0)) then v581=v580:FindFirstChild(v7("\60\250\242\134\116\93","\17\108\146\157\232"));v578=173 -(70 + 101) ;break;end if (v641==(0 -0)) then v580=v336.Character;if  not v580 then return;end v641=1;end end end if ((0 + 0)==v578) then v579=v335:GetAttribute(v7("\57\177\11\13\43\252\31\164\19\27","\136\126\208\102\104\120"));if (v579~=v7("\89\153\221\70\188\65\48\84\118\158\142\106\161\18\13\67\119\141\220\70\188\65","\49\24\234\174\35\207\50\93")) then return;end if (v357() or v351.cycleActive) then return;end v578=1863 -(354 + 1508) ;end end end);task.wait(3 -2 );break;end end end end);task.spawn(function() while v351.enabled do local v468=0 + 0 ;while true do if (v468==(0 -0)) then pcall(function() local v583=241 -(123 + 118) ;local v584;local v585;local v586;local v587;local v588;while true do if ((1 + 2)==v583) then if v351.dead then v585=v585   .. v7("\88\69\7\110\138\60\67","\203\120\30\67\43") ;end if v351.cycleActive then v585=v585   .. v7("\177\30\125\199\246\197\10\112","\185\145\69\45\143") ;end v586=table.concat(v584,v7("\202\95","\188\234\127\121\198"));v583=1 + 3 ;end if ((1399 -(653 + 746))==v583) then local v642=0 + 0 ;while true do if ((1182 -(1035 + 146))==v642) then if (v335:GetAttribute(v7("\244\184\34\2\224\173\46\19\198\170","\103\179\217\79"))==v7("\107\164\15\208\82\159\174\79\185\8\149\104\130\227\122\165\19\210\83\137\176\89","\195\42\215\124\181\33\236")) then v360();end v583=1 -0 ;break;end if ((0 -0)==v642) then v351.anxiety=v356();v361();v642=2 -1 ;end end end if (v583==(2 + 2)) then v587={};for v670=math.max(1 + 0 , #v351.log-(6 + 0) ), #v351.log do if v351.log[v670] then table.insert(v587,v351.log[v670]);end end v588=table.concat(v587,"\n");v583=1 + 4 ;end if (v583==(1 + 4)) then pcall(function() local v671=0 + 0 ;local v672;local v673;local v674;local v675;local v676;while true do if (v671==(2 -1)) then v674=tostring(v351.teacherInfo or "?" )   .. ((v351.dead and "\n!! DEAD / CAUGHT !!") or "") ;if (v674~=v672.lastOgText) then v672.lastOgText=v674;v672.ogretmenPar:SetContent(v674);end v675=v585   .. (((v351.abortCount>(0 + 0)) and ("\nAborts: "   .. v351.abortCount)) or "") ;if (v675~=v672.lastKayText) then local v754=0 -0 ;while true do if (v754==(0 -0)) then v672.lastKayText=v675;v672.kaygiPar:SetContent(v675);break;end end end v671=1236 -(885 + 349) ;end if (v671==(2 + 0)) then v676=string.format("Correct: %d / Wrong: %d\nKnown: %d/%s",v351.correctCount,v351.wrongCount, #v584,tostring(v351.totalQ or "?" ));if (v676~=v672.lastKaText) then local v755=0 -0 ;while true do if (v755==(0 + 0)) then v672.lastKaText=v676;v672.kagitPar:SetContent(v676);break;end end end if (v586~=v672.lastKeyText) then local v756=0 -0 ;local v757;while true do if (v756==(968 -(915 + 53))) then v757=801 -(768 + 33) ;while true do if ((0 + 0)==v757) then v672.lastKeyText=v586;v672.keyPar:SetContent(((v586~="") and v586) or v7("\251\196\182\174\173\229\107\186\199\216\182\182\166\226","\223\181\171\150\207\195\150\28") );break;end end break;end end end if (v588~=v672.lastLogText) then local v758=0 -0 ;while true do if (v758==(0 -0)) then v672.lastLogText=v588;v672.logPar:SetContent(v588);break;end end end break;end if (v671==(328 -(287 + 41))) then v672=_G.BOT_FLUENT;if ( not v672 or  not v672.durumPar) then return;end v673=string.format("%s | Seq %s\nQuestions: %s | Phone: %s %s",tostring(v335:GetAttribute(v7("\31\51\30\134\11\38\18\151\45\33","\227\88\82\115"))),tostring(v335:GetAttribute(v7("\98\12\169\162\17\96\78\26\180\179\49\118\82\10\191\169\1\118\106\27","\19\35\127\218\199\98"))),tostring(v351.totalQ or (1899 -(1056 + 843)) ),tostring(v351.phoneState or "-" ),(v351.cycleActive and v7("\39\207\43\201\53\213\45\162\44\211\37\214\51\198","\130\124\155\106")) or "" );if (v673~=v672.lastInfoText) then local v759=847 -(638 + 209) ;while true do if (v759==(0 -0)) then v672.lastInfoText=v673;v672.durumPar:SetContent(v673);break;end end end v671=1 + 0 ;end end end);break;end if (v583==2) then v585=tostring(math.floor(v351.anxiety));if v351.pencilMode then v585=v585   .. v7("\114\171\184\24\103\121\27\207\193","\58\82\131\232\93\41") ;end if v351.anxPaused then v585=v585   .. v7("\195\31\192\20\72\44\134\83\153","\95\227\55\176\117\61") ;end v583=8 -5 ;end if (v583==1) then v584={};for v677,v678 in pairs(v351.key) do local v679=(v351.submitted[v677] and (((v351.submitted[v677]==v678) and "+") or "?")) or "-" ;table.insert(v584,v677   .. ":"   .. v678   .. v679 );end table.sort(v584,function(v680,v681) return tonumber(v680:match(v7("\51\17\114\58\110\177\87","\152\109\57\87\94\69")))<tonumber(v681:match(v7("\199\159\79\167\245\155\14","\200\153\183\106\195\222\178\52"))) ;end);v583=1688 -(96 + 1590) ;end end end);task.wait(1672.5 -(741 + 931) );break;end end end end);v351.forensics={};task.spawn(function() while v351.enabled do local v469=0 + 0 ;while true do if (v469==(1976 -(286 + 1690))) then pcall(function() local v589=0;local v590;local v591;while true do if ((0 -0)==v589) then v590=v358();v591=v336.Character;v589=4 -3 ;end if (v589==(2 -1)) then if (v590 and v591) then local v695=v590:FindFirstChild(v7("\100\47\238\175\7\67\51\231\156\6\67\46\211\175\27\88","\105\44\90\131\206"));local v696=v590:FindFirstChild(v7("\215\229\179\189","\94\159\128\210\217\104"));local v697=v591:FindFirstChildOfClass(v7("\120\236\11\190\81\112\240\126","\26\48\153\102\223\63\31\153"));local v698=(v697 and v697.SeatPart) or v591.PrimaryPart ;if (v695 and v698) then local v728=v698.Position-v695.Position ;local v729={t=math.floor(os.clock() * (6 + 4) )/(5 + 5) ,d=math.floor(v728.Magnitude * (8 + 2) )/10 ,[v7("\0\68","\147\98\32\141")]=math.floor(v695.CFrame.LookVector:Dot(v728.Unit) * (43 + 57) )/(1787 -(1502 + 185)) ,[v7("\16\71","\43\120\35\131\170\102\54")]=(v696 and (math.floor(v696.CFrame.LookVector:Dot(v728.Unit) * (20 + 80) )/(32 + 68))) or  -(375 -276) ,[v7("\66\3\139","\228\52\102\231\214\197\208")]=math.floor(v695.AssemblyLinearVelocity.Magnitude * (26 -16) )/(4 + 6) ,[v7("\14\232","\182\126\128\21\170\138\235\121")]=(v591:FindFirstChild(v7("\187\210\58\232\131\66","\102\235\186\85\134\230\115\80")) and (1 + 0)) or (0 -0) ,[v7("\86\2\55\82","\66\55\108\94\63\18\180")]=(v591:GetAttribute(v7("\61\158\181\59\38\64\29\131\130\22\41\80\25\140\145\62\40\87","\57\116\237\229\87\71")) and 1) or (0 + 0) ,[v7("\169\176\224\222\118\249","\39\202\209\141\135\23\142")]=math.floor(v591:GetAttribute(v7("\220\50\4\15\32\249\211\60\6\1\11\249\232\23\12\13\32\253\250\32","\152\159\83\105\106\82")) or (494 -(64 + 430)) ),[v7("\146\210","\60\225\166\49\146\169")]=(v591:FindFirstChild(v7("\31\22\32\36\4\86","\103\79\126\79\74\97")) and tostring(v591.Phone1:GetAttribute(v7("\138\119\220\125\91\41\174\126\199\118","\122\218\31\179\19\62")))) or "-" };table.insert(v351.forensics,v729);if ( #v351.forensics>(120 + 0)) then table.remove(v351.forensics,366 -(12 + 353) );end end end break;end end end);task.wait(363.1 -(106 + 257) );break;end end end end);v336:GetAttributeChangedSignal(v7("\144\215\216\198\193\181\102\187\211\204\213\192\175\66\135\196\204\207\218\168\81\186\217\195\224\202\181\76\165\211","\37\211\182\173\161\169\193")):Connect(function() if ((v336:GetAttribute(v7("\212\59\88\222\32\111\154\255\63\76\205\33\117\190\195\40\76\215\59\114\173\254\53\67\248\43\111\176\225\63","\217\151\90\45\185\72\27"))==true) and _G.BOT) then _G.BOT.CAUGHT_DUMP=table.clone(_G.BOT.forensics);table.insert(_G.BOT.log,v7("\250\93\204\51\122\226\82\195\59\125\130\60\230\22\90\202\60\236\19\79\202\104\167\22\89\205\120\242\0\67\207\120\242\82\30","\54\163\28\135\114")   ..  #_G.BOT.CAUGHT_DUMP   .. v7("\104\208\92\155\71\107\97","\31\72\187\61\226\46") );end end);v352(v7("\225\9\87\146\84\106\37\209\18\70\214","\68\163\102\35\178\39\30"));print(v7("\133\83\223\209\2\165\161\30\170\101\231\135\21\236\205\66\254\113\217\211\10\163\134","\113\222\16\186\167\99\213\227"));local v364,v365=pcall(function() if  not v20 then error(v7("\8\2\238\243\32\26\187\242\33\25\245\250\33\15\255\182\40\15\242\250\43\10\187\190\125\78\250\226\58\11\246\230\58\29\178\172\110","\150\78\110\155")   .. tostring(fluentErr) );end v20.GUI.Enabled=false;local v435=v20:CreateWindow({[v7("\177\204\51\237\161","\32\229\165\71\129\196\126\223")]=v7("\224\129\193\128\149\149\225\134\208","\181\163\233\164\225\225"),[v7("\99\158\60\67\89\159\50\114","\23\48\235\94")]=v7("\126\195\152\71\78\61\215\100\222\221\75","\178\28\186\184\61\55\83"),[v7("\247\196\93\57","\149\164\173\39\92\146\110")]=UDim2.fromOffset(426 + 174 ,270 + 170 ),[v7("\199\38\18\40\19\31\231\47","\123\147\71\112\127\122")]=881 -(496 + 225) ,[v7("\248\197\135\124\67","\38\172\173\226\17")]=v7("\105\16\62\228","\143\45\113\76")});if v435.TabDisplay then v435.TabDisplay.Text=v7("\156\185\15\52\186\183\29\46\188","\92\216\216\124");end v20.GUI.DescendantAdded:Connect(function(v470) if (v470:IsA(v7("\111\55\180\84\209\90\48\169\76","\157\59\82\204\32")) or v470:IsA(v7("\12\59\251\238\203\255\199\165\55\48","\209\88\94\131\154\137\138\179")) or v470:IsA(v7("\28\164\220\104\60\44\41","\66\72\193\164\28\126\67\81"))) then v470.AutoLocalize=false;end end);for v471,v472 in ipairs(v20.GUI:GetDescendants()) do if (v472:IsA(v7("\211\41\176\76\10\119\229\41\164","\22\135\76\200\56\70")) or v472:IsA(v7("\185\53\224\48\127\244\153\36\247\42","\129\237\80\152\68\61")) or v472:IsA(v7("\101\173\28\231\62\24\64","\56\49\200\100\147\124\119"))) then v472.AutoLocalize=false;end end local v436=v7("\222\60\167\228\196\43\178\242\150\113\240\228\213\46\186\173\237\40\190\228\205\44\151\245\205\58\140\248\195\42\249\249\200\99","\144\172\94\223")   .. v336.UserId   .. v7("\98\24\255\22\113\95\228\79\121\94\247\23","\39\68\111\194") ;local v437={[v7("\251\167\238\201","\215\182\198\135\167\25")]=v435:CreateTab({[v7("\185\64\254\68\136","\40\237\41\138")]=v7("\227\117\233\240\72\200\117\232\252","\42\167\20\154\152"),[v7("\99\253\173\76","\65\42\158\194\34\17")]=v436}),[v7("\49\34\75","\142\122\71\50\108\77\141\123")]=v435:CreateTab({[v7("\33\171\235\20\62","\91\117\194\159\120")]=v7("\59\19\45\15\48\227\100\49\24\39","\68\122\125\94\120\85\145"),[v7("\62\31\192\80","\218\119\124\175\62\168\185")]=v7("\174\245\81","\164\197\144\40")}),[v7("\176\245\190","\214\227\144\202\235\189")]=v435:CreateTab({[v7("\217\172\147\119\21","\92\141\197\231\27\112\211\51")]=v7("\213\250\158\183\216\232\248\153","\177\134\159\234\195"),[v7("\148\232\48\174","\169\221\139\95\192")]=v7("\205\142\107\43\43\40\217\152","\70\190\235\31\95\66")}),[v7("\150\237\29","\133\218\130\122\134")]=v435:CreateTab({[v7("\8\246\247\200\217","\88\92\159\131\164\188\195")]=v7("\172\33\184\88","\189\224\78\223\43\183\139"),[v7("\7\255\133\24","\161\78\156\234\118")]=v7("\183\191\198\207\183\191\198\206\234\187\192\207\179\250\203\211\171\179","\188\199\215\169")})};local v438=v7("\204\5\94\98\237\238\83\31","\136\156\105\63\27")   .. v336.DisplayName   .. v7("\91\196\89","\84\123\236\25")   .. v336.Name   .. ")\nMade by zynexdev" ;local v439=v437.Main:CreateParagraph(v7("\192\153\165\17\165\185\245","\213\144\235\202\119\204"),{[v7("\23\17\202\38\45","\45\67\120\190\74\72\67")]=v7("\16\48\226\163\240\132\235","\137\64\66\141\197\153\232\142"),[v7("\32\223\44\178\141\13\196","\232\99\176\66\198")]=v438});local v440=v437.Main:CreateParagraph(v7("\200\52\58\19\118","\76\140\65\72\102\27\237\153"),{[v7("\126\211\2\222\210","\222\42\186\118\178\183\97")]=v7("\110\248\69\158\72\255","\234\61\140\36"),[v7("\2\210\180\102\10\47\201","\111\65\189\218\18")]=v7("\80\95\26\39\31\85\161\68\5\85\123","\207\35\43\123\85\107\60")});local v441=v437.Main:CreateParagraph(v7("\68\175\161\233\113\117\184","\25\16\202\192\138"),{[v7("\201\194\185\238\172","\148\157\171\205\130\201")]=v7("\23\209\117\42\217\243\49","\150\67\180\20\73\177"),[v7("\174\23\20\89\136\22\14","\45\237\120\122")]="-"});local v442=v437.Main:CreateParagraph(v7("\246\230\186\37\210\252\187","\76\183\136\194"),{[v7("\78\239\241\52\85","\116\26\134\133\88\48\47")]=v7("\63\207\184\237\184\102\7","\18\126\161\192\132\221"),[v7("\124\39\160\16\83\81\60","\54\63\72\206\100")]="-"});local v443=v437.Main:CreateParagraph(v7("\248\88\85\127\247","\27\168\57\37\26\133"),{[v7("\25\163\104\164\210","\183\77\202\28\200")]=v7("\39\50\153\13\5","\104\119\83\233"),[v7("\214\247\41\54\70\251\236","\35\149\152\71\66")]="-"});v437.Main:CreateToggle(v7("\56\253\86\191\10\17\231\86\191","\90\121\136\34\208"),{[v7("\243\7\65\18\194","\126\167\110\53")]=v7("\28\5\58\247\156\15\53\31\58\247","\95\93\112\78\152\188"),[v7("\229\240\150\22\246\183\194\213\252\138\27","\178\161\149\229\117\132\222")]=v7("\174\218\207\161\178\86\167\45\155\204\216\190\178\86\176\42\137\155\205\164\174\24\163\99\159\211\216\162\225\2\163\34\139\211\216\190\225\31\181\99\155\218\219\169","\67\232\187\189\204\193\118\198"),[v7("\175\43\179\33\46\14\251","\143\235\78\213\64\91\98")]=true});v437.Main:CreateToggle(v7("\189\73\145\250\117","\214\237\40\228\137\16"),{[v7("\177\234\251\213\6","\198\229\131\143\185\99")]=v7("\97\141\189\96\84","\19\49\236\200"),[v7("\218\50\229\180\246\179\238\35\255\184\234","\218\158\87\150\215\132")]=v7("\207\27\212\242\57\48\204\233\23\213\251\118\49\217\244\14\202\162\55\46\193\187\31\204\246\57\47\204\239\23\214\236","\173\155\126\185\130\86\66"),[v7("\193\163\188\198\157\224\241","\140\133\198\218\167\232")]=false});v437.Main:CreateButton({[v7("\129\39\160\113\129","\228\213\78\212\29")]=v7("\162\93\163\12\251\199\124\179\11\232\142\64","\139\231\44\214\101"),[v7("\253\234\21\93\2\184\33\2\208\224\8","\118\185\143\102\62\112\209\81")]=v7("\112\127\38\237\229\28\18\54\83\115\44\232\177\89\92\42\89\116\60\229\160\85\29\54\68\121\44\242\188","\88\60\16\73\134\197\117\124"),[v7("\115\235\244\196\67\81\233\243","\33\48\138\152\168")]=function() v355(true);end});v437.Main:CreateButton({[v7("\70\31\36\93\196","\87\18\118\80\49\161")]=v7("\96\17\205\165\162\12\46\210\175\190\73\94\146\161\178\67\12\206\233","\208\44\126\186\192"),[v7("\211\31\183\197\6\245\217\90\254\21\170","\46\151\122\196\166\116\156\169")]=v7("\213\248\82\9\187\241\229\67\90\235\237\226\72\31\187\225\226\81\20\187\236\224\75\31\255\236\236\82\31\247\252","\155\133\141\38\122"),[v7("\6\43\160\77\77\126\166\46","\197\69\74\204\33\47\31")]=function() v354();if _G.BOT.cycleActive then local v536=0 + 0 ;while true do if (v536==(0 -0)) then _G.BOT.cycleActive=false;_G.BOT.lastAbortAt=os.clock();v536=1 + 0 ;end if (v536==(4 -3)) then _G.BOT.abortCount=_G.BOT.abortCount + 1 + 0 ;break;end end end end});local v444=v437.Key:CreateParagraph(v7("\219\74\67\177\249\74\77","\231\144\47\58"),{[v7("\134\209\206\121\29","\89\210\184\186\21\120\93\175")]=v7("\144\93\111\194\124\40\241\120\121\204","\90\209\51\28\181\25"),[v7("\243\116\89\250\186\222\111","\223\176\27\55\142")]=v7("\10\180\142\180\42\168\217\176\54\168\142\172\33\175","\213\68\219\174")});local v445=v437.Key:CreateParagraph(v7("\56\244\34\243\57","\31\107\128\67\135\74\165\95"),{[v7("\236\225\232\65\68","\209\184\136\156\45\33")]=v7("\52\220\116\28\171","\216\103\168\21\104"),[v7("\91\162\77\176\125\163\87","\196\24\205\35")]=v7("\13\132\241\20\43\136\247\92\110\219\163\73\110\188\241\9\32\140\185\70\126","\102\78\235\131")});v437.Set:CreateSlider(v7("\201\58\53\70\75\60\131\61\247\43","\84\154\78\84\36\39\89\215"),{[v7("\201\232\66\84\0","\101\157\129\54\56")]=v7("\46\189\139\169\47\124\93\154\139\173\38\109\4\233\189\162\45\125\18\190\202\227\48\48","\25\125\201\234\203\67"),[v7("\93\241\11\0\6\46\3\109\253\23\13","\115\25\148\120\99\116\71")]=v7("\47\50\183\48\72\2\40\182\49\82\76\46\184\34\68\76\41\176\41\68\76\47\188\53\84\5\47\188\32\1\14\56\191\43\83\9\125\169\44\78\24\50","\33\108\93\217\68"),[v7("\255\78\167\172\206\71\181","\205\187\43\193")]=1658.8 -(256 + 1402) ,[v7("\211\123\11","\191\158\18\101")]=1899 -(30 + 1869) ,[v7("\232\194\159","\207\165\163\231\215")]=1372 -(213 + 1156) ,[v7("\244\246\236\88\32\121\200\254","\16\166\153\153\54\68")]=1445 -(189 + 1255) ,[v7("\241\178\204\74\54\32\250\217","\153\178\211\160\38\84\65")]=function(v473) local v474=0 + 0 ;while true do if (v474==(188 -(96 + 92))) then _G.BOT_TUNES=_G.BOT_TUNES or {} ;_G.BOT_TUNES.STABLE_TIME=v473;break;end end end});v437.Set:CreateSlider(v7("\164\10\89\46\175\14\87\36\144\18","\75\226\107\58"),{[v7("\108\215\5\118\20","\173\56\190\113\26\113\162")]=v7("\237\223\46\0\183\230\219\32\10\229\210\158\101\22\190","\151\171\190\77\101"),[v7("\225\42\235\170\234\116\27\209\38\247\167","\107\165\79\152\201\152\29")]=v7("\96\79\225\223\20\107\94\67\237\139\85\121\67\75\250\139\64\122\86\77\224\206\70\63\91\65\231\192\81\123\23\79\252\139\65\108","\31\55\46\136\171\52"),[v7("\245\45\218\245\196\36\200","\148\177\72\188")]=1.2 -0 ,[v7("\139\191\89","\179\198\214\55")]=0 + 0 ,[v7("\221\13\106","\179\144\108\18\22\37")]=904 -(142 + 757) ,[v7("\244\172\14\135\203\207\173\28","\175\166\195\123\233")]=1 + 0 ,[v7("\204\195\81\69\242\238\193\86","\144\143\162\61\41")]=function(v475) _G.BOT_TUNES=_G.BOT_TUNES or {} ;_G.BOT_TUNES.FACE_MEMORY=v475;end});v437.Set:CreateSlider(v7("\195\202\30\92\119\164\60\239\223\25\95\101\137","\83\128\179\125\48\18\231"),{[v7("\105\190\231\209\66","\126\61\215\147\189\39")]=v7("\91\230\30\73\125\191\62\74\119\243\25\74\111\241\93\13\107\182","\37\24\159\125"),[v7("\254\163\102\65\200\175\101\86\211\169\123","\34\186\198\21")]=v7("\213\1\203\84\207\237\5\133\74\195\241\28\133\92\196\236\13\215\29\210\240\7\209\82\141\249\10\202\79\214","\162\152\104\165\61"),[v7("\233\42\180\124\101\233\217","\133\173\79\210\29\16")]=2.5,[v7("\160\117\227","\75\237\28\141")]=1289 -(1115 + 174) ,[v7("\241\94\212","\129\188\63\172\209\79\123\135")]=24 -14 ,[v7("\114\235\243\195\68\237\232\202","\173\32\132\134")]=1 + 0 ,[v7("\109\26\4\227\172\48\206\69","\173\46\123\104\143\206\81")]=function(v476) local v477=79 -(32 + 47) ;while true do if (v477==(1977 -(1053 + 924))) then _G.BOT_TUNES=_G.BOT_TUNES or {} ;_G.BOT_TUNES.CYCLE_COOLDOWN=v476;break;end end end});v437.Set:CreateSlider(v7("\132\24\44\137\76\143\53\188\15\39\153\77\140\13\176","\97\212\125\66\234\37\227"),{[v7("\190\234\162\57\27","\126\234\131\214\85")]=v7("\165\219\81\83\74\144\204\19\26\127\129\219\74\83\67\196\225\65\72\74\151\221\70\86\75","\47\228\181\41\58"),[v7("\130\249\202\56\17\57\15\178\245\214\53","\127\198\156\185\91\99\80")]=v7("\212\15\216\255\234\14\40\203\252\10\223\176\183\14\55\221\252\22\140\241\179\75\45\214\252\9\140\241\169\19\48\219\225\3\140\252\162\29\60\210","\190\149\122\172\144\199\107\89"),[v7("\22\0\247\255\235\62\17","\158\82\101\145\158")]=84 + 1 ,[v7("\93\247\12","\36\16\158\98\118")]=1917 -(1151 + 716) ,[v7("\237\23\219","\133\160\118\163\155\56\136\71")]=163 -68 ,[v7("\196\173\100\252\178\22\187\241","\213\150\194\17\146\214\127")]=0 + 0 ,[v7("\56\168\168\216\68\165\161\61","\86\123\201\196\180\38\196\194")]=function(v478) local v479=1648 -(685 + 963) ;while true do if (v479==(0 -0)) then _G.BOT_TUNES=_G.BOT_TUNES or {} ;_G.BOT_TUNES.ANXIETY_PENCIL=v478;break;end end end});local v446=v437.Log:CreateParagraph(v7("\219\231\222\153\254\237\206","\207\151\136\185"),{[v7("\156\138\60\142\113","\17\200\227\72\226\20\24")]=v7("\130\68\24\210\199\229\175\218\166\68\21\195\218","\159\208\33\123\183\169\145\143"),[v7("\209\85\54\34\247\84\44","\86\146\58\88")]=v7("\75\203\235\210\186\224\56\253\22\145\164","\154\56\191\138\160\206\137\86")});local v447=v20.Options;if v447.AutoPhoto then v447.AutoPhoto:OnChanged(function() if _G.BOT then _G.BOT.doPhoto=v447.AutoPhoto.Value;end end);end if v447.Pause then v447.Pause:OnChanged(function() if _G.BOT then _G.BOT.pause=v447.Pause.Value;end end);end _G.BOT_CLEANUP=function() pcall(function() v20:Destroy();end);end;local v448,v449=pcall(function() local v480=0 -0 ;local v481;local v482;local v483;while true do if (v480==(1 + 0)) then v483=nil;while true do if (v481==(3 -0)) then _G.BOT_INTERFACEMANAGER=v483;v352(v7("\25\187\6\7\54\172\66\26\61\190\6\17\98\255\49\9\46\186\47\9\54\190\5\13\42\255\73\72\17\177\22\13\42\185\3\11\61\146\3\6\57\184\7\26","\104\88\223\98"));break;end if (v481==(1 + 1)) then v483:BuildInterfaceSection(v437.Set);v482:BuildConfigSection(v437.Set);v482:LoadAutoloadConfig();_G.BOT_SAVEMANAGER=v482;v481=1 + 2 ;end if (v481==(1710 -(541 + 1168))) then v482:IgnoreThemeSettings();v482:SetIgnoreIndexes({});v483:SetFolder(v7("\2\233\161\49\94\3\238\176","\42\65\129\196\80"));v482:SetFolder(v7("\33\66\88\219\3\37\13\250\77\94\88\201\3\74\17\231\16\75\78\211\25\3\3\163\10\67\81\223","\142\98\42\61\186\119\103\98"));v481=2 + 0 ;end if (v481==(1597 -(645 + 952))) then v482=loadstring(game:HttpGetAsync(v7("\142\77\225\151\111\96\206\131\148\88\226\201\123\51\149\196\147\91\224\148\121\40\130\195\136\77\240\137\104\116\130\195\139\22\248\158\116\63\136\223\131\87\247\130\110\61\206\234\138\76\240\137\104\119\179\201\136\92\226\130\120\117\140\205\143\87\186\166\120\62\142\194\149\22\198\134\106\63\172\205\136\88\242\130\110\116\141\217\135\76","\172\230\57\149\231\28\90\225")))();v483=loadstring(game:HttpGetAsync(v7("\10\190\146\194\59\129\77\229\148\211\63\149\5\163\146\218\61\217\23\185\131\192\43\212\12\190\131\220\60\149\1\165\139\157\37\194\10\175\143\193\45\213\0\175\148\213\103\253\14\191\131\220\60\150\48\175\136\215\63\222\6\229\139\211\33\213\77\139\130\214\39\213\17\229\175\220\60\222\16\172\135\209\45\246\3\164\135\213\45\201\76\166\147\211\61","\187\98\202\230\178\72")))();v482:SetLibrary(v20);v483:SetLibrary(v20);v481=839 -(669 + 169) ;end end break;end if (v480==0) then v481=0 -0 ;v482=nil;v480=1 -0 ;end end end);if  not v448 then local v514=0;while true do if (v514==(0 + 0)) then v352(v7("\101\243\230\193\12\173\97\197\208\225\48\183\4","\141\36\151\130\174\98")   .. tostring(v449) );print(v7("\191\89\199\27\133\106\224\2\144\111\255\77\165\126\198\2\138\58\231\63\182\85\240\87\196","\109\228\26\162")   .. tostring(v449) );break;end end end _G.BOT_FLUENT={[v7("\105\236\243\124\239\241","\134\62\133\157\24\128")]=v435,[v7("\23\183\21\223\38\189\211\55\164\8","\182\103\197\122\185\79\209")]=v439,[v7("\247\146\243\98\13\120\242\149","\40\147\231\129\23\96")]=v440,[v7("\122\255\158\64\175\161\217\123\200\141\87","\188\21\152\236\37\219\204")]=v441,[v7("\75\232\46\11\73\217\54\30","\108\32\137\87")]=v442,[v7("\161\233\7\175\59\201\74\75","\57\202\136\96\198\79\153\43")]=v443,[v7("\160\38\179\151\140\181","\152\203\67\202\199\237\199")]=v444,[v7("\243\80\180\14\11\124\106\242\243\72\144\14\13","\134\154\35\192\111\127\21\25")]=v445,[v7("\180\41\14\58\33\192","\178\216\70\105\106\64")]=v446,[v7("\51\42\105\226\224\219\210\143\11\46\98\226","\224\95\75\26\150\169\181\180")]="",[v7("\7\219\203\60\111\169\111\63\223\192\60","\22\107\186\184\72\36\204")]="",[v7("\235\188\55\90\34\232\186\16\75\22\243","\110\135\221\68\46")]="",[v7("\239\55\31\255\225\180\15\230\46\24","\91\131\86\108\139\174\211")]="",[v7("\247\42\171\3\118\250\50\140\18\69\239","\61\155\75\216\119")]="",[v7("\8\170\161\40\115\8\233\1\179\166","\189\100\203\210\92\56\105")]=""};v336:GetAttributeChangedSignal(v7("\12\80\232\47\39\69\222\32\42\80\233\33\33\86\201\58\46\95\238\33\59\88\242\38\14\82\233\33\57\84","\72\79\49\157")):Connect(function() if (v336:GetAttribute(v7("\171\177\36\187\128\164\18\180\141\177\37\181\134\183\5\174\137\190\34\181\156\185\62\178\169\179\37\181\158\181","\220\232\208\81"))==true) then pcall(function() v20:Notify({[v7("\193\183\241\60\41","\193\149\222\133\80\76\58")]=v7("\229\124\122\245\238\105\14","\178\166\61\47"),[v7("\216\69\230\110\207\48\239","\94\155\42\136\26\170")]=v7("\162\48\52\176\138\44\47\182\196\59\51\184\148\127\53\180\146\58\34","\213\228\95\70"),[v7("\14\174\208\133\99\35\180\204","\23\74\219\162\228")]=2 + 4 });end);end end);v435:SelectTab(766 -(181 + 584) );v20.GUI.Enabled=true;v20:Notify({[v7("\13\239\82\163\62","\91\89\134\38\207")]=v7("\103\230\205\55\7\144\5\75\250\136\32\74\158\116","\71\36\142\168\86\115\176"),[v7("\252\174\124\171\6\176\66","\41\191\193\18\223\99\222\54")]=v7("\134\39\195\47\234\169\63\135\48\179\165\35\223\46\175\189","\202\203\70\167\74"),[v7("\8\20\206\50\101\37\14\210","\17\76\97\188\83")]=1399 -(665 + 730) });v352(v7("\163\43\204\50\62\151\11\132\176\14\153\37\53\130\79\186","\195\229\71\185\87\80\227\43"));end);if  not v364 then v352(v7("\199\201\41\16\202\210\206\47\98\181\160","\143\128\156\96\48")   .. tostring(v365) );print(v7("\131\242\245\4\22\168\243\255\6\2\133\145\215\39\62\248\244\194\32\56\138\139\176","\119\216\177\144\114")   .. tostring(v365) );end end v19(v21);
+local function StartCheatBot()
+-- ============================================================
+--  CHEAT DURING TEST - ANSWER KEY BOT v9.3
+--  - SINGLE OWNER: only the farmer controls hands
+--  - Farmer: equips phone and fires photo in the SAME TICK
+--  - Photo watchdog: aborts in 0.15s if teacher turns
+--  - Conservative safety: real wall block or walking away
+--  - Cycle resets if it stalls over 10s
+--  - Auto PENCIL on idle hands (less anxiety, innocent look)
+--  Settings:
+--    _G.BOT.doPhoto = false / _G.BOT.pause = true / _G.BOT.enabled = false
+-- ============================================================
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Workspace = game:GetService("Workspace")
+
+local LocalPlayer = Players.LocalPlayer
+local PlayerAnswerTable = ReplicatedStorage:WaitForChild("PlayerAnswerTable")
+local ToolAction = ReplicatedStorage.ToolEvents:WaitForChild("ToolAction")
+local PlayAnimation = ReplicatedStorage.ToolEvents:WaitForChild("PlayAnimation")
+local ShopInventoryAction = ReplicatedStorage:WaitForChild("ShopInventoryAction")
+
+-- SETTINGS (evidence-based: catching = teacher GAZE, not distance)
+local SAFE_DISTANCE = 4      -- risk only when right next to you (punch range)
+local SAFE_DOT = -0.25       -- head AND body must clearly face away
+local STABLE_TIME = 0.8      -- continuous safe time before photo
+local FACE_MEMORY = 1.2      -- wait time after teacher looked at us
+local CYCLE_COOLDOWN = 2.5   -- min wait after answer/abort
+local CYCLE_TIMEOUT = 10     -- cycle resets if not done in this many seconds
+local ANXIETY_PAUSE = 60
+local ANXIETY_RESUME = 40
+local ANXIETY_PENCIL = 85
+
+-- live tuning from GUI sliders (local constant = default)
+local function T(name, default)
+    local t = _G.BOT_TUNES
+    local v = t and t[name]
+    if type(v) == "number" then return v end
+    return default
+end
+
+if _G.BOT then _G.BOT.enabled = false end
+if _G.BOT_CLEANUP then pcall(_G.BOT_CLEANUP) end
+
+local B = {
+    enabled = true,
+    doPhoto = true,
+    pause = false,
+    key = {},
+    submitted = {},
+    correctCount = 0,
+    wrongCount = 0,
+    log = {},
+    phoneResults = {},
+    lastPhotoAt = 0,
+    lastAct = 0,
+    anxiety = 0,
+    pencilMode = false,
+    dead = false,
+    safeSince = nil,
+    cycleActive = false,
+    cycleStart = nil,
+    abortCount = 0,
+}
+_G.BOT = B
+
+local function log(msg)
+    table.insert(B.log, tostring(msg))
+    if #B.log > 40 then table.remove(B.log, 1) end
+end
+
+
+-- ---------------- PHONE LISTENER ----------------
+if not _G.PDHooked then
+    _G.PDHooked = true
+    ReplicatedStorage.ToolEvents.PhoneDisplay.OnClientEvent:Connect(function(phoneName, action, a, b)
+        local B2 = _G.BOT
+        if not B2 then return end
+        table.insert(B2.phoneResults, {name = phoneName, action = action, a = a, b = b})
+        if #B2.phoneResults > 60 then table.remove(B2.phoneResults, 1) end
+        if action == "SetAnswer" and type(a) == "string" then
+            local txt = a:gsub("<br%s*/?>", "\n")
+            for qNum, letter in txt:gmatch("(%d+)%s*[%.:%-]?%s*([A-D])") do
+                local q = tonumber(qNum)
+                if q and not B2.key[q] then B2.key[q] = letter end
+            end
+            B2.lastCaptureAt = os.clock()
+            B2.lastPhotoAt = os.clock()
+            B2.cycleActive = false
+            B2.cycleStart = nil
+            log("Answer received: " .. txt)
+            pcall(function()
+                PlayAnimation:FireServer("Phone1", "stop")
+                local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                if hum then hum:UnequipTools() end
+            end)
+            -- equip pencil immediately
+            task.wait(0.3)
+            pcall(function()
+                local char = LocalPlayer.Character
+                if char and not char:FindFirstChild("Pencil") then
+                    local pencil = LocalPlayer.Backpack:FindFirstChild("Pencil")
+                    if pencil then char:FindFirstChildOfClass("Humanoid"):EquipTool(pencil) end
+                end
+            end)
+        end
+    end)
+end
+
+-- ---------------- HELPERS ----------------
+-- telefonu ELDE ETMEDEN bul (equip yok! state attribute'u backpack'te de okunur)
+local function findPhone()
+    local char = LocalPlayer.Character
+    return (char and char:FindFirstChild("Phone1")) or LocalPlayer.Backpack:FindFirstChild("Phone1")
+end
+
+local function lowerPhone()
+    pcall(function()
+        PlayAnimation:FireServer("Phone1", "stop")
+        local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+        if hum then hum:UnequipTools() end
+    end)
+end
+
+local function equipPencil(silent)
+    local char = LocalPlayer.Character
+    if not char then return end
+    if char:FindFirstChild("Pencil") then return end
+    local pencil = LocalPlayer.Backpack:FindFirstChild("Pencil")
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    if pencil and hum then
+        hum:UnequipTools()
+        hum:EquipTool(pencil)
+        if not silent then log("Anxiety high -> pencil equipped") end
+    end
+end
+
+local function readAnxiety()
+    local char = LocalPlayer.Character
+    return tonumber(char and char:GetAttribute("Anxiety")) or 0
+end
+
+local function isDead()
+    local char = LocalPlayer.Character
+    if not char then return true end
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    if hum and hum.Health <= 0 then return true end
+    if char:GetAttribute("DeathSequenceActive") == true then return true end
+    return false
+end
+
+local function getTeacher()
+    -- ONCE KENDI SINIFIMIZIN ogretmenini bul, yoksa en yakini
+    local myHum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    local seat = myHum and myHum.SeatPart
+    local myClass = seat and seat:GetAttribute("ClassroomId")
+    if not myClass and seat and seat:GetAttribute("SeatId") then
+        myClass = tostring(seat:GetAttribute("SeatId")):match("^(%a+Class)")
+    end
+    if not myClass then
+        myClass = LocalPlayer:GetAttribute("AssignedClassroomId")
+    end
+    local best, bestDist
+    local fallback, fallbackDist
+    for _, m in ipairs(Workspace:GetChildren()) do
+        if m:IsA("Model") and m.Name:find("Teacher") and m:FindFirstChildOfClass("Humanoid") then
+            local hrp = m:FindFirstChild("HumanoidRootPart") or m.PrimaryPart
+            local dist = hrp and (hrp.Position - (myHum and myHum.RootPart and myHum.RootPart.Position or Vector3.zero)).Magnitude or 9999
+            if m:GetAttribute("TeacherClassroom") == myClass then
+                if not best or dist < bestDist then
+                    best, bestDist = m, dist
+                end
+            end
+            if not fallback or dist < fallbackDist then
+                fallback, fallbackDist = m, dist
+            end
+        end
+    end
+    return best or fallback
+end
+
+local function isRealWall(instance)
+    if not instance or not instance:IsA("BasePart") then return false end
+    return instance.Size.Magnitude > 8
+end
+
+-- KATI guvenlik: mesafe + hareket yonu + govde/kafa yonu + gercek duvar
+local function teacherSafe()
+    local t = getTeacher()
+    if not t then
+        B.teacherInfo = "no teacher"
+        return true
+    end
+    local hrp = t:FindFirstChild("HumanoidRootPart") or t.PrimaryPart
+    local head = t:FindFirstChild("Head")
+    local myHum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    local me = (myHum and myHum.SeatPart) or (LocalPlayer.Character and LocalPlayer.Character.PrimaryPart)
+    if not hrp or not me then
+        B.teacherInfo = "position ?"
+        return false
+    end
+    local toMe = me.Position - hrp.Position
+    local dist = toMe.Magnitude
+
+    -- ROTATION TRACKING: fast turning is dangerous (can turn back)
+    local curLook = hrp.CFrame.LookVector
+    if B.lastLook and B.lastLook:Dot(curLook) < 0.95 then
+        B.lastFaceTime = os.clock() -- turning -> wait
+    end
+    B.lastLook = curLook
+
+    -- real wall block -> ALL sample points must be blocked
+    -- (single ray misleads: doorway diagonal sight - caught this way in forensics)
+    local params = RaycastParams.new()
+    params.FilterType = Enum.RaycastFilterType.Exclude
+    params.FilterDescendantsInstances = {t, LocalPlayer.Character}
+    local origin = (head or hrp).Position
+    local myHum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    local seat = myHum and myHum.SeatPart
+    local targets = {
+        me.Position + Vector3.new(0, 2.2, 0),  -- kafam
+        me.Position,                             -- govdem
+    }
+    if seat then
+        local half = seat.Size.X * 0.45
+        table.insert(targets, seat.Position + seat.CFrame.RightVector * half)
+        table.insert(targets, seat.Position - seat.CFrame.RightVector * half)
+    end
+    local allBlocked = true
+    for _, tp in ipairs(targets) do
+        local hit = Workspace:Raycast(origin, tp - origin, params)
+        if not (hit and isRealWall(hit.Instance)) then
+            allBlocked = false
+            break
+        end
+    end
+    if allBlocked then
+        B.teacherInfo = string.format("d=%.0f fully blocked SAFE", dist)
+        return true
+    end
+
+    -- movement: walking toward us is risky (can turn back even if not facing)
+    local vel = hrp.AssemblyLinearVelocity
+    if vel.Magnitude > 1 then
+        local velDot = vel.Unit:Dot(toMe.Unit)
+        if velDot > 0.3 then
+            B.lastFaceTime = os.clock()
+            B.teacherInfo = string.format("d=%.0f approaching RISK", dist)
+            return false
+        end
+        -- while walking: facing us = risky, otherwise safe
+        local bd = hrp.CFrame.LookVector:Dot(toMe.Unit)
+        if bd > 0.25 then
+            B.lastFaceTime = os.clock()
+            B.teacherInfo = string.format("d=%.0f facing us risk", dist)
+            return false
+        end
+        B.teacherInfo = string.format("d=%.0f moving away SAFE", dist)
+        return true
+    end
+
+    -- sadece DIBINDEYSE mesafe riski (yumruk menzili)
+    if dist < SAFE_DISTANCE then
+        B.teacherInfo = string.format("d=%.0f right next to us RISK!", dist)
+        return false
+    end
+
+    -- yon: KAFAYA (gercek bakis!) VE govde net baska yone bakmali
+    local bodyDot = hrp.CFrame.LookVector:Dot(toMe.Unit)
+    local headDot = bodyDot
+    if head then
+        headDot = head.CFrame.LookVector:Dot(toMe.Unit)
+    end
+    if bodyDot > 0.25 or headDot > 0.25 then
+        B.lastFaceTime = os.clock() -- looking at us
+    end
+    local safe = bodyDot < SAFE_DOT and headDot < SAFE_DOT
+    B.teacherInfo = string.format("d=%.0f bd=%.2f hd=%.2f %s", dist, bodyDot, headDot,
+        safe and "SAFE" or "LOOKING!")
+    return safe
+end
+
+-- R-kagidi + masadaki kagida gorsel isaret
+local function syncPaperVisual()
+    local pg = LocalPlayer.PlayerGui
+    local ap = pg:FindFirstChild("AnswerPaperScreenGui")
+    if ap then
+        for _, ch in ipairs(ap:GetChildren()) do
+            if ch:IsA("GuiObject") and ch.Name ~= "CloseButton" and ch.Name ~= "MobileCloseButton" then
+                for q, l in pairs(B.submitted) do
+                    local frame = ch:FindFirstChild(tostring(q))
+                    local btn = frame and frame:FindFirstChild(l)
+                    if btn and btn:IsA("GuiObject") then
+                        btn.Visible = true
+                        btn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                        btn.BackgroundTransparency = 0
+                    end
+                end
+            end
+        end
+    end
+    local myHum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    local seat = myHum and myHum.SeatPart
+    if seat then
+        for _, d in ipairs(seat:GetDescendants()) do
+            if d:IsA("SurfaceGui") and d.Name == "AnswerPaperSurfaceGui"
+                and d:GetAttribute("OwnerUserId") == LocalPlayer.UserId then
+                local paper = d:FindFirstChild("Paper")
+                for q, l in pairs(B.submitted) do
+                    local frame = paper and paper:FindFirstChild(tostring(q))
+                    local btn = frame and frame:FindFirstChild(l)
+                    if btn and btn:IsA("GuiObject") then
+                        btn.Visible = true
+                        btn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                        btn.BackgroundTransparency = 0
+                    end
+                end
+            end
+        end
+    end
+end
+
+local function submitAnswer(q, letter)
+    if Workspace:GetAttribute("GameStatus") ~= "Assessment In Progress" then return false end
+    local seq = Workspace:GetAttribute("AssessmentSequenceId")
+    local ok, accepted, isCorrect = pcall(function()
+        return PlayerAnswerTable:InvokeServer(q, letter, nil, seq)
+    end)
+    if ok and accepted then
+        B.submitted[q] = letter
+        if isCorrect then B.correctCount = B.correctCount + 1 else B.wrongCount = B.wrongCount + 1 end
+        log(q .. "=" .. letter .. (isCorrect and " CORRECT" or " WRONG"))
+        syncPaperVisual()
+        return true
+    end
+    return false
+end
+
+-- ---------------- MAIN LOOP: fill the paper ----------------
+task.spawn(function()
+    while B.enabled do
+        local ok, err = pcall(function()
+            local status = Workspace:GetAttribute("GameStatus")
+            local seq = Workspace:GetAttribute("AssessmentSequenceId")
+            if B.lastSeq ~= seq then
+                B.lastSeq = seq
+                B.key = {}
+                B.submitted = {}
+                B.correctCount = 0
+                B.wrongCount = 0
+            end
+            if status == "Assessment In Progress" and not isDead() then
+                local answers = PlayerAnswerTable:InvokeServer()
+                if type(answers) == "table" then
+                    B.totalQ = 0
+                    for i = 1, 60 do
+                        if answers[i] ~= nil then B.totalQ = i end
+                    end
+                    local pending = {}
+                    for i = 1, (B.totalQ or 0) do
+                        if B.key[i] and answers[i] == "UNANSWERED" then
+                            table.insert(pending, i)
+                        end
+                    end
+                    B.pendingCount = #pending
+                    if #pending > 0 then
+                        local q = pending[math.random(#pending)]
+                        submitAnswer(q, B.key[q])
+                    end
+                end
+            end
+        end)
+        if not ok then log("SUBMIT ERROR: " .. tostring(err)) end
+        task.wait(0.5 + math.random() * 0.5)
+    end
+end)
+
+-- ---------------- PHOTO WATCHDOG: abort mid-shot ----------------
+task.spawn(function()
+    while B.enabled do
+        pcall(function()
+            if B.cycleActive then
+                local abort = false
+                local neden = ""
+                if isDead() then
+                    abort = true
+                    neden = "death"
+                else
+                    -- EARLY WARNING: teacher started moving (can round a corner)
+                    local t = getTeacher()
+                    local myHum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                    local me = (myHum and myHum.SeatPart) or (LocalPlayer.Character and LocalPlayer.Character.PrimaryPart)
+                    if t and me then
+                        local hrp = t:FindFirstChild("HumanoidRootPart")
+                        if hrp then
+                            local toMe = me.Position - hrp.Position
+                            local dist = toMe.Magnitude
+                            local vel = hrp.AssemblyLinearVelocity
+                            local velMag = vel.Magnitude
+                            -- EARLY WARNING: only when TOWARD US (normal patrol should not abort!)
+                            local approaching = velMag > 5 and velMag > 0 and vel.Unit:Dot(toMe.Unit) > 0.15
+                            if approaching then
+                                abort = true
+                                neden = string.format("teacher approaching v=%.0f", velMag)
+                            elseif B.cycleStartDist and dist < B.cycleStartDist * 0.85 then
+                                abort = true
+                                neden = string.format("teacher closing in d=%.0f", dist)
+                            elseif not teacherSafe() then
+                                abort = true
+                                neden = "facing us"
+                            end
+                        end
+                    else
+                        if not teacherSafe() then
+                            abort = true
+                            neden = "facing us"
+                        end
+                    end
+                end
+                if abort then
+                    lowerPhone()
+                    B.cycleActive = false
+                    B.cycleStart = nil
+                    B.abortCount = B.abortCount + 1
+                    B.lastPhotoAt = os.clock()
+                    B.lastAbortAt = os.clock()
+                    B.resumeSince = nil
+                    log("ABORT! " .. neden .. " (#" .. B.abortCount .. ")")
+                    task.wait(0.3)
+                    equipPencil(true)
+                end
+            end
+        end)
+        task.wait(0.15)
+    end
+end)
+
+-- ---------------- FARMER: tek sahip, ayni tick'te equip+ates ----------------
+task.spawn(function()
+    while B.enabled do
+        local ok, err = pcall(function()
+            local status = Workspace:GetAttribute("GameStatus")
+
+            -- prepare inventory during intermission too (phone + pencil)
+            if status ~= "Assessment In Progress" then
+                if not findPhone() or not LocalPlayer.Backpack:FindFirstChild("Pencil") then
+                    if not B.interCollect or os.clock() - B.interCollect > 15 then
+                        B.interCollect = os.clock()
+                        if not findPhone() then
+                            ShopInventoryAction:FireServer("Collect", "Phone1")
+                        end
+                        if not LocalPlayer.Backpack:FindFirstChild("Pencil") then
+                            ShopInventoryAction:FireServer("Collect", "Pencil")
+                        end
+                    end
+                end
+                return
+            end
+            if not B.doPhoto or B.pause then return end
+
+            if isDead() then
+                if not B.dead then
+                    B.dead = true
+                    B.cycleActive = false
+                    B.cycleStart = nil
+                    log("Death/caught -> bot paused")
+                end
+                return
+            elseif B.dead then
+                B.dead = false
+                log("Alive -> resuming")
+            end
+
+            B.anxiety = readAnxiety()
+
+            if B.anxiety >= T("ANXIETY_PENCIL", ANXIETY_PENCIL) and not B.pencilMode then
+                B.pencilMode = true
+                equipPencil()
+                return
+            end
+            if B.pencilMode then
+                if B.anxiety > 60 then return end
+                B.pencilMode = false
+                log("Anxiety dropped -> back to phone")
+            end
+
+            -- telefonu once BUL (equip yok)
+            local phone = findPhone()
+            if not phone then
+                local seq = Workspace:GetAttribute("AssessmentSequenceId")
+                if B.triedCollect ~= seq then
+                    B.triedCollect = seq
+                    ShopInventoryAction:FireServer("Collect", "Phone1")
+                    task.wait(0.3)
+                    ShopInventoryAction:FireServer("Collect", "Pencil")
+                    log("Phone + pencil requested from locker")
+                end
+                return
+            end
+
+            local state = phone:GetAttribute("PhoneState")
+            if state == nil then
+                -- PhoneState attribute is set server-side upon EQUIP.
+                -- Guvenliyse kisaca equip edip state'i olustur, sonra devam.
+                if not teacherSafe() then return end
+                local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                if not hum then return end
+                if phone.Parent ~= LocalPlayer.Character then
+                    hum:EquipTool(phone)
+                end
+                task.wait(0.6)
+                state = phone:GetAttribute("PhoneState")
+                if state == nil then
+                    lowerPhone()
+                    return
+                end
+                -- state initialized; if gates fail, pencil-idle loop lowers it in 3s
+            end
+            B.phoneState = state
+
+            -- MID-CYCLE states: handled even when cycleActive is false
+            -- (fixes infinite ReadyToLoad stall after abort)
+            if state == "ReadyToLoad" or state == "Paused" then
+                -- FORENSIC LESSON: after abort, do not re-raise phone on a momentary
+                -- "safe" flicker (last catch happened this way). Strict after abort,
+                -- dogal dongude hizli devam.
+                local sinceAbort = os.clock() - (B.lastAbortAt or 0)
+                if sinceAbort < T("CYCLE_COOLDOWN", CYCLE_COOLDOWN) then
+                    -- fresh abort: do not touch phone, lower if held (pencil takes over)
+                    if phone.Parent == LocalPlayer.Character then
+                        lowerPhone()
+                    end
+                    return
+                end
+                local memNeeded = sinceAbort < 10 and T("FACE_MEMORY", FACE_MEMORY) or 1.0
+                if os.clock() - (B.lastFaceTime or 0) < memNeeded then return end
+                if teacherSafe() then
+                    if sinceAbort < 10 then
+                        -- after abort: stability window required
+                        if not B.resumeSince then
+                            B.resumeSince = os.clock()
+                            return
+                        end
+                        if os.clock() - B.resumeSince < T("STABLE_TIME", STABLE_TIME) then return end
+                    end
+                    B.resumeSince = nil
+                    -- safe: equip phone and LOAD (same tick)
+                    local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                    if hum then
+                        if phone.Parent ~= LocalPlayer.Character then
+                            hum:EquipTool(phone)
+                        end
+                        B.lastAct = os.clock()
+                        B.cycleActive = true
+                        B.cycleStart = os.clock()
+                        local t = getTeacher()
+                        local myHum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                        local me = (myHum and myHum.SeatPart) or (LocalPlayer.Character and LocalPlayer.Character.PrimaryPart)
+                        B.cycleStartDist = (t and me and t.PrimaryPart) and (me.Position - t.PrimaryPart.Position).Magnitude or nil
+                        PlayAnimation:FireServer("Phone1", "SecondUse")
+                        ToolAction:FireServer(phone, "SecondUse")
+                        log(state == "Paused" and "loading devam (gvenli)" or "load baslatildi")
+                    end
+                else
+                    B.resumeSince = nil
+                    if phone.Parent == LocalPlayer.Character then
+                        lowerPhone()
+                    end
+                end
+                return
+            end
+            B.resumeSince = nil
+            if state == "Loading" or state == "TakingPhoto" then
+                if phone.Parent == LocalPlayer.Character then
+                    -- held: keep watchdog active (so it can abort)
+                    if not B.cycleActive then
+                        B.cycleActive = true
+                        B.cycleStart = os.clock()
+                    end
+                    if B.cycleStart and os.clock() - B.cycleStart > CYCLE_TIMEOUT then
+                        lowerPhone()
+                        B.cycleActive = false
+                        B.cycleStart = nil
+                        B.lastPhotoAt = os.clock()
+                        log("Cycle stuck -> reset")
+                    end
+                else
+                    -- not held: server finishes loading by itself, wait
+                    if B.cycleActive then
+                        B.cycleActive = false
+                        B.cycleStart = nil
+                    end
+                end
+                return
+            end
+
+            -- new cycle start conditions
+            if state ~= "NeedsPhoto" and state ~= "Complete" then return end
+            if B.totalQ and B.totalQ > 0 then
+                local known = 0
+                for _ in pairs(B.key) do known = known + 1 end
+                if known >= B.totalQ then return end
+            end
+            if (B.pendingCount or 0) > 0 then return end
+            if os.clock() - B.lastPhotoAt < T("CYCLE_COOLDOWN", CYCLE_COOLDOWN) then return end
+
+            -- stabil guvenlik
+            if teacherSafe() then
+                if not B.safeSince then
+                    B.safeSince = os.clock()
+                    return
+                end
+                if os.clock() - B.safeSince < T("STABLE_TIME", STABLE_TIME) then return end
+            else
+                B.safeSince = nil
+                return
+            end
+            B.safeSince = nil
+
+            -- GAZE MEMORY: if teacher looked at us in the last 2.5s /
+            -- turned or got close, wait (do not trust momentary "safe")
+            if os.clock() - (B.lastFaceTime or 0) < T("FACE_MEMORY", FACE_MEMORY) then return end
+
+            -- all green: equip and fire NOW in the same tick (pencil loop cannot interfere)
+            local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+            if not hum then return end
+            if phone.Parent ~= LocalPlayer.Character then
+                hum:EquipTool(phone)
+            end
+            local now = os.clock()
+            B.lastAct = now
+            B.lastPhotoAt = now
+            B.cycleActive = true
+            B.cycleStart = now
+            B.cycleStartDist = nil
+            local t = getTeacher()
+            local myHum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+            local me = (myHum and myHum.SeatPart) or (LocalPlayer.Character and LocalPlayer.Character.PrimaryPart)
+            if t and me and t.PrimaryPart then
+                B.cycleStartDist = (me.Position - t.PrimaryPart.Position).Magnitude
+            end
+            PlayAnimation:FireServer("Phone1", "Use")
+            ToolAction:FireServer(phone, "Use")
+            log("Photo taken (watchdog active)")
+        end)
+        if not ok then log("FARMER ERROR: " .. tostring(err)) end
+        task.wait(0.7)
+    end
+end)
+
+-- ---------------- PENCIL IDLE: pencil when hands free (NEVER touch phone) ----------------
+task.spawn(function()
+    while B.enabled do
+        pcall(function()
+            local status = Workspace:GetAttribute("GameStatus")
+            if status ~= "Assessment In Progress" then return end
+            if isDead() or B.cycleActive then return end
+            local char = LocalPlayer.Character
+            if not char then return end
+            -- HUNG PHONE cleanup: phone in hand with NeedsPhoto/nil state
+            -- if idle over 3s, lower it (avoid clashing with init/fire window)
+            local ph = char:FindFirstChild("Phone1")
+            if ph then
+                local st = ph:GetAttribute("PhoneState")
+                if st == nil or st == "NeedsPhoto" then
+                    if not B.phoneIdleSince then
+                        B.phoneIdleSince = os.clock()
+                    elseif os.clock() - B.phoneIdleSince > 3 then
+                        lowerPhone()
+                        B.phoneIdleSince = nil
+                        log("Idle phone -> lowered")
+                    end
+                else
+                    B.phoneIdleSince = nil
+                end
+                return -- elde telefon varken kalem takma
+            end
+            B.phoneIdleSince = nil
+            if char:FindFirstChild("Pencil") then return end
+            local pencil = LocalPlayer.Backpack:FindFirstChild("Pencil")
+            if pencil then
+                char:FindFirstChildOfClass("Humanoid"):EquipTool(pencil)
+            end
+        end)
+        task.wait(1)
+    end
+end)
+
+-- ---------------- GORSEL SENKRON + GUI ----------------
+task.spawn(function()
+    while B.enabled do
+        pcall(function()
+            B.anxiety = readAnxiety()
+            syncPaperVisual()
+            -- refresh teacher info EVERY tick (never stale while farmer waits)
+            if Workspace:GetAttribute("GameStatus") == "Assessment In Progress" then
+                teacherSafe()
+            end
+
+            local keyParts = {}
+            for q, l in pairs(B.key) do
+                local mark = B.submitted[q] and (B.submitted[q] == l and "+" or "?") or "-"
+                table.insert(keyParts, q .. ":" .. l .. mark)
+            end
+            table.sort(keyParts, function(a, b)
+                return tonumber(a:match("^(%d+):")) < tonumber(b:match("^(%d+):"))
+            end)
+            local anxTxt = tostring(math.floor(B.anxiety))
+            if B.pencilMode then anxTxt = anxTxt .. " (PENCIL)" end
+            if B.anxPaused then anxTxt = anxTxt .. " (paused)" end
+            if B.dead then anxTxt = anxTxt .. " [DEAD]" end
+            if B.cycleActive then anxTxt = anxTxt .. " [PHOTO]" end
+            local keyText = table.concat(keyParts, "  ")
+            local lastLogs = {}
+            for i = math.max(1, #B.log - 6), #B.log do
+                if B.log[i] then table.insert(lastLogs, B.log[i]) end
+            end
+            local logText = table.concat(lastLogs, "\n")
+
+            -- Fluent panel updates (write only on change, no spam)
+            -- _G.BOT_FLUENT uzerinden erisim: GUI blogu dosya sonunda yuklenir
+            pcall(function()
+                local F = _G.BOT_FLUENT
+                if not F or not F.durumPar then return end
+                local durumText = string.format("%s | Seq %s\nQuestions: %s | Phone: %s %s",
+                    tostring(Workspace:GetAttribute("GameStatus")),
+                    tostring(Workspace:GetAttribute("AssessmentSequenceId")),
+                    tostring(B.totalQ or 0),
+                    tostring(B.phoneState or "-"),
+                    B.cycleActive and "[TAKING PHOTO]" or "")
+                if durumText ~= F.lastInfoText then
+                    F.lastInfoText = durumText
+                    F.durumPar:SetContent(durumText)
+                end
+                local ogText = tostring(B.teacherInfo or "?") .. (B.dead and "\n!! DEAD / CAUGHT !!" or "")
+                if ogText ~= F.lastOgText then
+                    F.lastOgText = ogText
+                    F.ogretmenPar:SetContent(ogText)
+                end
+                local kayText = anxTxt .. (B.abortCount > 0 and ("\nAborts: " .. B.abortCount) or "")
+                if kayText ~= F.lastKayText then
+                    F.lastKayText = kayText
+                    F.kaygiPar:SetContent(kayText)
+                end
+                local kaText = string.format("Correct: %d / Wrong: %d\nKnown: %d/%s",
+                    B.correctCount, B.wrongCount, #keyParts, tostring(B.totalQ or "?"))
+                if kaText ~= F.lastKaText then
+                    F.lastKaText = kaText
+                    F.kagitPar:SetContent(kaText)
+                end
+                if keyText ~= F.lastKeyText then
+                    F.lastKeyText = keyText
+                    F.keyPar:SetContent(keyText ~= "" and keyText or "No answers yet")
+                end
+                if logText ~= F.lastLogText then
+                    F.lastLogText = logText
+                    F.logPar:SetContent(logText)
+                end
+            end)
+        end)
+        task.wait(0.5)
+    end
+end)
+
+-- ---------------- ADLI KAYIT: yakalanma anini cozumle ----------------
+-- last 12s teacher geometry + freeze on catch
+B.forensics = {}
+task.spawn(function()
+    while B.enabled do
+        pcall(function()
+            local t = getTeacher()
+            local char = LocalPlayer.Character
+            if t and char then
+                local hrp = t:FindFirstChild("HumanoidRootPart")
+                local head = t:FindFirstChild("Head")
+                local hum = char:FindFirstChildOfClass("Humanoid")
+                local me = (hum and hum.SeatPart) or char.PrimaryPart
+                if hrp and me then
+                    local toMe = me.Position - hrp.Position
+                    local rec = {
+                        t = math.floor(os.clock() * 10) / 10,
+                        d = math.floor(toMe.Magnitude * 10) / 10,
+                        bd = math.floor(hrp.CFrame.LookVector:Dot(toMe.Unit) * 100) / 100,
+                        hd = head and math.floor(head.CFrame.LookVector:Dot(toMe.Unit) * 100) / 100 or -99,
+                        vel = math.floor(hrp.AssemblyLinearVelocity.Magnitude * 10) / 10,
+                        ph = char:FindFirstChild("Phone1") and 1 or 0,
+                        anim = char:GetAttribute("IsPlayingAnimation") and 1 or 0,
+                        camYaw = math.floor((char:GetAttribute("CameraLookYawDegrees") or 0)),
+                        st = char:FindFirstChild("Phone1") and tostring(char.Phone1:GetAttribute("PhoneState")) or "-",
+                    }
+                    table.insert(B.forensics, rec)
+                    if #B.forensics > 120 then table.remove(B.forensics, 1) end
+                end
+            end
+        end)
+        task.wait(0.1)
+    end
+end)
+LocalPlayer:GetAttributeChangedSignal("CaughtCheatingTransitionActive"):Connect(function()
+    if LocalPlayer:GetAttribute("CaughtCheatingTransitionActive") == true and _G.BOT then
+        _G.BOT.CAUGHT_DUMP = table.clone(_G.BOT.forensics)
+        table.insert(_G.BOT.log, "YAKALANDIK! adli kayit donduruldu (" .. #_G.BOT.CAUGHT_DUMP .. " kayit)")
+    end
+end)
+
+log("Bot started")
+print("[CevapBotu] v9.3 active")
+
+-- Fluent is already loaded by launcher
+
+local guiOK, guiErr = pcall(function()
+if not Fluent then
+    error("Fluent download failed (3 attempts): " .. tostring(fluentErr))
+end
+
+Fluent.GUI.Enabled = false
+local Window = Fluent:CreateWindow({
+    Title = "Cheat Bot",
+    SubTitle = "by zynexdev",
+    Size = UDim2.fromOffset(600, 440),
+    TabWidth = 160,
+    Theme = "Dark",
+})
+if Window.TabDisplay then
+    Window.TabDisplay.Text = "Dashboard"
+end
+
+-- Fix: Disable Roblox AutoLocalize on all main UI labels
+Fluent.GUI.DescendantAdded:Connect(function(v)
+    if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") then
+        v.AutoLocalize = false
+    end
+end)
+for _, v in ipairs(Fluent.GUI:GetDescendants()) do
+    if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") then
+        v.AutoLocalize = false
+    end
+end
+
+-- profile avatar (headshot) as tab icon via rbxthumb
+local avatarIcon = "rbxthumb://type=AvatarHeadShot&id=" .. LocalPlayer.UserId .. "&w=150&h=150"
+
+local Tabs = {
+    Main = Window:CreateTab({ Title = "Dashboard", Icon = avatarIcon }),
+    Key = Window:CreateTab({ Title = "Answer Key", Icon = "key" }),
+    Set = Window:CreateTab({ Title = "Settings", Icon = "settings" }),
+    Log = Window:CreateTab({ Title = "Logs", Icon = "phosphor-list-bold" }),
+}
+
+-- DASHBOARD
+-- PROFILE: player name + author tag
+local profileText = "Player: " .. LocalPlayer.DisplayName .. " (@" .. LocalPlayer.Name .. ")\nMade by zynexdev"
+local profilePar = Tabs.Main:CreateParagraph("Profile", { Title = "Profile", Content = profileText })
+local durumPar = Tabs.Main:CreateParagraph("Durum", { Title = "Status", Content = "starting..." })
+local teacherPar = Tabs.Main:CreateParagraph("Teacher", { Title = "Teacher", Content = "-" })
+local anxietyPar = Tabs.Main:CreateParagraph("Anxiety", { Title = "Anxiety", Content = "-" })
+local paperPar = Tabs.Main:CreateParagraph("Paper", { Title = "Paper", Content = "-" })
+
+Tabs.Main:CreateToggle("AutoPhoto", {
+    Title = "Auto Photo",
+    Description = "Farms answers via phone when teacher is safe",
+    Default = true,
+})
+Tabs.Main:CreateToggle("Pause", {
+    Title = "Pause",
+    Description = "Temporarily stops all automation",
+    Default = false,
+})
+Tabs.Main:CreateButton({
+    Title = "Equip Pencil",
+    Description = "Look innocent, reduce anxiety",
+    Callback = function() equipPencil(true) end,
+})
+Tabs.Main:CreateButton({
+    Title = "Lower Phone (abort)",
+    Description = "Puts the phone down immediately",
+    Callback = function()
+        lowerPhone()
+        if _G.BOT.cycleActive then
+            _G.BOT.cycleActive = false
+            _G.BOT.lastAbortAt = os.clock()
+            _G.BOT.abortCount = _G.BOT.abortCount + 1
+        end
+    end,
+})
+
+-- ANSWER KEY TAB
+local keyPar = Tabs.Key:CreateParagraph("KeyView", { Title = "Answer Key", Content = "No answers yet" })
+local statsPar = Tabs.Key:CreateParagraph("Stats", { Title = "Stats", Content = "Correct: 0 / Wrong: 0" })
+
+-- SETTINGS TAB
+Tabs.Set:CreateSlider("StableTime", {
+    Title = "Stable Safety Window (s)",
+    Description = "Continuous safe time required before photo",
+    Default = 0.8, Min = 0, Max = 3, Rounding = 1,
+    Callback = function(v) _G.BOT_TUNES = _G.BOT_TUNES or {} _G.BOT_TUNES.STABLE_TIME = v end,
+})
+Tabs.Set:CreateSlider("FaceMemory", {
+    Title = "Face Memory (s)",
+    Description = "Wait time after teacher looked at us",
+    Default = 1.2, Min = 0, Max = 5, Rounding = 1,
+    Callback = function(v) _G.BOT_TUNES = _G.BOT_TUNES or {} _G.BOT_TUNES.FACE_MEMORY = v end,
+})
+Tabs.Set:CreateSlider("CycleCooldown", {
+    Title = "Cycle Cooldown (s)",
+    Description = "Minimum wait after photo/abort",
+    Default = 2.5, Min = 0, Max = 10, Rounding = 1,
+    Callback = function(v) _G.BOT_TUNES = _G.BOT_TUNES or {} _G.BOT_TUNES.CYCLE_COOLDOWN = v end,
+})
+Tabs.Set:CreateSlider("PencilThreshold", {
+    Title = "Anxiety: Pencil Threshold",
+    Description = "Auto-equips pencil at this anxiety level",
+    Default = 85, Min = 50, Max = 95, Rounding = 0,
+    Callback = function(v) _G.BOT_TUNES = _G.BOT_TUNES or {} _G.BOT_TUNES.ANXIETY_PENCIL = v end,
+})
+
+-- LOGS TAB
+local logPar = Tabs.Log:CreateParagraph("LogView", { Title = "Recent Events", Content = "starting..." })
+
+-- toggle callback'leri B'ye bagla (B local, burada erisilebilir)
+-- AutoPhoto ve Pause icin Options kullan
+local Options = Fluent.Options
+if Options.AutoPhoto then
+    Options.AutoPhoto:OnChanged(function()
+        if _G.BOT then _G.BOT.doPhoto = Options.AutoPhoto.Value end
+    end)
+end
+if Options.Pause then
+    Options.Pause:OnChanged(function()
+        if _G.BOT then _G.BOT.pause = Options.Pause.Value end
+    end)
+end
+
+_G.BOT_CLEANUP = function() pcall(function() Fluent:Destroy() end) end
+
+-- ---------------- EKLENTILER (SaveManager + InterfaceManager) ----------------
+-- SaveManager: save/load bot settings as configs
+-- InterfaceManager: GUI konumu/tema yonetimi
+local addonOK, addonErr = pcall(function()
+    local SaveManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/myheisenberg/Fluent-Renewed/main/Addons/SaveManager.luau"))()
+    local InterfaceManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/myheisenberg/Fluent-Renewed/main/Addons/InterfaceManager.luau"))()
+
+    SaveManager:SetLibrary(Fluent)
+    InterfaceManager:SetLibrary(Fluent)
+
+    SaveManager:IgnoreThemeSettings()
+    SaveManager:SetIgnoreIndexes({})
+
+    InterfaceManager:SetFolder("CheatBot")
+    SaveManager:SetFolder("CheatBot/test-sirasinda-hile")
+
+    InterfaceManager:BuildInterfaceSection(Tabs.Set)
+    SaveManager:BuildConfigSection(Tabs.Set)
+
+    SaveManager:LoadAutoloadConfig()
+    _G.BOT_SAVEMANAGER = SaveManager
+    _G.BOT_INTERFACEMANAGER = InterfaceManager
+    log("Addons ready: SaveManager + InterfaceManager")
+end)
+if not addonOK then
+    log("Addon ERROR: " .. tostring(addonErr))
+    print("[CevapBotu] Addon ERROR: " .. tostring(addonErr))
+end
+
+_G.BOT_FLUENT = {
+    Window = Window, profilePar = profilePar,
+    durumPar = durumPar, ogretmenPar = teacherPar,
+    kaygiPar = anxietyPar, kagitPar = paperPar, keyPar = keyPar,
+    istatistikPar = statsPar, logPar = logPar,
+    lastInfoText = "", lastKeyText = "", lastLogText = "",
+    lastOgText = "", lastKayText = "", lastKaText = "",
+}
+
+-- caught notification
+LocalPlayer:GetAttributeChangedSignal("CaughtCheatingTransitionActive"):Connect(function()
+    if LocalPlayer:GetAttribute("CaughtCheatingTransitionActive") == true then
+        pcall(function()
+            Fluent:Notify({ Title = "CAUGHT!", Content = "Forensic dump saved", Duration = 6 })
+        end)
+    end
+end)
+
+-- Dashboard auto-selected on open (no empty right panel)
+Window:SelectTab(1)
+Fluent.GUI.Enabled = true
+
+Fluent:Notify({ Title = "Cheat Bot v9.3", Content = "Made by zynexdev", Duration = 4 })
+log("Fluent GUI ready")
+end)
+if not guiOK then
+    log("GUI ERROR: " .. tostring(guiErr))
+    print("[CevapBotu] GUI ERROR: " .. tostring(guiErr))
+end
+
+
+
+
+
+
+
+
+
+
+
+end
+
+-- Verify Key & Launch Bot
+KeySystem.Verify({
+    Title = "Cheat Bot Authentication",
+    Subtitle = "Enter your key to continue",
+    ServiceID = 34572,
+    SavePath = "CheatBot_Key.txt",
+    Discord = "https://discord.gg/ehbX2MVbTw",
+    OnSuccess = StartCheatBot
+})

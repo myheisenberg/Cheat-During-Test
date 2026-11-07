@@ -1,7 +1,7 @@
 -- ==============================================================================
 --  Cheat During Test | Official Automation Hub
 --  Secured by PandaAuth (Zynex Scripts)
---  Design: Fluent UI Acrylic Key Modal
+--  Design: Authentic Fluent UI Acrylic Key Modal (1:1 Dandy's World Match)
 -- ==============================================================================
 
 local TweenService = game:GetService("TweenService")
@@ -64,7 +64,7 @@ local function LaunchMainScript()
     loadstring(game:HttpGet(VSS_URL))()
 end
 
--- ================= MODAL CREATION (Fluent UI Acrylic) =================
+-- ================= MODAL CREATION (1:1 Fluent UI Acrylic) =================
 local function CreateKeyModal(onSuccess)
     -- 1. Check auto-saved key first (Bypass if already verified)
     if isfile and readfile and isfile(SAVE_PATH) then
@@ -107,7 +107,7 @@ local function CreateKeyModal(onSuccess)
     -- Main Card Frame (Fluent Acrylic Card)
     local Card = Instance.new("Frame")
     Card.Name = "Card"
-    Card.Size = UDim2.fromOffset(480, 260)
+    Card.Size = UDim2.fromOffset(480, 255)
     Card.AnchorPoint = Vector2.new(0.5, 0.5)
     Card.Position = UDim2.fromScale(0.5, 0.5)
     Card.BackgroundTransparency = 1
@@ -243,7 +243,7 @@ local function CreateKeyModal(onSuccess)
 
     local SubTitle = Instance.new("TextLabel")
     SubTitle.Name = "SubTitle"
-    SubTitle.Text = "Enter your key to continue"
+    SubTitle.Text = "Authentication | by zynex"
     SubTitle.Font = Enum.Font.Gotham
     SubTitle.TextSize = 12
     SubTitle.TextColor3 = Color3.fromRGB(175, 175, 180)
@@ -323,7 +323,7 @@ local function CreateKeyModal(onSuccess)
 
     local StatusLabel = Instance.new("TextLabel")
     StatusLabel.Name = "Status"
-    StatusLabel.Text = "Keys are valid for 24h across all Zynex Scripts."
+    StatusLabel.Text = "Click \"Get Key\" to copy the verification link."
     StatusLabel.Font = Enum.Font.Gotham
     StatusLabel.TextSize = 12
     StatusLabel.TextColor3 = Color3.fromRGB(155, 155, 160)
@@ -335,7 +335,7 @@ local function CreateKeyModal(onSuccess)
     StatusLabel.ZIndex = 5
     StatusLabel.Parent = Body
 
-    -- ================= BOTTOM BAR =================
+    -- ================= BOTTOM BAR (Exact 1:1 Dandy's World Layout) =================
     local BottomBar = Instance.new("Frame")
     BottomBar.Name = "BottomBar"
     BottomBar.Size = UDim2.new(1, 0, 0, 58)
@@ -370,35 +370,21 @@ local function CreateKeyModal(onSuccess)
     BottomLine.ZIndex = 6
     BottomLine.Parent = BottomBar
 
-    local ButtonHolder = Instance.new("Frame")
-    ButtonHolder.Name = "ButtonHolder"
-    ButtonHolder.Size = UDim2.new(1, -40, 1, 0)
-    ButtonHolder.Position = UDim2.fromOffset(20, 0)
-    ButtonHolder.BackgroundTransparency = 1
-    ButtonHolder.ZIndex = 6
-    ButtonHolder.Parent = BottomBar
-
-    local BtnLayout = Instance.new("UIListLayout")
-    BtnLayout.FillDirection = Enum.FillDirection.Horizontal
-    BtnLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
-    BtnLayout.VerticalAlignment = Enum.VerticalAlignment.Center
-    BtnLayout.Padding = UDim.new(0, 10)
-    BtnLayout.Parent = ButtonHolder
-
-    -- Discord Button
+    -- 1. Discord Button (Stands on the FAR LEFT alone)
     local DiscordBtn = Instance.new("TextButton")
     DiscordBtn.Name = "DiscordBtn"
     DiscordBtn.Text = "Discord"
     DiscordBtn.Font = Enum.Font.GothamBold
-    DiscordBtn.TextSize = 13
+    DiscordBtn.TextSize = 14
     DiscordBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-    DiscordBtn.Size = UDim2.fromOffset(90, 34)
+    DiscordBtn.Size = UDim2.fromOffset(88, 34)
+    DiscordBtn.Position = UDim2.fromOffset(20, 12)
     DiscordBtn.BackgroundColor3 = Color3.fromRGB(88, 101, 242)
     DiscordBtn.BackgroundTransparency = 0.1
     DiscordBtn.AutoButtonColor = false
     DiscordBtn.AutoLocalize = false
     DiscordBtn.ZIndex = 7
-    DiscordBtn.Parent = ButtonHolder
+    DiscordBtn.Parent = BottomBar
 
     local DiscordCorner = Instance.new("UICorner")
     DiscordCorner.CornerRadius = UDim.new(0, 4)
@@ -428,6 +414,22 @@ local function CreateKeyModal(onSuccess)
         end
     end)
 
+    -- 2. Right Button Holder for Get Key & Verify Key
+    local RightHolder = Instance.new("Frame")
+    RightHolder.Name = "RightHolder"
+    RightHolder.Size = UDim2.new(0, 260, 0, 34)
+    RightHolder.Position = UDim2.new(1, -280, 0, 12)
+    RightHolder.BackgroundTransparency = 1
+    RightHolder.ZIndex = 6
+    RightHolder.Parent = BottomBar
+
+    local RightLayout = Instance.new("UIListLayout")
+    RightLayout.FillDirection = Enum.FillDirection.Horizontal
+    RightLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+    RightLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+    RightLayout.Padding = UDim.new(0, 10)
+    RightLayout.Parent = RightHolder
+
     -- Get Key Button
     local GetKeyBtn = Instance.new("TextButton")
     GetKeyBtn.Name = "GetKeyBtn"
@@ -435,13 +437,13 @@ local function CreateKeyModal(onSuccess)
     GetKeyBtn.Font = Enum.Font.GothamMedium
     GetKeyBtn.TextSize = 13
     GetKeyBtn.TextColor3 = Color3.fromRGB(235, 235, 240)
-    GetKeyBtn.Size = UDim2.fromOffset(110, 34)
+    GetKeyBtn.Size = UDim2.fromOffset(125, 34)
     GetKeyBtn.BackgroundColor3 = Color3.fromRGB(48, 48, 54)
     GetKeyBtn.BackgroundTransparency = 0.1
     GetKeyBtn.AutoButtonColor = false
     GetKeyBtn.AutoLocalize = false
     GetKeyBtn.ZIndex = 7
-    GetKeyBtn.Parent = ButtonHolder
+    GetKeyBtn.Parent = RightHolder
 
     local GetKeyCorner = Instance.new("UICorner")
     GetKeyCorner.CornerRadius = UDim.new(0, 4)
@@ -477,7 +479,7 @@ local function CreateKeyModal(onSuccess)
     VerifyBtn.Name = "VerifyBtn"
     VerifyBtn.Text = "Verify Key"
     VerifyBtn.Font = Enum.Font.GothamBold
-    VerifyBtn.TextSize = 13
+    VerifyBtn.TextSize = 14
     VerifyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
     VerifyBtn.Size = UDim2.fromOffset(115, 34)
     VerifyBtn.BackgroundColor3 = Color3.fromRGB(0, 120, 212)
@@ -485,7 +487,7 @@ local function CreateKeyModal(onSuccess)
     VerifyBtn.AutoButtonColor = false
     VerifyBtn.AutoLocalize = false
     VerifyBtn.ZIndex = 7
-    VerifyBtn.Parent = ButtonHolder
+    VerifyBtn.Parent = RightHolder
 
     local VerifyCorner = Instance.new("UICorner")
     VerifyCorner.CornerRadius = UDim.new(0, 4)

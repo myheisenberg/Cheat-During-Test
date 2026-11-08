@@ -1,9 +1,3 @@
--- ==============================================================================
---  Cheat During Test | Official Automation Hub
---  Secured by PandaAuth (Zynex Scripts)
---  Design: Authentic Fluent UI Acrylic Key Modal (1:1 Dandy's World Match)
--- ==============================================================================
-
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
 local HttpService = game:GetService("HttpService")
@@ -16,7 +10,6 @@ local SAVE_PATH = "CheatBot_Key.txt"
 local DEFAULT_DISCORD = "https://discord.gg/ehbX2MVbTw"
 local VSS_URL = "https://vault.pandauth.com/vss/acf0f5c28295354c"
 
--- 1. Initialize PandaAuth SDK (Official PUSL-V4)
 local PandaAuth = (function()
     local ok, lib = pcall(function()
         local src = game:HttpGet("https://secure.pandauth.com/pv4/lib")
@@ -29,7 +22,6 @@ local PandaAuth = (function()
     return nil
 end)()
 
--- 2. Fetch live Discord URL from GitHub
 local discordUrl = DEFAULT_DISCORD
 pcall(function()
     local fetched = game:HttpGetAsync("https://raw.githubusercontent.com/myheisenberg/Fluent-Renewed/main/discord.txt")
@@ -38,7 +30,6 @@ pcall(function()
     end
 end)
 
--- 3. Pure 100% Server-Side Whitelist Check (NO hardcoded keys in client code!)
 local function CheckWhitelist(key)
     if not key or key == "" then return false end
     key = string.gsub(key, "^%s*(.-)%s*$", "%1")
@@ -64,9 +55,7 @@ local function LaunchMainScript()
     loadstring(game:HttpGet(VSS_URL))()
 end
 
--- ================= MODAL CREATION (1:1 Fluent UI Acrylic) =================
 local function CreateKeyModal(onSuccess)
-    -- 1. Check auto-saved key first (Bypass if already verified)
     if isfile and readfile and isfile(SAVE_PATH) then
         local savedKey = nil
         pcall(function() savedKey = readfile(SAVE_PATH) end)
@@ -78,7 +67,6 @@ local function CreateKeyModal(onSuccess)
         end
     end
 
-    -- Clean previous instances
     for _, name in ipairs({"Platoboost_AuthModal", "CheatBot_AuthModal", "Zynex_AuthModal"}) do
         local old = (gethui and gethui():FindFirstChild(name)) or CoreGui:FindFirstChild(name)
         if old then old:Destroy() end
@@ -93,7 +81,6 @@ local function CreateKeyModal(onSuccess)
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     ScreenGui.Parent = parent
 
-    -- Background Tint Overlay
     local Overlay = Instance.new("TextButton")
     Overlay.Name = "Overlay"
     Overlay.Text = ""
@@ -104,7 +91,6 @@ local function CreateKeyModal(onSuccess)
     Overlay.BorderSizePixel = 0
     Overlay.Parent = ScreenGui
 
-    -- Main Card Frame (Fluent Acrylic Card)
     local Card = Instance.new("Frame")
     Card.Name = "Card"
     Card.Size = UDim2.fromOffset(480, 255)
@@ -114,7 +100,6 @@ local function CreateKeyModal(onSuccess)
     Card.BorderSizePixel = 0
     Card.Parent = ScreenGui
 
-    -- 1. Fluent Window Drop Shadow
     local Shadow = Instance.new("ImageLabel")
     Shadow.Name = "Shadow"
     Shadow.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -129,7 +114,6 @@ local function CreateKeyModal(onSuccess)
     Shadow.ZIndex = 1
     Shadow.Parent = Card
 
-    -- 2. Acrylic Background Frame (Fluent Dark Theme AcrylicMain)
     local Background = Instance.new("Frame")
     Background.Name = "Background"
     Background.Size = UDim2.fromScale(1, 1)
@@ -143,7 +127,6 @@ local function CreateKeyModal(onSuccess)
     BgCorner.CornerRadius = UDim.new(0, 8)
     BgCorner.Parent = Background
 
-    -- 3. Acrylic Subtle Gradient Layer
     local GradientFrame = Instance.new("Frame")
     GradientFrame.Name = "Gradient"
     GradientFrame.Size = UDim2.fromScale(1, 1)
@@ -162,7 +145,6 @@ local function CreateKeyModal(onSuccess)
     Grad.Color = ColorSequence.new(Color3.fromRGB(48, 48, 54), Color3.fromRGB(24, 24, 28))
     Grad.Parent = GradientFrame
 
-    -- 4. Acrylic Noise Texture
     local Noise = Instance.new("ImageLabel")
     Noise.Name = "Noise"
     Noise.Size = UDim2.fromScale(1, 1)
@@ -178,7 +160,6 @@ local function CreateKeyModal(onSuccess)
     NoiseCorner.CornerRadius = UDim.new(0, 8)
     NoiseCorner.Parent = Noise
 
-    -- 5. Fluent Border Stroke
     local BorderFrame = Instance.new("Frame")
     BorderFrame.Name = "Border"
     BorderFrame.Size = UDim2.fromScale(1, 1)
@@ -196,7 +177,6 @@ local function CreateKeyModal(onSuccess)
     BorderStroke.Thickness = 1
     BorderStroke.Parent = BorderFrame
 
-    -- 6. Fluent Cyan Top Accent Line
     local TopLine = Instance.new("Frame")
     TopLine.Name = "TopLine"
     TopLine.Size = UDim2.new(1, -16, 0, 1)
@@ -207,7 +187,6 @@ local function CreateKeyModal(onSuccess)
     TopLine.ZIndex = 5
     TopLine.Parent = Card
 
-    -- ================= HEADER =================
     local Header = Instance.new("Frame")
     Header.Name = "Header"
     Header.Size = UDim2.new(1, 0, 0, 52)
@@ -255,7 +234,6 @@ local function CreateKeyModal(onSuccess)
     SubTitle.ZIndex = 5
     SubTitle.Parent = Header
 
-    -- ================= BODY =================
     local Body = Instance.new("Frame")
     Body.Name = "Body"
     Body.Size = UDim2.new(1, -40, 0, 115)
@@ -335,7 +313,6 @@ local function CreateKeyModal(onSuccess)
     StatusLabel.ZIndex = 5
     StatusLabel.Parent = Body
 
-    -- ================= BOTTOM BAR (Exact 1:1 Dandy's World Layout) =================
     local BottomBar = Instance.new("Frame")
     BottomBar.Name = "BottomBar"
     BottomBar.Size = UDim2.new(1, 0, 0, 58)
@@ -370,7 +347,6 @@ local function CreateKeyModal(onSuccess)
     BottomLine.ZIndex = 6
     BottomLine.Parent = BottomBar
 
-    -- 1. Discord Button (Stands on the FAR LEFT alone)
     local DiscordBtn = Instance.new("TextButton")
     DiscordBtn.Name = "DiscordBtn"
     DiscordBtn.Text = "Discord"
@@ -414,7 +390,6 @@ local function CreateKeyModal(onSuccess)
         end
     end)
 
-    -- 2. Right Button Holder for Get Key & Verify Key
     local RightHolder = Instance.new("Frame")
     RightHolder.Name = "RightHolder"
     RightHolder.Size = UDim2.new(0, 260, 0, 34)
@@ -430,7 +405,6 @@ local function CreateKeyModal(onSuccess)
     RightLayout.Padding = UDim.new(0, 10)
     RightLayout.Parent = RightHolder
 
-    -- Get Key Button
     local GetKeyBtn = Instance.new("TextButton")
     GetKeyBtn.Name = "GetKeyBtn"
     GetKeyBtn.Text = "Get Key"
@@ -474,7 +448,6 @@ local function CreateKeyModal(onSuccess)
         end
     end)
 
-    -- Verify Key Button
     local VerifyBtn = Instance.new("TextButton")
     VerifyBtn.Name = "VerifyBtn"
     VerifyBtn.Text = "Verify Key"
@@ -541,7 +514,6 @@ local function CreateKeyModal(onSuccess)
         end)
     end)
 
-    -- Dragging functionality
     local dragging, dragInput, dragStart, startPos
     Card.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
@@ -566,5 +538,4 @@ local function CreateKeyModal(onSuccess)
     end)
 end
 
--- Start Key System Modal
 CreateKeyModal(LaunchMainScript)
